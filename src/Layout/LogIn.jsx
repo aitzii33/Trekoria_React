@@ -1,13 +1,13 @@
-import TripifyLogo from '../src/assets/logo.png'
-import IntagramLogo from '../src/assets/instagramLogo.jpeg'
-import TiktokLogo from '../src/assets/Tiktok.png'
-import TwitterLogo from '../src/assets/twitterLogo.png'
-import YoutubeLogo from '../src/assets/youtubeLogo.png'
-import Image from '../src/assets/LogIn.jpeg'
-import '../src/CSS/LogIn.css'
+import TripifyLogo from '../assets/logo.png'
+import IntagramLogo from '../assets/instagramLogo.jpeg'
+import TiktokLogo from '../assets/TiktokLogo.png'
+import TwitterLogo from '../assets/twitterLogo.png'
+import YoutubeLogo from '../assets/youtubeLogo.png'
+import Image from '../assets/LogIn.jpeg'
+import '../CSS/LogIn.css'
 
 
-function LogIn()
+export default function LogIn()
 {
     return(
         <div>

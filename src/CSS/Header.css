@@ -1,23 +1,25 @@
-/* Header.css */
-body{
-  padding-top: 120px;
+body {
+  margin: 0;
+  padding: 0;
 }
+
 /* Main header styling */
 .header {
   display: flex;
   align-items: center;
-  padding: 1rem; /* equivalent to p-3 */
-  border-bottom: 1px solid #dee2e6;
+  padding: 1rem;
   background-color: white;
+
   position: fixed;
   top: 0;
+  left: 0;    
   width: 100%;
   z-index: 1000;
 }
 
 /* Logo */
 .header-logo {
-  margin-left: 1rem; /* ms-3 */
+  margin-left: 1rem; 
   width: 110px;
   height: 90px;
 }
@@ -31,8 +33,8 @@ body{
 .header-nav {
   display: flex;
   align-items: center;
-  gap: 1rem; /* gap-3 */
-  margin-right: 15px; /* spacing from button */
+  gap: 1rem;
+  margin-right: 30px;
 }
 
 .header-nav a {
@@ -41,24 +43,24 @@ body{
 }
 
 .header-nav a:hover {
-  text-decoration: underline; /* optional hover effect */
+  text-decoration: underline;
 }
 
 /* Access button wrapper */
 .header-access {
   position: relative;
-  margin-right: 1rem; /* me-3 */
-  margin-left: 10px;  /* extra spacing from nav */
+  margin-right: 1rem; 
+  margin-left: 10px; 
 }
 
 /* Dropdown menu */
 .header-dropdown {
   position: absolute;
   right: 0;
-  margin-top: 0.5rem; /* mt-2 */
-  padding: 0.5rem; /* p-2 */
-  border: 1px solid #dee2e6;
-  background-color: white;
+  margin-top: 0.5rem; 
+  padding: 0.5rem;
+  border: 1px solid #d1d3d6;
+  background-color: rgb(174, 212, 244);
   list-style: none;
 }
 
@@ -72,6 +74,25 @@ body{
 .header-dropdown li a:hover {
   background-color: #f8f9fa;
 }
+
 .main-content {
-  padding-top: 120px; /* same as header height */
+  padding-top: 120px; 
 }
+/* Access button styling */
+.header-access button {
+  background-color: #84c0e0; 
+  color: white;              
+  border: none;             
+  padding: 0.5rem 1rem;     
+  border-radius: 5px;      
+  cursor: pointer;         
+  font-size: 1rem;          
+  transition: background-color 0.3s;
+  margin-right: 2rem;
+}
+
+/* Optional: hover effect */
+.header-access button:hover {
+  background-color: #7bbcc0; 
+}
+

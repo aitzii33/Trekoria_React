@@ -1,6 +1,6 @@
 
 
-function Footer(){
+export default function Footer(){
     return(
         <div>
             <div class="container my-5">
