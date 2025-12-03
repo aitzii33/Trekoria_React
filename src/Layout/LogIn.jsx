@@ -1,10 +1,10 @@
-import TripifyLogo from 'public/img/LOGO.png'
-import IntagramLogo from 'public/img/instagramLogo.jpeg'
-import TiktokLogo from 'public/img/Tiktok.png'
-import TwitterLogo from 'public/img/twitterLogo.png'
-import YoutubeLogo from 'public/img/youtubeLogo.png'
-import Image from 'public/img/LogIn.jpeg'
-import './LogIn.css'
+import TripifyLogo from '../src/assets/logo.png'
+import IntagramLogo from '../src/assets/instagramLogo.jpeg'
+import TiktokLogo from '../src/assets/Tiktok.png'
+import TwitterLogo from '../src/assets/twitterLogo.png'
+import YoutubeLogo from '../src/assets/youtubeLogo.png'
+import Image from '../src/assets/LogIn.jpeg'
+import '../src/CSS/LogIn.css'
 
 
 function LogIn()
@@ -45,7 +45,6 @@ function LogIn()
                                                 <p class="mb-0 me-2">Don't have an account?</p>
                                                 <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-danger">Create new</button>
                                             </div>
-
                                             <div>
                                                 <img src={IntagramLogo} alt="Instagram"></img>
                                                 <img src={YoutubeLogo} alt="Youtube"></img>
