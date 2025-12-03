@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../CSS/Header.css';
 
 export default function Head() {
-  const [showDropdown, setShowDropdown] = useState(false);
 
   return (
     <div className="main-content">
