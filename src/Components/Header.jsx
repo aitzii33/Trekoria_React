@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import logo from "../../assets/logo.png";
-import home from "../../assets/home.png";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../CSS/Header.css';
+import logo from '../assets/logo.png'
+import home from "../assets/home.png";
+import '../CSS/Header.css';
 
 export default function Head() {
 
@@ -22,7 +21,6 @@ export default function Head() {
         <a href="#">
           <img src={home} alt="Home" style={{ width: "20px", height: "20px" }} />
         </a>
-        <a href="#">Bookings</a>
         <a href="#">About Us</a>
         <a href="#">Contact</a>
       </nav>
