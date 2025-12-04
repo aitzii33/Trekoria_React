@@ -22,7 +22,6 @@ export default function Head() {
         <a href="#">
           <img src={home} alt="Home" style={{ width: "20px", height: "20px" }} />
         </a>
-        <a href="#">Bookings</a>
         <a href="#">About Us</a>
         <a href="#">Contact</a>
       </nav>
