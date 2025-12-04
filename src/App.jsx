@@ -1,27 +1,21 @@
-import { useState } from 'react'
-<<<<<<< HEAD
+import { useState } from 'react' 
 import Footer from './Components/Footer'
 import Head from './Components/Header'
 
-=======
 import logIn from './Layout/LogIn';
->>>>>>> origin/main
 import './App.css'
 import Header from './Components/Header';
 import Landing from './Layout/Landing';
+import Footer from './Components/Footer';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-<<<<<<< HEAD
-      <Head></Head>
-      <Footer></Footer>
-=======
-      <Header/>
+       <Header/>
       <Landing/>
->>>>>>> origin/main
+      <Footer />
     </>
   )
 }
