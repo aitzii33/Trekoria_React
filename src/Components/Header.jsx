@@ -4,7 +4,6 @@ import home from "../assets/home.png";
 import '../CSS/Header.css';
 
 export default function Head() {
-  const [showDropdown, setShowDropdown] = useState(false);
 
   return (
     <div className="main-content">
