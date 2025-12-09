@@ -1,15 +1,6 @@
 import '../assets/css/LogIn.css';
 
-import TripifyLogo from '../assets/logo.png'
-import IntagramLogo from '../assets/instagramLogo.jpeg'
-import TiktokLogo from '../assets/TiktokLogo.png'
-import TwitterLogo from '../assets/twitterLogo.png'
-import YoutubeLogo from '../assets/youtubeLogo.png'
-import Image from '../assets/LogIn.jpeg'
-import '../CSS/LogIn.css'
-
-
-export default function LogIn()
+function LogIn() 
 {
     return (
         <div>
@@ -95,3 +86,4 @@ export default function LogIn()
     );
 }
 
+export default LogIn;
