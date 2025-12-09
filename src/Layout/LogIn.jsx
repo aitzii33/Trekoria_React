@@ -15,7 +15,7 @@ function LogIn()
 
                                         <div className="text-center">
                                             <img style={{ width: "185px" }} alt="logo" />
-                                            <h4 className="mt-1 mb-5 pb-1">We are TripiFy</h4>
+                                            <h4 className="mt-1 mb-5 pb-1">We are Trekoria</h4>
                                         </div>
 
                                         <form>
