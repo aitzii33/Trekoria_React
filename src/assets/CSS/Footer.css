@@ -1,8 +1,14 @@
-/* Background and text */
 footer {
-  background-color: #45526e;
+  background-color: #7d8eb3;
   color: white;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 0.5em 0;   /* small padding top & bottom */
+  margin-top: 0;       /* ensure no extra margin above */
+  margin-bottom: 0;    /* no extra margin below */
+  text-align: center;
 }
+
 
 /* Titles in uppercase, bold, and with a bottom margin */
 .text-uppercase {
