@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+
 import logo from '../assets/logo.png'
 import home from "../assets/home.png";
-import '../CSS/Header.css';
+import '../assets/CSS/Header.css';
 
 export default function Head() {
 
@@ -29,20 +29,9 @@ export default function Head() {
       <div className="header-access">
         <button
           className="btn btn-primary"
-          onClick={() => setShowDropdown(!showDropdown)}
         >
           Access
         </button>
-        {showDropdown && (
-          <ul className="header-dropdown">
-            <li>
-              <a href="/login">Login</a>
-            </li>
-            <li>
-              <a href="/register">Register</a>
-            </li>
-          </ul>
-        )}
       </div>
     </header>
     </div>
