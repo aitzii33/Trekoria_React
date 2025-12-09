@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 import '../assets/css/LogIn.css';
 
-
-function LogIn() 
-=======
 import TripifyLogo from '../assets/logo.png'
 import IntagramLogo from '../assets/instagramLogo.jpeg'
 import TiktokLogo from '../assets/TiktokLogo.png'
@@ -14,7 +10,6 @@ import '../CSS/LogIn.css'
 
 
 export default function LogIn()
->>>>>>> origin/main
 {
     return (
         <div>
@@ -100,4 +95,3 @@ export default function LogIn()
     );
 }
 
-export default LogIn;
