@@ -1,7 +1,7 @@
 
 import logo from '../assets/logo.png'
 import home from "../assets/home.png";
-import '../assets/CSS/HeaderLanding.css';
+import '../assets/CSS/Header.css';
 
 export default function Head() 
 {

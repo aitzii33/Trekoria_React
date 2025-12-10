@@ -1,4 +1,4 @@
-import '../assets/css/LogIn.css';
+//import '../assets/css/LogIn.css';
 
 function LogIn() 
 {
@@ -51,24 +51,6 @@ function LogIn()
                                                 <button type="button" className="btn btn-outline-danger">
                                                     Create new
                                                 </button>
-                                            </div>
-
-                                            <div className="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
-                                                <a className="btn btn-outline-light btn-floating m-1 text-white" role="button">
-                                                    <i className="fab fa-facebook-f"></i>
-                                                </a>
-
-                                                <a className="btn btn-outline-light btn-floating m-1 text-white" role="button">
-                                                    <i className="fab fa-twitter"></i>
-                                                </a>
-
-                                                <a className="btn btn-outline-light btn-floating m-1 text-white" role="button">
-                                                    <i className="fab fa-google"></i>
-                                                </a>
-
-                                                <a className="btn btn-outline-light btn-floating m-1 text-white" role="button">
-                                                    <i className="fab fa-instagram"></i>
-                                                </a>
                                             </div>
                                         </form>
                                     </div>
