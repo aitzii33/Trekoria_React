@@ -1,6 +1,7 @@
 footer {
-  background-color: #7d8eb3;
-  color: white;
+
+  background-color: #D1DCEC;
+  color: black;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   padding: 0.5em 0;   /* small padding top & bottom */
@@ -56,14 +57,14 @@ a.text-white:hover {
 
 .btn-outline-light {
   border: 1px solid #fff;
-  color: white;
+  color: black;
   background: transparent;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn-outline-light:hover {
-  background-color: white;
-  color: #45526e;
+  background-color: black;
+  color: #2796D1;
   text-decoration: none;
 }
 

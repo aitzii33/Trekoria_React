@@ -1,5 +1,6 @@
-import { useState } from 'react' 
-import Footer from './Components/Footer'
+
+import { useState } from 'react'
+import logIn from './Layout/LogIn';
 import './App.css'
 import Head from './Components/Header';
 import Landing from './Layout/Landing';
@@ -10,8 +11,8 @@ function App() {
 
   return (
     <>
-      <Head />
-      <Landing />
+      <Header/>
+      <Landing/>
       <Foot />
     </>
   )
