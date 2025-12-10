@@ -1,7 +1,7 @@
 /* Background and text */
 footer {
-  background-color: #45526e;
-  color: white;
+  background-color: #D1DCEC;
+  color: black;
 }
 
 /* Titles in uppercase, bold, and with a bottom margin */
@@ -50,14 +50,14 @@ a.text-white:hover {
 
 .btn-outline-light {
   border: 1px solid #fff;
-  color: white;
+  color: black;
   background: transparent;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn-outline-light:hover {
-  background-color: white;
-  color: #45526e;
+  background-color: black;
+  color: #2796D1;
   text-decoration: none;
 }
 

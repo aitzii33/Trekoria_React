@@ -1,4 +1,8 @@
-import '../../CSS/Footes.css';
+import '../assets/CSS/Footes.css';
+import img_insta from '../assets/img/instagramLogo.jpeg'
+import img_tiktok from '../assets/img/TiktokLogo.png'
+import img_twitter from '../assets/img/twitterLogo.png'
+import img_youtube from '../assets/img/youtubeLogo.png'
 
 function Footer() 
 {
@@ -59,16 +63,24 @@ function Footer()
 
                         <div className="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
                             <a className="btn btn-outline-light btn-floating m-1 text-white" role="button" href="#!">
-                                <i className="fab fa-facebook-f"></i>
+                                <i className="fab">
+                                    <img src={img_insta} alt='instagram'></img>
+                                </i>
                             </a>
                             <a className="btn btn-outline-light btn-floating m-1 text-white" role="button" href="#!">
-                                <i className="fab fa-twitter"></i>
+                                <i className="fab">
+                                    <img src={img_tiktok} alt='tiktok'></img>
+                                </i>
                             </a>
                             <a className="btn btn-outline-light btn-floating m-1 text-white" role="button" href="#!">
-                                <i className="fab fa-google"></i>
+                                <i className="fab">
+                                    <img src={img_twitter} alt='twitter'></img>
+                                </i>
                             </a>
                             <a className="btn btn-outline-light btn-floating m-1 text-white" role="button" href="#!">
-                                <i className="fab fa-instagram"></i>
+                                <i className="fab">
+                                    <img src={img_youtube} alt='youtube'></img>
+                                </i>
                             </a>
                         </div>
                     </div>
