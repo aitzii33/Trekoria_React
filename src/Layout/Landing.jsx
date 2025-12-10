@@ -1,6 +1,7 @@
 //Proxmoss: https:\\10.14.4.161:8006
 //User: Group3
 //Password: Muffin
+//Password machines: zubiri zubiri
 
 export default function Landing() 
 {

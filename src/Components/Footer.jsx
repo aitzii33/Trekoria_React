@@ -1,9 +1,16 @@
 
 import '../assets/CSS/Footes.css';
+
+//imagenes
 import img_insta from '../assets/img/instagramLogo.jpeg'
 import img_tiktok from '../assets/img/TiktokLogo.png'
 import img_twitter from '../assets/img/twitterLogo.png'
 import img_youtube from '../assets/img/youtubeLogo.png'
+
+//redirections
+import Contact from './Contact.jsx'
+import We from '../Layout/Landing.jsx'
+
 
 
 function Footer() 
@@ -16,18 +23,13 @@ function Footer()
                         <div className="row">
                             <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                                 <h6 className="text-uppercase mb-4 font-weight-bold">Trekoria</h6>
-                                <p>
-                                    Trekoria is a web platform designed to simplify exploration and booking 
-                                    of tourist experiences across multiple cities.
-                                </p>
+                                <p><a className="text-white" href={We}>How we are</a></p>
                             </div>
 
                             <hr className="w-100 clearfix d-md-none" />
 
                             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                                 <h6 className="text-uppercase mb-4 font-weight-bold">Products</h6>
-                                <p><a className="text-white" href="#!">Travels</a></p>
-                                <p><a className="text-white" href="#!">Hotels</a></p>
                                 <p><a className="text-white" href="#!">Activities</a></p>
                             </div>
 
@@ -36,8 +38,7 @@ function Footer()
                             <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
                                 <h6 className="text-uppercase mb-4 font-weight-bold">Useful links</h6>
                                 <p><a className="text-white" href="#!">Your Account</a></p>
-                                <p><a className="text-white" href="#!">Contact form</a></p>
-                                <p><a className="text-white" href="#!">Help</a></p>
+                                <p><a className="text-white" href={Contact}>Contact form</a></p>
                             </div>
 
                             <hr className="w-100 clearfix d-md-none" />
