@@ -1,5 +1,9 @@
+//Proxmoss: https\\10.14.4.161:8006
+//User: Group3
+//Password: Muffin
 
-export default function Landing() {
+export default function Landing() 
+{
   return (
     <div className="landing-page">
       {/* Collage Section */}
@@ -9,8 +13,6 @@ export default function Landing() {
           <div className="col-3 col-md-1 col-lg-2 d-none d-md-flex align-items-center">
             <div className="bg-dark ratio ratio-1x1 opacity-25"></div>
           </div>
-
-
 
           {/* Center Image */}
           <div className="col-4 col-md-4 col-lg-3">
