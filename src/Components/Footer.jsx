@@ -1,6 +1,3 @@
-
-//import '../assets/CSS/Footes.css';
-
 //imagenes
 import img_insta from '../assets/img/instagramLogo.jpeg'
 import img_tiktok from '../assets/img/TiktokLogo.png'
@@ -10,6 +7,8 @@ import img_youtube from '../assets/img/youtubeLogo.png'
 //redirections
 import Contact from './Contact.jsx'
 import We from '../Layout/Landing.jsx'
+
+import '../assets/CSS/Footer.css'
 
 
 

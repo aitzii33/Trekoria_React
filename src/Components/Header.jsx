@@ -1,25 +1,32 @@
-//import '../assets/CSS/Header';
+
 import logo from '../assets/img/logo.png'
-import userImg from '../assets/img/DefaultUserImage.png';
+import userImg from '../assets/img/DefaultUserImage.png'
+import '../assets/CSS/Header.css'
 
 function Head() 
 {
     function AccessButton()
     {
         //it's going to show options button with the reserve, my profile and log out
-        const box = document.getElementById("extraButtons");
-            //box.classList.toggle("d-none");
-
-        if (box.classList.contains("d-none")) 
-        {
-            box.classList.remove("d-none");
-            box.classList.add("fade-in");
-        } 
-        else 
-        {
-            box.classList.add("d-none");
-            box.classList.remove("fade-in");
-        }
+        //if() log out, redirect to the log in page 
+        //{
+        //
+        //}
+        //else
+        //{
+        //    const box = document.getElementById("extraButtons");
+        //
+        //    if (box.classList.contains("d-none")) 
+        //    {
+        //        box.classList.remove("d-none");
+        //        box.classList.add("fade-in");
+        //    } 
+        //    else 
+        //    {
+        //        box.classList.add("d-none");
+        //        box.classList.remove("fade-in");
+        //    }
+        //}
     }
 
 
@@ -34,18 +41,9 @@ function Head()
                 {/* Spacer */}
                 <div className="header-spacer"></div>
 
-                {/* Title */}
-                <h1>TREKORIA</h1>
-
                 {/* Access button */}
                 <div className="header-access">
                     <img src={userImg} alt='User image' onClick={AccessButton}/>
-
-                    <div id="extraButtons" class="mt-3 d-none">
-                        <button class="btn btn-primary btn-sm mb-1">Reserve</button>
-                        <button class="btn btn-secondary btn-sm mb-1">my profile</button>
-                        <button class="btn btn-danger btn-sm mb-1">Log out</button>
-                    </div>
                 </div>
             </header>
         </div>
@@ -53,3 +51,11 @@ function Head()
 }
 
 export default Head;
+
+/*
+<div id="extraButtons" class="mt-3 d-none">
+                        <button class="btn btn-primary btn-sm mb-1">Reserve</button>
+                        <button class="btn btn-secondary btn-sm mb-1">my profile</button>
+                        <button class="btn btn-danger btn-sm mb-1">Log out</button>
+                    </div>
+*/
