@@ -1,8 +1,10 @@
+
 import '../assets/CSS/Footes.css';
 import img_insta from '../assets/img/instagramLogo.jpeg'
 import img_tiktok from '../assets/img/TiktokLogo.png'
 import img_twitter from '../assets/img/twitterLogo.png'
 import img_youtube from '../assets/img/youtubeLogo.png'
+
 
 function Footer() 
 {
@@ -13,9 +15,9 @@ function Footer()
                     <section>
                         <div className="row">
                             <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                                <h6 className="text-uppercase mb-4 font-weight-bold">Tripify</h6>
+                                <h6 className="text-uppercase mb-4 font-weight-bold">Trekoria</h6>
                                 <p>
-                                    Tripify is a web platform designed to simplify exploration and booking 
+                                    Trekoria is a web platform designed to simplify exploration and booking 
                                     of tourist experiences across multiple cities.
                                 </p>
                             </div>

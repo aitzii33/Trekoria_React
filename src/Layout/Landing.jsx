@@ -1,3 +1,4 @@
+
 export default function Landing() {
   return (
     <div className="landing-page">
@@ -61,3 +62,4 @@ export default function Landing() {
     </div>
   );
 }
+
