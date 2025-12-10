@@ -1,5 +1,5 @@
 
-import '../assets/CSS/Footes.css';
+//import '../assets/CSS/Footes.css';
 
 //imagenes
 import img_insta from '../assets/img/instagramLogo.jpeg'

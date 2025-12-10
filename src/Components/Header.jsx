@@ -1,30 +1,25 @@
-
-import logo from '../assets/logo.png'
-import home from "../assets/home.png";
-import '../assets/CSS/Header.css';
-import userImg from 'DefaultUserImage.png';
+//import '../assets/CSS/Header';
+import logo from '../assets/img/logo.png'
+import userImg from '../assets/img/DefaultUserImage.png';
 
 function Head() 
 {
     function AccessButton()
     {
         //it's going to show options button with the reserve, my profile and log out
-        document.getElementById("userImage").addEventListener("click", () => 
-        {
-            const box = document.getElementById("extraButtons");
+        const box = document.getElementById("extraButtons");
             //box.classList.toggle("d-none");
 
-            if (box.classList.contains("d-none")) 
-            {
-                box.classList.remove("d-none");
-                box.classList.add("fade-in");
-            } 
-            else 
-            {
-                box.classList.add("d-none");
-                box.classList.remove("fade-in");
-            }
-        });
+        if (box.classList.contains("d-none")) 
+        {
+            box.classList.remove("d-none");
+            box.classList.add("fade-in");
+        } 
+        else 
+        {
+            box.classList.add("d-none");
+            box.classList.remove("fade-in");
+        }
     }
 
 
@@ -44,7 +39,7 @@ function Head()
 
                 {/* Access button */}
                 <div className="header-access">
-                    <img src={userImg} alt='User image' onClick={AccessButton()}/>
+                    <img src={userImg} alt='User image' onClick={AccessButton}/>
 
                     <div id="extraButtons" class="mt-3 d-none">
                         <button class="btn btn-primary btn-sm mb-1">Reserve</button>
