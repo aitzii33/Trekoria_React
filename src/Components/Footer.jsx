@@ -20,13 +20,6 @@ function Footer()
                 <div className="container p-4 pb-0">
                     <section>
                         <div className="row">
-                            <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                                <h6 className="text-uppercase mb-4 font-weight-bold">Trekoria</h6>
-                                <p><a className="text-white" href={We}>How we are</a></p>
-                            </div>
-
-                            <hr className="w-100 clearfix d-md-none" />
-
                             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                                 <h6 className="text-uppercase mb-4 font-weight-bold">Products</h6>
                                 <p><a className="text-white" href="#!">Activities</a></p>
@@ -36,7 +29,7 @@ function Footer()
 
                             <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
                                 <h6 className="text-uppercase mb-4 font-weight-bold">Useful links</h6>
-                                <p><a className="text-white" href="#!">Your Account</a></p>
+                                <p><a className="text-white" href={We}>About us</a></p>
                                 <p><a className="text-white" href={Contact}>Contact form</a></p>
                             </div>
 
@@ -65,26 +58,10 @@ function Footer()
                         </div>
 
                         <div className="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
-                            <a className="btn btn-outline-light btn-floating m-1 text-white" role="button" href="#!">
-                                <i className="fab">
-                                    <img src={img_insta} alt='instagram'></img>
-                                </i>
-                            </a>
-                            <a className="btn btn-outline-light btn-floating m-1 text-white" role="button" href="#!">
-                                <i className="fab">
-                                    <img src={img_tiktok} alt='tiktok'></img>
-                                </i>
-                            </a>
-                            <a className="btn btn-outline-light btn-floating m-1 text-white" role="button" href="#!">
-                                <i className="fab">
-                                    <img src={img_twitter} alt='twitter'></img>
-                                </i>
-                            </a>
-                            <a className="btn btn-outline-light btn-floating m-1 text-white" role="button" href="#!">
-                                <i className="fab">
-                                    <img src={img_youtube} alt='youtube'></img>
-                                </i>
-                            </a>
+                            <img className="img rounded-circle icono" src={img_insta} alt="instagram"/>
+                            <img className="img rounded-circle icono" src={img_tiktok} alt="tiktok"/>
+                            <img className="img rounded-circle icono" src={img_twitter} alt="twitter"/>
+                            <img className="img rounded-circle icono" src={img_youtube} alt="youtube"/>
                         </div>
                     </div>
                 </section>

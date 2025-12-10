@@ -1,8 +1,7 @@
 
 import { useState } from 'react'
-import logIn from './Layout/LogIn';
 import './App.css'
-import Header from './Components/Header';
+import Header from './Components/Header_Landing';
 import Landing from './Layout/Landing';
 import Foot from './Components/Footer';
 

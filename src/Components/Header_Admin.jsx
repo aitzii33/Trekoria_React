@@ -31,11 +31,6 @@ export default function Head()
           <a href={user}>Users</a>
           <a href={analytic}>Analytics</a>
         </nav>
-
-        {/* Access button */}
-        <div className="header-access">
-          <button className="btn btn-primary"> Access </button>
-        </div>
       </header>
     </div>
   );
