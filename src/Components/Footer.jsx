@@ -36,6 +36,7 @@ function Footer()
                             <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
                                 <h6 className="text-uppercase mb-4 font-weight-bold">Useful links</h6>
                                 <p><a className="text-white" href="#!">Your Account</a></p>
+                                <p><a className="text-white" href="#!">Contact form</a></p>
                                 <p><a className="text-white" href="#!">Help</a></p>
                             </div>
 
@@ -92,4 +93,4 @@ function Footer()
     </div>
     );
 }
-export default Footer
+export default Footer;
