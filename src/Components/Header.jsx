@@ -2,39 +2,59 @@
 import logo from '../assets/logo.png'
 import home from "../assets/home.png";
 import '../assets/CSS/Header.css';
+import userImg from 'DefaultUserImage.png';
 
-export default function Head() {
+function Head() 
+{
+    function AccessButton()
+    {
+        //it's going to show options button with the reserve, my profile and log out
+        document.getElementById("userImage").addEventListener("click", () => 
+        {
+            const box = document.getElementById("extraButtons");
+            //box.classList.toggle("d-none");
 
-  return (
-    <div className="main-content">
-        <header className="header">
-      {/* Logo */}
-      <div>
-        <img src={logo} alt="Logo" className="header-logo" />
-      </div>
+            if (box.classList.contains("d-none")) 
+            {
+                box.classList.remove("d-none");
+                box.classList.add("fade-in");
+            } 
+            else 
+            {
+                box.classList.add("d-none");
+                box.classList.remove("fade-in");
+            }
+        });
+    }
 
-      {/* Spacer */}
-      <div className="header-spacer"></div>
 
-      {/* Navigation */}
-      <nav className="header-nav">
-        <a href="#">
-          <img src={home} alt="Home" style={{ width: "20px", height: "20px" }} />
-        </a>
-        <a href="#">About Us</a>
-        <a href="#">Contact</a>
-      </nav>
+    return (
+        <div className="main-content">
+            <header className="header">
+                {/* Logo */}
+                <div>
+                    <img src={logo} alt="Logo" className="header-logo" />
+                </div>
 
-      {/* Access button */}
-      <div className="header-access">
-        <button
-          className="btn btn-primary"
-        >
-          Access
-        </button>
-      </div>
-    </header>
-    </div>
-    
-  );
+                {/* Spacer */}
+                <div className="header-spacer"></div>
+
+                {/* Title */}
+                <h1>TREKORIA</h1>
+
+                {/* Access button */}
+                <div className="header-access">
+                    <img src={userImg} alt='User image' onClick={AccessButton()}/>
+
+                    <div id="extraButtons" class="mt-3 d-none">
+                        <button class="btn btn-primary btn-sm mb-1">Reserve</button>
+                        <button class="btn btn-secondary btn-sm mb-1">my profile</button>
+                        <button class="btn btn-danger btn-sm mb-1">Log out</button>
+                    </div>
+                </div>
+            </header>
+        </div>
+    );
 }
+
+export default Head;

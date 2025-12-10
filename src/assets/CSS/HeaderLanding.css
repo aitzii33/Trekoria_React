@@ -96,27 +96,3 @@ body {
   background-color: #7bbcc0; 
 }
 
-
-
-/* we have to try and what we like more */
-.fade-in-element {
-  opacity: 0;
-  transition: opacity var(--fade-duration) ease-out;
-}
-/* Trigger with a class or JavaScript, updating the variable */
-.fade-in-element.fast {
-  --fade-duration: 0.5s;
-}
-
-/* we have to try and what we like more */
-/* 
-.fade-in {
-    animation: fadeIn 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-5px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-
-*/

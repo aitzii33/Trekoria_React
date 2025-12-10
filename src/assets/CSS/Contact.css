@@ -1,0 +1,54 @@
+#contact-form {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #D1DCEC;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+#contact-form h2 {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Inputs and textarea */
+#contact-form .form-control {
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: 1px solid #ced4da;
+  background-color: #fafafa;
+}
+
+/* Focus */
+#contact-form .form-control:focus {
+  border-color: #E5E592;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+  background-color: #fff;
+}
+
+/* Labels */
+#contact-form .form-label {
+  font-weight: 500;
+  color: #444;
+}
+
+/* Buttons */
+#contact-form .btn-primary {
+  padding: 12px;
+  font-size: 1.05rem;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+/* Button hover */
+#contact-form .btn-primary:hover {
+  background-color: #2796D1;
+  box-shadow: 0 6px 15px rgba(13, 110, 253, 0.3);
+}
+
+#contact-form:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
