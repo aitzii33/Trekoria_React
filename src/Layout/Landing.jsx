@@ -10,16 +10,7 @@ export default function Landing() {
             <div className="bg-dark ratio ratio-1x1 opacity-25"></div>
           </div>
 
-          {/* Left Column Images */}
-          <div className="col-4 col-md-3 col-lg-2 d-flex flex-column justify-content-between">
-            <div className="bg-primary ratio ratio-1x1 opacity-25"></div>
-            <img
-              className="img-fluid mt-2"
-              src="https://images.unsplash.com/photo-1531445075774-bfb641f42229?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&ixid=MnwzNzg0fDB8MXxzZWFyY2h8Njd8fGJ1aWxkaW5nfGVufDB8Mnx8fDE2MzQ1NTE3NDg&ixlib=rb-1.2.1&q=80&w=1080&h=1080"
-              alt="Photo by Meriç Dağlı"
-              style={{ objectFit: "cover" }}
-            />
-          </div>
+
 
           {/* Center Image */}
           <div className="col-4 col-md-4 col-lg-3">
@@ -29,17 +20,6 @@ export default function Landing() {
               alt="Photo by Simone Hutsch"
               style={{ objectFit: "cover" }}
             />
-          </div>
-
-          {/* Right Column Images */}
-          <div className="col-4 col-md-3 col-lg-2 d-flex flex-column justify-content-between">
-            <img
-              className="img-fluid mb-2"
-              src="https://images.unsplash.com/photo-1528810084506-41bd091551af?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&ixid=MnwzNzg0fDB8MXxzZWFyY2h8NDJ8fGJ1aWxkaW5nfGVufDB8Mnx8fDE2MzQ1NTE3NDE&ixlib=rb-1.2.1&q=80&w=1080&h=1080"
-              alt="Photo by Simone Hutsch"
-              style={{ objectFit: "cover" }}
-            />
-            <div className="bg-primary ratio ratio-1x1 opacity-25"></div>
           </div>
 
           {/* Right Spacer */}
