@@ -20,3 +20,49 @@
         border-bottom-right-radius: .3rem;
     }
 }
+
+body {
+  background-color: #CE93D8 !important;
+  color: #000;
+  overflow-x: hidden;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+.btn-outline-danger {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.form-outline input {
+  padding: 10px 20px;
+  border: 1px solid lightgrey !important;
+  border-radius: 6px !important;
+  background-color: #fff !important;
+  color: #2c3e50;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.form-outline input:focus {
+  box-shadow: none !important;
+  border-color: #512da8 !important;
+  outline: none;
+}
+
+::placeholder {
+  color: #bdbdbd;
+}
+
+.text-muted:hover {
+  text-decoration: underline;
+}
+
+.card {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}

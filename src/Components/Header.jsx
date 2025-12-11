@@ -44,6 +44,13 @@ function Head()
                 {/* Access button */}
                 <div className="header-access">
                     <img src={userImg} alt='User image' onClick={AccessButton}/>
+                    {/* 
+                        <div id="extraButtons" class="mt-3 d-none">
+                            <button class="btn btn-primary btn-sm mb-1">Reserve</button>
+                            <button class="btn btn-secondary btn-sm mb-1">my profile</button>
+                            <button class="btn btn-danger btn-sm mb-1">Log out</button>
+                        </div>
+                    */}
                 </div>
             </header>
         </div>
@@ -51,11 +58,3 @@ function Head()
 }
 
 export default Head;
-
-/*
-<div id="extraButtons" class="mt-3 d-none">
-                        <button class="btn btn-primary btn-sm mb-1">Reserve</button>
-                        <button class="btn btn-secondary btn-sm mb-1">my profile</button>
-                        <button class="btn btn-danger btn-sm mb-1">Log out</button>
-                    </div>
-*/

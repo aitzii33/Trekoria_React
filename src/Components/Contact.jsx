@@ -17,18 +17,11 @@ function ContactUs()
             </div>
 
             <div className="mb-3">
-                <label for="subject" className="form-label">Subject</label>
-                <input type="text" id="subject" name="subject" className="form-control" />
-            </div>
-
-            <div className="mb-3">
                 <label for="message" className="form-label">Message</label>
                 <textarea className="form-control" id="message" name="message" rows="4"></textarea>
             </div>
 
-            <button id="submit-form" type="submit" className="btn btn-primary w-100">
-                Send
-            </button>
+            <button id="submit-form" type="submit" className="btn btn-primary w-100"> Send </button>
         </form>
     );
 }
