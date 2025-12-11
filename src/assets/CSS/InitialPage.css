@@ -7,10 +7,9 @@ body {
 
 .landing-section {
   display: flex;
-  align-items: flex-start;      /* top-aligned */
-  justify-content: space-between; /* space between text & collage */
+  align-items: flex-start;  
+  justify-content: space-between;
   padding: 4rem 2rem;
-  min-height: 100vh;
   overflow: hidden;
 }
 
@@ -18,12 +17,12 @@ body {
 .text-section {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;   /* left-aligned */
-  justify-content: flex-start; /* top-aligned */
-  gap: 1rem; /* spacing between elements */
+  align-items: flex-start;  
+  justify-content: flex-start;
+  gap: 1rem;
   flex: 1;
   padding-top: 2rem;
-  text-align: left;  /* ensure all text is left-aligned */
+  text-align: left;
 }
 
 /* App name */
@@ -49,7 +48,7 @@ body {
   font-size: 1.1rem; 
   line-height: 1.5;
   margin-bottom: 2rem;
-  text-align: left;  /* enforce left alignment */
+  text-align: left;
 }
 
 
@@ -87,6 +86,14 @@ body {
 .collage-img:hover {
   transform: scale(1.05);
   box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+}
+.gallery-section{
+  height: 400px;
+  background-color: #D1DCEC;
+}
+.gallery-section img {
+  height: 300px; 
+  object-fit: cover; 
 }
 
 /* ---------- Responsive Design ---------- */
