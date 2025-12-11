@@ -10,9 +10,10 @@ function App() {
 
   return (
     <>
-      <Header/>
+
+      <Header />
       <Landing/>
-      <Foot />
+
     </>
   )
 }
