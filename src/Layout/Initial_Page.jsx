@@ -1,15 +1,13 @@
 import lupa from '../assets/img/lupa.png'
+import Header from '../Components/Header'
+import Footer from '../Components/Footer'
 
 
 function InitialPage()
 {
     return(
-        <div>
-            <div className="description">
-                {/* A little desciption of our application */}
-                <p></p>
-            </div>
-
+        <Container>
+            <Header/>
             <div>
                 {/* When they click on the 'Where are you going?' 
                     appear all the list of the places, and when 
@@ -38,7 +36,8 @@ function InitialPage()
                     </div>
                 ))}
             </div>
-        </div>
+            <Footer/>
+        </Container>
     );
 }
 
