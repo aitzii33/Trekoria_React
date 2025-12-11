@@ -1,6 +1,7 @@
 
-import logo from '../assets/logo.png'
-import home from "../assets/home.png";
+import logo from '../assets/img/logo.png';
+import userImg from '../assets/img/DefaultUserImage.png';
+import home from '../assets/img/home.png';
 import '../assets/CSS/Header.css';
 
 export default function Head() 
@@ -10,7 +11,7 @@ export default function Head()
       <header className="header">
         {/* Logo */}
         <div>
-          <img src={logo} alt="Logo" className="header-logo" style={{ width: "20px", height: "20px" }}/>
+          <img src={logo} alt="Logo" className="header-logo" style={{ width: "90px", height: "60px" }}/>
         </div>
 
         {/* Spacer */}
@@ -31,8 +32,13 @@ export default function Head()
 
         {/* Access button */}
         <div className="header-access">
-          <button className="btn btn-primary"> Access </button>
+          <img 
+            src={userImg} 
+            alt="User" 
+            style={{ width: "40px", height: "40px", borderRadius: "50%", objectFit: "cover" }} 
+          />
         </div>
+
       </header>
     </div>
   );
