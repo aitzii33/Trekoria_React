@@ -1,9 +1,9 @@
 
-import logo from '../assets/img/logo.png'
-import home from "../assets/img/home.png"
-import '../assets/CSS/Header.css'
+import logo from '../assets/logo.png'
+import home from "../assets/home.png";
+import '../assets/CSS/Header.css';
 
-function Head() 
+export default function Head() 
 {
   return (
     <div className="main-content">
@@ -16,8 +16,6 @@ function Head()
         {/* Spacer */}
         <div className="header-spacer"></div>
 
-        {/* Name of the application */}
-        <div><h1>TREKORIA</h1></div>
 
         {/* Spacer */}
         <div className="header-spacer"></div>
@@ -30,9 +28,12 @@ function Head()
           <a href="#">About Us</a>
           <a href="#">Contact</a>
         </nav>
+
+        {/* Access button */}
+        <div className="header-access">
+          <button className="btn btn-primary"> Access </button>
+        </div>
       </header>
     </div>
   );
 }
-
-export default Head;
