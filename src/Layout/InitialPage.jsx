@@ -1,38 +1,55 @@
-import 'bootstrap/disk/css/bootstrap.min.css';
+//Proxmoss: https:\\10.14.4.161:8006
+//User: Group3
+//Password: Muffin
+//Password machines: zubiri zubiri
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
+import img1 from '../assets/img/LandingImg1.png';
+import img2 from '../assets/img/LandingImg2.jpg';
+import img3 from '../assets/img/LandingImg3.jpg';
+import '../assets/CSS/InitialPage.css';
+import Button from '../Components/Button';
 
-export default function Landing(){
-    return(
-        <section className="py-5 bg-light">
-            <div className="conatiner">
-                <div className="row align-items-center">
-                    {/*imgs*/}
-                    <div className="col-md-6 d-flex gap-3 mb-4 mb-md-0">
-                         <img 
-                            src="https://via.placeholder.com/300x200" 
-                            alt="Design 1" 
-                            className="img-fluid rounded shadow"
-                        />
-                        <img 
-                            src="https://via.placeholder.com/300x200" 
-                            alt="Design 2" 
-                            className="img-fluid rounded shadow"
-                        />
-                    </div>
-                    {/* Text + Button */}
-                    <div className="col-md-6">
-                        <h1 className="mb-3">Beautiful Interior Designs</h1>
-                        <p className="mb-4">
-                        Transform your space with modern, elegant, and functional interior designs.
-                        Explore ideas that bring comfort and style to your home.
-                        </p>
-                        <a href="#contact" className="btn btn-primary btn-lg">Get Started</a>
-                    </div>
-                </div>
+export default function Landing() {
+  return (
+    <section className="landing-section d-flex align-items-center">
+      <div className="container">
+        <div className="row align-items-center">
 
+          {/* Left: Text + CTA */}
+          <div className="col-md-6 text-section mb-4 mb-md-0">
+            <h1 className="app-name">TREKORIA</h1>
+            <h2 className="main-title">Explore & Book Exciting Activities</h2>
+            <p className="lead mb-4">
+              Discover adventures, tours, and experiences in cities around the world.
+              Find what you love and book instantly.
+            </p>
+            <Button text="Start Exploring" onClick={() => alert("Clicked!")} />
+          </div>
+
+          {/* Right: Collage of 3 Images */}
+          <div className="col-md-6 image-section d-flex justify-content-end position-relative">
+            <div className="collage-wrapper">
+              <img 
+                src={img1} 
+                alt="Activity 1" 
+                className="collage-img img1"
+              />
+              <img 
+                src={img2} 
+                alt="Activity 2" 
+                className="collage-img img2"
+              />
+              <img 
+                src={img3} 
+                alt="Activity 3" 
+                className="collage-img img3"
+              />
             </div>
+          </div>
 
-        </section>
-
-    );
+        </div>
+      </div>
+    </section>
+  );
 }

@@ -3,7 +3,7 @@ import { useState } from 'react'
 import logIn from './Layout/LogIn';
 import './App.css'
 import Header from './Components/Header';
-import Landing from './Layout/Landing';
+import Landing from './Layout/InitialPage';
 import Foot from './Components/Footer';
 
 function App() {
@@ -11,9 +11,10 @@ function App() {
 
   return (
     <>
-      <Header/>
+
+      <Header />
       <Landing/>
-      <Foot />
+
     </>
   )
 }
