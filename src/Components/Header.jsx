@@ -1,34 +1,40 @@
 
 import logo from '../assets/img/logo.png'
 import userImg from '../assets/img/DefaultUserImage.png'
+import home from '../assets/img/home.png'
 import '../assets/CSS/Header.css'
+import { useNavigate } from "react-router-dom"
+import React, { useState } from "react"
 
-function Head() 
+
+function Head({ isLoggedIn }) 
 {
-    function AccessButton()
+    const navigate = useNavigate();
+    const [showExtraButtons, setShowExtraButtons] = useState(false);
+
+    const AccessButton = () => 
     {
-        //it's going to show options button with the reserve, my profile and log out
-            
-        //if() log out, redirect to the log in page 
-        //{
-        //
-        //}
-        //else
-        //{
-        //    const box = document.getElementById("extraButtons");
-        //
-        //    if (box.classList.contains("d-none")) 
-        //    {
-        //        box.classList.remove("d-none");
-        //        box.classList.add("fade-in");
-        //    } 
-        //    else 
-        //    {
-        //        box.classList.add("d-none");
-        //        box.classList.remove("fade-in");
-        //    }
-        //}
-    }
+        if (!isLoggedIn) 
+        {
+            navigate("/login");
+        } 
+        else 
+        {
+            setShowExtraButtons(prev => !prev);
+        }
+    };
+
+    const routeInitial = () => 
+    {
+        const path = '/Initial_Page';
+        navigate(path);
+    };
+
+    const routeLanding = () => 
+    {
+        const path = '/InitialPage';
+        navigate(path);
+    };
 
 
     return (
@@ -36,22 +42,27 @@ function Head()
             <header className="header">
                 {/* Logo */}
                 <div>
-                    <img src={logo} alt="Logo" className="header-logo" />
+                    <img src={logo} alt="Logo" className="header-logo" onClick={routeInitial}/>
                 </div>
 
                 {/* Spacer */}
                 <div className="header-spacer"></div>
 
+                <div>
+                    <img src={home} alt="Home" style={{ width: "20px", height: "20px" }} className="me-4" onClick={routeInitial}/>
+                    <a onClick={routeLanding} className="me-4" style={{ color: 'black' }}>About Us</a>
+                </div>
+
                 {/* Access button */}
                 <div className="header-access">
-                    <img src={userImg} alt='User image' onClick={AccessButton}/>
-                    {/* 
-                        <div id="extraButtons" class="mt-3 d-none">
-                            <button class="btn btn-primary btn-sm mb-1">Reserve</button>
-                            <button class="btn btn-secondary btn-sm mb-1">my profile</button>
-                            <button class="btn btn-danger btn-sm mb-1">Log out</button>
+                    <img src={userImg} alt="User image" onClick={AccessButton} style={{ width: "50px", height: "50px", borderRadius: "50%", objectFit: "cover" }}/>
+                    {isLoggedIn && showExtraButtons && (
+                        <div id="extraButtons" className="mt-3">
+                            <button className="btn btn-primary btn-sm mb-1">Reserve</button>
+                            <button className="btn btn-secondary btn-sm mb-1">My profile</button>
+                            <button className="btn btn-danger btn-sm mb-1">Log out</button>
                         </div>
-                    */}
+                    )}
                 </div>
             </header>
         </div>
