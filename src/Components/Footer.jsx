@@ -4,16 +4,27 @@ import img_tiktok from '../assets/img/TiktokLogo.png'
 import img_twitter from '../assets/img/twitterLogo.png'
 import img_youtube from '../assets/img/youtubeLogo.png'
 
-//redirections
-import Contact from './Contact.jsx'
-import We from '../Layout/Landing.jsx'
-
 import '../assets/CSS/Footer.css'
-
+import { useNavigate } from "react-router-dom"
 
 
 function Footer() 
 {
+    const navigate = useNavigate();
+  
+    const routeContactUs = () => 
+    {
+        const path = '/ContactUs';
+        navigate(path);
+    };
+
+    const routeLanding = () => 
+    {
+        const path = '/InitialPage';
+        navigate(path);
+    };
+
+
     return (
         <div className="container my-5">
             <footer className="text-center text-lg-start text-white">
@@ -29,8 +40,8 @@ function Footer()
 
                             <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
                                 <h6 className="text-uppercase mb-4 font-weight-bold">Useful links</h6>
-                                <p><a className="text-white" href={We}>About us</a></p>
-                                <p><a className="text-white" href={Contact}>Contact form</a></p>
+                                <p><a className="text-white" onClick={routeLanding}>About us</a></p>
+                                <p><a className="text-white" onClick={routeContactUs}>Contact form</a></p>
                             </div>
 
                             <hr className="w-100 clearfix d-md-none" />

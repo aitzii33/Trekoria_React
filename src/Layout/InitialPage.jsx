@@ -1,18 +1,34 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import React from 'react';
-import img1 from '../assets/img/LandingImg1.png';
-import img2 from '../assets/img/LandingImg2.jpg';
-import img3 from '../assets/img/LandingImg3.jpg';
-import img4 from '../assets/img/NewYork.jpg';
-import girlImg from '../assets/img/Girl.avif';
-import BaloonImg from '../assets/img/Baloon.jpg';
-import BoatImg from '../assets/img/Boat.avif';
-import '../assets/CSS/InitialPage.css';
-import Button from '../Components/Button';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import img1 from '../assets/img/LandingImg1.png'
+import img2 from '../assets/img/LandingImg2.jpg'
+import img3 from '../assets/img/LandingImg3.jpg'
+import img4 from '../assets/img/NewYork.jpg'
+import girlImg from '../assets/img/Girl.avif'
+import BaloonImg from '../assets/img/Baloon.jpg'
+import BoatImg from '../assets/img/Boat.avif'
+import '../assets/CSS/InitialPage.css'
+import Button from '../Components/Button'
+import { useNavigate } from "react-router-dom"
+import Header from '../Components/Header_Landing'
 
-export default function Landing() {
+
+
+export default function Landing() 
+{
+  const navigate = useNavigate();
+  
+  const routeChange = () => 
+  {
+    const path = '/Initial_Page';
+    navigate(path);
+  };
+
+
+
   return (
     <>
+      <Header/>
+
       {/* Top Section */}
       <section className="landing-section d-flex align-items-center py-5">
         <div className="container">
@@ -26,7 +42,7 @@ export default function Landing() {
                 Discover adventures, tours, and experiences in cities around the world.
                 Find what you love and book instantly.
               </p>
-              <Button text="Start Exploring" onClick={() => alert("Clicked!")} />
+              <Button text="Start Exploring" onClick={(routeChange)} />
             </div>
 
             {/* Right: Collage of 3 Images */}
