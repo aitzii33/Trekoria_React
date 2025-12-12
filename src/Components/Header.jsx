@@ -8,6 +8,7 @@ function Head()
     function AccessButton()
     {
         //it's going to show options button with the reserve, my profile and log out
+            
         //if() log out, redirect to the log in page 
         //{
         //

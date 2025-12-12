@@ -3,9 +3,26 @@ import logo from '../assets/img/logo.png';
 import userImg from '../assets/img/DefaultUserImage.png';
 import home from '../assets/img/home.png';
 import '../assets/CSS/Header.css';
+import { useNavigate } from "react-router-dom"
+
 
 export default function Head() 
 {
+  const navigate = useNavigate();
+  
+  const routeInitial = () => 
+  {
+    const path = '/Initial_Page';
+    navigate(path);
+  };
+
+  const routeContact = () => 
+  {
+    const path = '/ContactUs';
+    navigate(path);
+  };
+
+
   return (
     <div className="main-content">
       <header className="header">
@@ -23,20 +40,16 @@ export default function Head()
 
         {/* Navigation */}
         <nav className="header-nav" style={{ marginRight: "180px" }}>
-          <a href="#">
-            <img src={home} alt="Home" style={{ width: "20px", height: "20px" }} />
+          <a>
+            <img src={home} alt="Home" style={{ width: "20px", height: "20px" }} onClick={(routeInitial)}/>
           </a>
           <a href="#">About Us</a>
-          <a href="#">Contact</a>
+          <a onClick={(routeContact)}>Contact</a>
         </nav>
 
         {/* Access button */}
         <div className="header-access">
-          <img 
-            src={userImg} 
-            alt="User" 
-            style={{ width: "40px", height: "40px", borderRadius: "50%", objectFit: "cover" }} 
-          />
+          <img src={userImg} alt="User" style={{ width: "40px", height: "40px", borderRadius: "50%", objectFit: "cover" }}/>
         </div>
 
       </header>

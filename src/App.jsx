@@ -1,21 +1,25 @@
 
 import { useState } from 'react'
 import './App.css'
-import Header from './Components/Header_Landing';
-import Landing from './Layout/InitialPage';
+import { Routes, Route } from "react-router-dom"
+import Landing from "./Layout/InitialPage"
+import Footer from './Components/Footer'
+import Initial from './Layout/Initial_Page'
+import Header from './Components/Header_Landing'
+import ContactUs from './Components/Contact'
 
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function App()
+{
   return (
     <>
-
-      <Header />
-      <Landing/>
-
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/ContactUs" element={<ContactUs />} />
+        <Route path="/Home" element={<Initial />} />
+      </Routes>
     </>
-  )
+ );
 }
 
-export default App
+export default App;
