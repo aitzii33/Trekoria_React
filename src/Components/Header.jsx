@@ -8,7 +8,7 @@ function Head()
     function AccessButton()
     {
         //it's going to show options button with the reserve, my profile and log out
-            
+
         //if() log out, redirect to the log in page 
         //{
         //
@@ -42,9 +42,19 @@ function Head()
                 {/* Spacer */}
                 <div className="header-spacer"></div>
 
+                {/*
+                    <nav className="header-nav" style={{ marginRight: "180px" }}>
+                        <a>
+                            <img src={home} alt="Home" style={{ width: "20px", height: "20px" }} onClick={(routeInitial)}/>
+                        </a>
+                        <a href="#">About Us</a>
+                    </nav>
+                */}
+
+
                 {/* Access button */}
                 <div className="header-access">
-                    <img src={userImg} alt='User image' onClick={AccessButton}/>
+                    <img src={userImg} alt='User image' onClick={AccessButton} style={{ width: "50px", height: "50px", borderRadius: "50%", objectFit: "cover" }}/>
                     {/* 
                         <div id="extraButtons" class="mt-3 d-none">
                             <button class="btn btn-primary btn-sm mb-1">Reserve</button>

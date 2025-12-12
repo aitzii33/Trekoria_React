@@ -28,7 +28,7 @@ export default function Head()
       <header className="header">
         {/* Logo */}
         <div>
-          <img src={logo} alt="Logo" className="header-logo" style={{ width: "90px", height: "60px" }}/>
+          <img src={logo} alt="Logo" className="header-logo" style={{ width: "120px", height: "80px" }}/>
         </div>
 
         {/* Spacer */}
@@ -46,12 +46,6 @@ export default function Head()
           <a href="#">About Us</a>
           <a onClick={(routeContact)}>Contact</a>
         </nav>
-
-        {/* Access button */}
-        <div className="header-access">
-          <img src={userImg} alt="User" style={{ width: "40px", height: "40px", borderRadius: "50%", objectFit: "cover" }}/>
-        </div>
-
       </header>
     </div>
   );
