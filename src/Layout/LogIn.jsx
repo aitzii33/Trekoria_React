@@ -1,40 +1,72 @@
-import "../assets/CSS/Login.css"
-import logo from '../assets/img/logo.css'
+import logo from '../assets/img/logo.png'
+import "../assets/CSS/LogIn.css"
+import Header from '../Components/Header_Landing'
+import Footer from '../Components/Footer'
 
-function LoginPage() 
+function Login() 
 {
-  return (
-    <div className="container py-5 h-100 d-flex justify-content-center align-items-center">
-        <div className="card rounded-3 text-black col-xl-10 col-lg-6 p-md-5 mx-md-4">
-            <div className="text-center">
-                <img src={logo} alt="logo" style={{ width: "185px" }}/>
-                <h4 className="mt-1 mb-5 pb-1">We are Trekoria</h4>
-                </div>
+    const navigate = useNavigate();
+  
+    const routeChange = () => 
+    {
+        const path = '/Initial_Page';
+        navigate(path);
+    };
 
-                <form>
-                <div className="form-outline mb-4">
-                    <input type="email" className="form-control" placeholder="Introduce your username"/>
-                    <label className="form-label" htmlFor="username"></label>
-                </div>
+    const Verify = (e) => 
+    {
+        e.preventDefault();
 
-                <div className="form-outline mb-4">
-                    <input type="password" className="form-control" placeholder="Introduce your password"/>
-                    <label className="form-label" htmlFor="password"></label>
-                </div>
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
 
-                <div className="text-center pt-1 mb-5 pb-1">
-                    <button className="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button"> Log in </button>
-                    <a className="text-muted" href="#!"> Forgot password/user? </a>
-                </div>
+        const data = ProveUserPassword(password, username);
 
-                <div className="d-flex align-items-center justify-content-center pb-4">
-                    <p className="mb-0 me-2">Don't have an account?</p>
-                    <button type="button" className="btn btn-outline-danger"> Register </button>
-                </div>
-            </form>
+        if(data === false)
+        {
+            alert('The user name or the password is incorrect');
+        }
+    };  
+
+
+    return (
+    <>
+        <Header/>
+        <div className="container py-5 h-100 d-flex justify-content-center align-items-center" onSubmit={Verify}>
+            <div className="card rounded-3 text-black col-xl-10 col-lg-6 p-md-5 mx-md-4">
+                <div className="text-center">
+                    <img src={logo} alt="logo" style={{ width: "185px" }}/>
+                    <h4 className="mt-1 mb-5 pb-1">We are Trekoria</h4>
+                    </div>
+
+                    <form>
+                    <div className="form-outline mb-4">
+                        <input type="email" className="form-control" id="username" placeholder="Introduce your username"/>
+                        <label className="form-label" id="username"></label>
+                    </div>
+
+                    <div className="form-outline mb-4">
+                        <input type="password" className="form-control" id="password" placeholder="Introduce your password"/>
+                        <label className="form-label" id="password"></label>
+                    </div>
+
+                    <div className="text-center pt-1 mb-5 pb-1">
+                        <button className="btn btn-primary btn-block fa-lg mb-3" type="submit"> Log in </button>
+                        <br></br>
+                        <br></br>
+                        <a className="text-muted" href="#!"> Forgot password/user? </a>
+                    </div>
+
+                    <div className="d-flex align-items-center justify-content-center pb-4">
+                        <p className="mb-0 me-2">Don't have an account?</p>
+                        <button className="btn btn-outline-danger" href="#!"> Register </button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
+        <Footer/>
+    </>
   );
 }
 
-export default LoginPage;
+export default Login;

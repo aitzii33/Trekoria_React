@@ -24,7 +24,6 @@ export default function Landing()
   };
 
 
-
   return (
     <>
       <Header/>
@@ -91,7 +90,6 @@ export default function Landing()
                 alt="Paris city view"
               />
             </div>
-
           </div>
         </div>
       </section>
