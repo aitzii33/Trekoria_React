@@ -1,48 +1,100 @@
-//Proxmoss: https:\\10.14.4.161:8006
-//User: Group3
-//Password: Muffin
-//Password machines: zubiri zubiri
+import 'bootstrap/dist/css/bootstrap.min.css'
+import img1 from '../assets/img/LandingImg1.png'
+import img2 from '../assets/img/LandingImg2.jpg'
+import img3 from '../assets/img/LandingImg3.jpg'
+import img4 from '../assets/img/NewYork.jpg'
+import girlImg from '../assets/img/Girl.avif'
+import BaloonImg from '../assets/img/Baloon.jpg'
+import BoatImg from '../assets/img/Boat.avif'
+import '../assets/CSS/InitialPage.css'
+import Button from '../Components/Button'
+import { useNavigate } from "react-router-dom"
+import Header from '../Components/Header_Landing'
+
+
 
 export default function Landing() 
 {
+  const navigate = useNavigate();
+  
+  const routeChange = () => 
+  {
+    const path = '/Initial_Page';
+    navigate(path);
+  };
+
+
+
   return (
-    <div className="landing-page">
-      {/* Collage Section */}
-      <div className="container-fluid pt-5">
-        <div className="row mb-4 mb-lg-5 justify-content-lg-between">
-          {/* Left Spacer */}
-          <div className="col-3 col-md-1 col-lg-2 d-none d-md-flex align-items-center">
-            <div className="bg-dark ratio ratio-1x1 opacity-25"></div>
-          </div>
+    <>
+      <Header/>
 
-          {/* Center Image */}
-          <div className="col-4 col-md-4 col-lg-3">
-            <img
-              className="img-fluid"
-              src="https://images.unsplash.com/photo-1526546334624-2afe5b01088d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzg0fDB8MXxzZWFyY2h8MzF8fGJ1aWxkaW5nfGVufDB8MXx8fDE2MzQ1NTE2NTE&ixlib=rb-1.2.1&q=80&w=1080"
-              alt="Photo by Simone Hutsch"
-              style={{ objectFit: "cover" }}
-            />
-          </div>
+      {/* Top Section */}
+      <section className="landing-section d-flex align-items-center py-5">
+        <div className="container">
+          <div className="row align-items-center">
+            
+            {/* Left: Text + CTA */}
+            <div className="col-md-6 text-section mb-4 mb-md-0">
+              <h1 className="app-name">TREKORIA</h1>
+              <h2 className="main-title">Explore & Book Exciting Activities</h2>
+              <p className="lead mb-4">
+                Discover adventures, tours, and experiences in cities around the world.
+                Find what you love and book instantly.
+              </p>
+              <Button text="Start Exploring" onClick={(routeChange)} />
+            </div>
 
-          {/* Right Spacer */}
-          <div className="col-3 col-md-1 col-lg-2 d-none d-md-flex align-items-center">
-            <div className="bg-dark ratio ratio-1x1 opacity-25"></div>
+            {/* Right: Collage of 3 Images */}
+            <div className="col-md-6 image-section position-relative d-flex justify-content-end">
+              <div className="collage-wrapper position-relative">
+                <img src={BaloonImg} alt="Balloon ride" className="collage-img img1 rounded shadow" />
+                <img src={girlImg} alt="Traveler" className="collage-img img2 rounded shadow" />
+                <img src={BoatImg} alt="Boat activity" className="collage-img img3 rounded shadow" />
+              </div>
+            </div>
+
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Hero Text */}
-      <div className="container text-center">
-        <h1 className="rfs-25 fw-bold">
-          The quick brown fox jumps over the lazy dog
-        </h1>
-        <p className="lead mt-3">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et
-          metus id ligula malesuada placerat sit amet quis enim.
-        </p>
-      </div>
-    </div>
+      {/* Gallery Section */}
+      <section className="gallery-section py-5">
+        <div className="container">
+          <div className="row g-4">
+
+            <div className="col-lg-3 col-md-6">
+              <img
+                src={img1}
+                className="w-100 rounded shadow"
+                alt="New York City"
+              />
+            </div>
+            <div className="col-lg-3 col-md-6">
+              <img
+                src={img2}
+                className="w-100 rounded shadow"
+                alt="Eiffel Tower, Paris"
+              />
+            </div>
+            <div className="col-lg-3 col-md-6">
+              <img
+                src={img3}
+                className="w-100 rounded shadow"
+                alt="Tokyo cityscape"
+              />
+            </div>
+            <div className="col-lg-3 col-md-6">
+              <img
+                src={img4}
+                className="w-100 rounded shadow"
+                alt="Paris city view"
+              />
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
-
