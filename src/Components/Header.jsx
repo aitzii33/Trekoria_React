@@ -51,6 +51,7 @@ function Head({ isLoggedIn })
                 <div>
                     <img src={home} alt="Home" style={{ width: "20px", height: "20px" }} className="me-4" onClick={routeInitial}/>
                     <a onClick={routeLanding} className="me-4" style={{ color: 'black' }}>About Us</a>
+                    <a className="me-4" style={{ color: 'black' }}>Contact</a>
                 </div>
 
                 {/* Access button */}

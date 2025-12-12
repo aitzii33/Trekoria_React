@@ -2,11 +2,7 @@
 //To see the email they have enter have @ and .
 export function ProveEmail(email)
 {
-    if(email.includes('@') && email.includes('.'))
-    {
-        return true;
-    }
-    else 
+    if(!email.includes('@') && !email.includes('.'))
     {
         return false;
     }
@@ -21,6 +17,17 @@ export function ProveMessage(message)
         return true;
     }
     else 
+    {
+        return false;
+    }
+}
+
+
+//Check user name and password
+export function ProveUserPassword(password, username)
+{
+    //se necesitan los datos de la base de datos para verificar
+    if(!password && !username)
     {
         return false;
     }
