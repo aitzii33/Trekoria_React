@@ -1,9 +1,12 @@
 import '../assets/CSS/Contact.css'
 import { ProveEmail,  ProveMessage  } from '../Funtions'
 import Header from '../Components/Header'
+import { useNavigate } from 'react-router-dom'
 
 function ContactUs()
 {
+    const navigate = useNavigate();
+
     const Verify = (e) => 
     {
         e.preventDefault();
@@ -12,17 +15,21 @@ function ContactUs()
         const message = document.getElementById('message').value;
 
         const dataEmail = ProveEmail(email);
+        const dataMessage = ProveMessage(message);
         
         if(dataEmail === false)
         {
-            alert("The email have to have a @ and .");
+            alert("The email isn't correct");
         }
-
-        const dataMessage = ProveMessage(message);
-
-        if(dataMessage === false)
+        else if(dataMessage === false)
         {
             alert("The message have to be between 20 and 120");
+        }
+        else
+        {
+            alert('The message have been send succesfully');
+
+            navigate(-1); //To navigate to the previous page
         }
     };
 

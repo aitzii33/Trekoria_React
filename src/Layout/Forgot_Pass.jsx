@@ -1,9 +1,12 @@
 import '../assets/CSS/Contact.css'
 import { IfExistEmail  } from '../Funtions'
 import Header from '../Components/Header'
+import { useNavigate } from 'react-router-dom'
 
 function ForgotPass()
 {
+    const navigate = useNavigate();
+
     const Verify = (e) => 
     {
         e.preventDefault();
@@ -15,8 +18,14 @@ function ForgotPass()
         {
             alert("This email isn't exist yet");
         }
+        else
+        {
+            alert('The email have sended');
 
-        alert('The email have sended');
+            //redirect to log in
+            const path = '/LogIn';
+            navigate(path);
+        }
     };
 
 

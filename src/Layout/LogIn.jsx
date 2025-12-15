@@ -65,7 +65,7 @@ function Login()
                         </div>
 
                         <div className="text-center pt-1 mb-5 pb-1">
-                            <button className="btn btn-primary btn-block fa-lg mb-3" type="submit"> Log in </button>
+                            <button className="btn btn-primary btn-block fa-lg mb-4" type="submit"> Log in </button>
                             <br></br>
                             <br></br>
                             <a className="text-muted" onClick={NavegateForgot}> Forgot password/user? </a>
@@ -78,7 +78,6 @@ function Login()
                     </form>
                 </div>
             </div>
-            <Footer/>
         </>
     );
 }
