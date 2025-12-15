@@ -1,3 +1,8 @@
+export function ProveUserName(username)
+{
+    //check if that username exist
+}
+
 
 //To see the email they have enter have @ and .
 export function ProveEmail(email)
@@ -28,6 +33,15 @@ export function ProveUserPassword(password, username)
 {
     //se necesitan los datos de la base de datos para verificar
     if(!password && !username)
+    {
+        return false;
+    }
+}
+
+export function IfExistEmail(email)
+{
+    //Mira si el email si esta en la base de datos
+    if(!email.includes('@') && !email.includes('.'))
     {
         return false;
     }
