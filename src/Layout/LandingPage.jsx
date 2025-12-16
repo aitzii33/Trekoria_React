@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
 import img1 from '../assets/img/LandingImg1.png'
 import img2 from '../assets/img/LandingImg2.jpg'
 import img3 from '../assets/img/LandingImg3.jpg'
@@ -19,7 +18,7 @@ export default function Landing()
   
   const routeChange = () => 
   {
-    const path = '/Initial_Page';
+    const path = '/Home';
     navigate(path);
   };
 
