@@ -1,5 +1,5 @@
 
-import logo from '../assets/img/logo.png';
+import logo from '../assets/logo.svg';
 import userImg from '../assets/img/DefaultUserImage.png';
 import home from '../assets/img/home.png';
 import '../assets/CSS/Header.css';
@@ -16,6 +16,12 @@ export default function Head()
     navigate(path);
   };
 
+  const routeAboutUs = () =>
+  {
+    const path = '/About';
+    navigate(path);
+  }
+
   const routeContact = () => 
   {
     const path = '/ContactUs';
@@ -28,7 +34,7 @@ export default function Head()
       <header className="header">
         {/* Logo */}
         <div>
-          <img src={logo} alt="Logo" className="header-logo" style={{ width: "120px", height: "80px" }}/>
+          <img src={logo} alt="Logo" className="header-logo" style={{ width: "auto", height: "80px" }}/>
         </div>
 
         {/* Spacer */}
@@ -43,7 +49,7 @@ export default function Head()
           <a>
             <img src={home} alt="Home" style={{ width: "20px", height: "20px" }} onClick={(routeInitial)}/>
           </a>
-          <a href="#">About Us</a>
+          <a onClick={(routeAboutUs)}>About Us</a>
           <a onClick={(routeContact)}>Contact</a>
         </nav>
       </header>

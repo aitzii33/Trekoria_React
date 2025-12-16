@@ -8,6 +8,7 @@ import ContactUs from './Components/Contact'
 import Login from './Layout/LogIn'
 import ForgotPass from './Layout/Forgot_Pass'
 import Register from './Layout/Register'
+import AboutUs from './Components/AboutUs'
 
 
 function App()
@@ -21,7 +22,8 @@ function App()
         <Route path="/LogIn" element={<Login />} />
         <Route path="/ForgotPass" element={<ForgotPass />} />
         <Route path="/Register" element={<Register />} />
-      </Routes>
+        <Route path="/About" element={<AboutUs />} />
+    </Routes>
     </>
  );
 }

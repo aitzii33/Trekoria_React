@@ -1,5 +1,5 @@
 
-import logo from '../assets/img/logo.png'
+import logo from '../assets/logo.svg'
 import userImg from '../assets/img/DefaultUserImage.png'
 import home from '../assets/img/home.png'
 import '../assets/CSS/Header.css'
@@ -30,6 +30,12 @@ function Head({ isLoggedIn })
         navigate(path);
     };
 
+        const routeAboutUs = () =>
+    {
+        const path = '/About';
+        navigate(path);
+    }
+
     const routeLanding = () => 
     {
         const path = '/InitialPage';
@@ -50,7 +56,7 @@ function Head({ isLoggedIn })
 
                 <div>
                     <img src={home} alt="Home" style={{ width: "20px", height: "20px" }} className="me-4" onClick={routeInitial}/>
-                    <a onClick={routeLanding} className="me-4" style={{ color: 'black' }}>About Us</a>
+                    <a onClick={routeAboutUs} className="me-4" style={{ color: 'black' }}>About Us</a>
                     <a className="me-4" style={{ color: 'black' }}>Contact</a>
                 </div>
 
