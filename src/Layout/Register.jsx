@@ -21,9 +21,8 @@ function RegisterPage()
         {
             alert('That user already exist');
         }
-        else (dataEmail === true && dataUser === true)
+        else
         {
-            alert('The register has been successfully completed');
             //redirect to log in
             const path = '/LogIn';
             navigate(path);
@@ -51,7 +50,7 @@ function RegisterPage()
                     </div>
 
                     <div className="form-outline mb-4">
-                        <input type="date" className="form-control" placeholder="Introduce your birthday"/>
+                        <input type="text" className="form-control" placeholder="Introduce your birthday"/>
                         <label className="form-label" htmlFor="birthday" id="birthday"></label>
                     </div>
 

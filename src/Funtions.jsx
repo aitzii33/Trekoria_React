@@ -11,10 +11,6 @@ export function ProveEmail(email)
     {
         return false;
     }
-    else
-    {
-        return true;
-    }
 }
 
 
@@ -35,26 +31,18 @@ export function ProveMessage(message)
 //Check user name and password
 export function ProveUserPassword(password, username)
 {
-    //The database data is needed for verification
+    //se necesitan los datos de la base de datos para verificar
     if(!password && !username)
     {
         return false;
-    }
-    else
-    {
-        return true;
     }
 }
 
 export function IfExistEmail(email)
 {
-    //Check if the email is in the database
+    //Mira si el email si esta en la base de datos
     if(!email.includes('@') && !email.includes('.'))
     {
         return false;
-    }
-    else
-    {
-        return true;
     }
 }

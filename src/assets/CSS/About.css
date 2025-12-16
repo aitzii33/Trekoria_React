@@ -1,9 +1,9 @@
 .about-gradient {
   background: linear-gradient(
-    to bottom,
-    #FFFFFF,  
-    #D1DCEC, 
-    #2796D1   
+    to bottom, /* top → bottom */
+    #FFFFFF,   /* White at the top */
+    #D1DCEC,   /* Light Blue in the middle */
+    #2796D1    /* Deep Blue at the bottom */
   );
   width: 100%;
 }
