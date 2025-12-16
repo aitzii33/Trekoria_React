@@ -34,7 +34,7 @@ function ForgotPass()
             <Header/>
             
             <form id="contact-form" action="mail.php" method="POST" onSubmit={Verify} className="p-4 border rounded shadow-sm bg-white">
-                <h2 className="text-center mb-4">Contact us</h2>
+                <h2 className="text-center mb-4"> Forgot </h2>
 
                 <div className="mb-3">
                     <label className="form-label">Email address</label>
