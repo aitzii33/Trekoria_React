@@ -1,4 +1,4 @@
-import Header from './Header_Landing';
+import Header from './Header';
 import '../assets/CSS/About.css';
 import team1 from '../assets/img/team1.png';
 import team2 from '../assets/img/team2.png';
