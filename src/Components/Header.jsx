@@ -5,6 +5,7 @@ import home from '../assets/img/home.png'
 import '../assets/CSS/Header.css'
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
+import '../assets/CSS/Header.css';
 
 
 function Head({ isLoggedIn }) 
@@ -62,10 +63,10 @@ function Head({ isLoggedIn })
                 {/* Spacer */}
                 <div className="header-spacer"></div>
 
-                <div>
-                    <img src={home} alt="Home" style={{ width: "20px", height: "20px" }} className="me-4" onClick={routeInitial}/>
-                    <a onClick={routeAboutUs} className="me-4" style={{ color: 'black' }}>About Us</a>
-                    <a onClick={routeContact} className="me-4" style={{ color: 'black' }}>Contact</a>
+                <div className="nav-links">
+                    <img src={home} alt="Home" style={{ width: "20px", height: "20px" }} className="me-4 nav-ico" onClick={routeInitial}/>
+                    <a onClick={routeAboutUs} className="nav-link me-4">About Us</a>
+                    <a onClick={routeContact} className="nav-link me-4">Contact</a>
                 </div>
 
                 {/* Access button */}

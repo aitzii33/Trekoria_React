@@ -4,6 +4,7 @@ import userImg from '../assets/img/DefaultUserImage.png';
 import home from '../assets/img/home.png';
 import '../assets/CSS/Header.css';
 import { useNavigate } from "react-router-dom"
+import '../assets/CSS/Header.css';
 
 
 export default function Head() 
@@ -45,14 +46,14 @@ export default function Head()
         <div className="header-spacer"></div>
 
         {/* Navigation */}
-        <nav className="header-nav" style={{ marginRight: "180px" }}>
-          <a>
-            <img src={home} alt="Home" style={{ width: "20px", height: "20px" }} onClick={(routeInitial)}/>
-          </a>
-          <a onClick={(routeAboutUs)}>About Us</a>
-          <a onClick={(routeContact)}>Contact</a>
-        </nav>
+        <div className="nav-links">
+            <img src={home} alt="Home" style={{ width: "20px", height: "20px" }} className="me-4 nav-ico" onClick={routeInitial}/>
+            <a onClick={routeAboutUs} className="nav-link me-4">About Us</a>
+            <a onClick={routeContact} className="nav-link me-4">Contact</a>
+        </div>
+        
       </header>
+    
     </div>
   );
 }
