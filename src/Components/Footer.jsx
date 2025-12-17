@@ -26,7 +26,7 @@ function Footer()
 
 
     return (
-        <div className="container my-5">
+        <div className="container my-5" >
             <footer className="text-center text-lg-start text-white">
                 <div className="container p-4 pb-0">
                     <section>

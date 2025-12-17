@@ -1,4 +1,6 @@
-.about-gradient {
+body{
+  background-color: white;
+}.about-gradient {
   background: linear-gradient(
     to bottom, /* top → bottom */
     #FFFFFF,   /* White at the top */
@@ -7,5 +9,40 @@
   );
   width: 100%;
 }
+.aboutus-secktion h2 {
+  font-weight: 700;
+}
+.about-gradient h1{
+  font-weight: 500;
+  font-size: 60px;
+}
 
+.aboutus-secktion p {
+  line-height: 1.7;
+}
+
+
+.stats-section .stat-box h2 {
+  font-size: 2.5rem;
+  color: #6d93c5;
+  margin-bottom: 10px;
+}
+
+.stats-section .stat-box p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.team-img img {
+  object-position: center;
+}
+.team-img img {
+  width: 150px;  
+  height: 150px; 
+  object-fit: cover; 
+  border-radius: 50%; 
+}
+.team-sektion h2{
+  font-weight: 700;
+}
 
