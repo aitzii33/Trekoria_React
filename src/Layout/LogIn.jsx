@@ -1,6 +1,5 @@
 import logo from '../assets/img/logo.png'
 import "../assets/CSS/LogIn.css"
-import Header from '../Components/Header_Landing'
 import { useNavigate } from 'react-router-dom'
 import { ProveUserPassword  } from '../Funtions'
 
@@ -10,14 +9,12 @@ function Login()
   
     const NavegateForgot = () => 
     {
-        const path = '/ForgotPass';
-        navigate(path);
+        navigate('/ForgotPass');
     };
 
     const NavegateRegister = () => 
     {
-        const path = '/Register';
-        navigate(path);
+        navigate('/Register');
     };
 
     const Verify = (e) => 
@@ -35,16 +32,13 @@ function Login()
         }
         else 
         {
-            //redirect to inital page
-            const path = '/Home';
-            navigate(path);
+            navigate('/Home');
         }
     };
 
 
     return(
         <>
-            <Header/>
             <div className="container py-5 h-100 d-flex justify-content-center align-items-center" onSubmit={Verify}>
                 <div className="card rounded-3 text-black col-xl-10 col-lg-6 p-md-5 mx-md-4">
                     <div className="text-center">

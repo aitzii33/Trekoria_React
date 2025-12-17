@@ -1,5 +1,5 @@
 import logo from '../assets/img/logo.png'
-import { IfExistEmail, ProveUserName  } from '../Funtions'
+import { IfExistEmail, ProveUserName, samePass  } from '../Funtions'
 
 function RegisterPage() 
 {
@@ -9,9 +9,12 @@ function RegisterPage()
 
         const email = document.getElementById('email').value;
         const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const password2 = document.getElementById('password2').value;
 
         const dataEmail = IfExistEmail(email);
         const dataUser = ProveUserName(username);
+        const samePass = SamePassword(password, password2)
         
         if(dataEmail === false)
         {
@@ -20,6 +23,10 @@ function RegisterPage()
         else if(dataUser === false)
         {
             alert('That user already exist');
+        }
+        else if(samePass == false)
+        {
+            alert('The password is not the same');
         }
         else
         {
@@ -35,7 +42,6 @@ function RegisterPage()
             <div className="card rounded-3 text-black col-xl-10 col-lg-6 p-md-5 mx-md-4">
                 <div className="text-center">
                     <img src={logo} alt="logo" style={{ width: "185px" }}/>
-                    <h4 className="mt-1 mb-5 pb-1">We are Trekoria</h4>
                 </div>
 
                 <form onSubmit={Verify}>
@@ -50,7 +56,7 @@ function RegisterPage()
                     </div>
 
                     <div className="form-outline mb-4">
-                        <input type="text" className="form-control" placeholder="Introduce your birthday"/>
+                        <input type="date" className="form-control" placeholder="Introduce your birthday"/>
                         <label className="form-label" htmlFor="birthday" id="birthday"></label>
                     </div>
 

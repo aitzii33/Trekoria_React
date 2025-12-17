@@ -26,7 +26,8 @@ function InitialPage()
                     going to appear the cities which people take more museums)
                     (we need a function to found the most popular cities) */}
 
-                {cities.slice(0, 9).map((city, index) => 
+                {/*                
+                    {cities.slice(0, 9).map((city, index) => 
                 (
                     <div key={index} className="card" style={{ width: "18rem", left: "120px" }}>
                         <img src={city.image} className="card-img-top" alt={city.name} />
@@ -37,6 +38,7 @@ function InitialPage()
                         </div>
                     </div>
                 ))}
+                */}
             </div>
 
             <Footer/>

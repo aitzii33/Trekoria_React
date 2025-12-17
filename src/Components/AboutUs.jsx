@@ -25,15 +25,15 @@ export default function AboutUs(){
       </section>
 
 
-      <div class="aboutus-secktion paddingTB60">
-        <div class="container">
-          <div class="row align-items-center">
+      <div className="aboutus-secktion paddingTB60">
+        <div className="container">
+          <div className="row align-items-center">
             
-            <div class="col-md-6">
+            <div className="col-md-6">
               <br />
               <br />
-              <h2 class="strong mb-3">Discover. Book. Experience.</h2>
-              <p class="lead mb-4">
+              <h2 className="strong mb-3">Discover. Book. Experience.</h2>
+              <p className="lead mb-4">
                 Your gateway to unforgettable activities, wherever you are.
               </p>
               <p>
@@ -41,8 +41,8 @@ export default function AboutUs(){
               </p>
             </div>
 
-            <div class="col-md-6">
-              <p class="mb-3">
+            <div className="col-md-6">
+              <p className="mb-3">
                 <br />
                 <br />
                 <br />
@@ -60,34 +60,34 @@ export default function AboutUs(){
 
 
 
-     <div class="stats-section paddingTB60 text-center">
-        <div class="container">
-          <div class="row">
+     <div className="stats-section paddingTB60 text-center">
+        <div className="container">
+          <div className="row">
 
-            <div class="col-md-3 col-sm-6 mb-4">
-              <div class="stat-box">
-                <h2 class="strong">5+</h2>
+            <div className="col-md-3 col-sm-6 mb-4">
+              <div className="stat-box">
+                <h2 className="strong">5+</h2>
                 <p>Years of Experience</p>
               </div>
             </div>
 
-            <div class="col-md-3 col-sm-6 mb-4">
-              <div class="stat-box">
-                <h2 class="strong">10,000+</h2>
+            <div className="col-md-3 col-sm-6 mb-4">
+              <div className="stat-box">
+                <h2 className="strong">10,000+</h2>
                 <p>Happy Customers</p>
               </div>
             </div>
 
-            <div class="col-md-3 col-sm-6 mb-4">
-              <div class="stat-box">
-                <h2 class="strong">95%</h2>
+            <div className="col-md-3 col-sm-6 mb-4">
+              <div className="stat-box">
+                <h2 className="strong">95%</h2>
                 <p>Trusted Providers</p>
               </div>
             </div>
 
-            <div class="col-md-3 col-sm-6 mb-4">
-              <div class="stat-box">
-                <h2 class="strong">4.8/5</h2>
+            <div className="col-md-3 col-sm-6 mb-4">
+              <div className="stat-box">
+                <h2 className="strong">4.8/5</h2>
                 <p>Average Rating</p>
               </div>
             </div>

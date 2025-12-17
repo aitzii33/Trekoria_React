@@ -26,26 +26,22 @@ function Head({ isLoggedIn })
 
     const routeInitial = () => 
     {
-        const path = '/Home';
-        navigate(path);
+        navigate('/Home');
     };
 
     const routeAboutUs = () =>
     {
-        const path = '/About';
-        navigate(path);
+        navigate('/About');
     }
 
     const routeContact = () => 
     {
-        const path = '/ContactUs';
-        navigate(path);
+        navigate('/ContactUs');
     };
 
     const routeProfile = () => 
     {
-        const path = '/Profile';
-        navigate(path);
+        navigate('/Profile');
     };
 
     const routeLogOut = () => 
@@ -60,7 +56,7 @@ function Head({ isLoggedIn })
             <header className="header">
                 {/* Logo */}
                 <div>
-                    <img src={logo} alt="Logo" className="header-logo" onClick={routeInitial}/>
+                    <img src={logo} alt="Logo" className="header-logo me-2" onClick={routeInitial}/>
                 </div>
 
                 {/* Spacer */}

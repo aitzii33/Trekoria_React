@@ -1,6 +1,7 @@
 import '../assets/CSS/Contact.css'
 import { ProveEmail,  ProveMessage  } from '../Funtions'
 import Header from '../Components/Header'
+import { Container } from 'reactstrap';
 
 function ContactUs()
 {
@@ -28,22 +29,8 @@ function ContactUs()
 
 
     return(
-        <>
-             <section className="py-5 about-gradient w-100">
-                 <Header/>
-                <div className="container">
-                    <div className="row justify-content-center">
-                        <div className="col-md-8">
-                            <div className="text-center text-white">
-                                <h1 className="display-5 fw-bold">Contact Us</h1>
-                                <p className="lead">
-                                ...
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <Container>
+            <Header/>
             
             <form id="contact-form" action="mail.php" method="POST" onSubmit={Verify} className="p-4 border rounded shadow-sm bg-white">
                 <h2 className="text-center mb-4">Contact us</h2>
@@ -65,7 +52,7 @@ function ContactUs()
 
                 <button id="submit-form" type="submit" className="btn btn-primary w-100"> Send </button>
             </form>
-        </>
+        </Container>
     );
 }
 
