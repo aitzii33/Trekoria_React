@@ -30,9 +30,7 @@ function RegisterPage()
         }
         else
         {
-            //redirect to log in
-            const path = '/LogIn';
-            navigate(path);
+            navigate('/LogIn');
         }
     };
 
@@ -61,7 +59,7 @@ function RegisterPage()
                     </div>
 
                     <div className="form-outline mb-4">
-                        <input type="text" className="form-control" placeholder="Introduce your email"/>
+                        <input type="date" className="form-control" placeholder="Introduce your email"/>
                         <label className="form-label" htmlFor="email" id="email"></label>
                     </div>
 

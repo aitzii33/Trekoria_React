@@ -2,6 +2,7 @@ import logo from '../assets/img/logo.png'
 import "../assets/CSS/LogIn.css"
 import { useNavigate } from 'react-router-dom'
 import { ProveUserPassword  } from '../Funtions'
+import { Container } from 'reactstrap'
 
 function Login() 
 {
@@ -38,12 +39,11 @@ function Login()
 
 
     return(
-        <>
+        <Container>
             <div className="container py-5 h-100 d-flex justify-content-center align-items-center" onSubmit={Verify}>
                 <div className="card rounded-3 text-black col-xl-10 col-lg-6 p-md-5 mx-md-4">
                     <div className="text-center">
                         <img src={logo} alt="logo" style={{ width: "185px" }}/>
-                        <h4 className="mt-1 mb-5 pb-1">We are Trekoria</h4>
                         </div>
 
                         <form onSubmit={Verify} > 
@@ -71,7 +71,7 @@ function Login()
                     </form>
                 </div>
             </div>
-        </>
+        </Container>
     );
 }
 

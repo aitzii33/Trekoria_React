@@ -1,5 +1,7 @@
 #container{
-  background-color: #D1DCEC;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
 
 #contact-form {
@@ -11,13 +13,11 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
-/* Title */
 #contact-form h2 {
   font-weight: 600;
   color: #333;
 }
 
-/* Inputs and textarea */
 #contact-form .form-control {
   padding: 12px;
   border-radius: 8px;
@@ -26,20 +26,17 @@
   background-color: #fafafa;
 }
 
-/* Focus */
 #contact-form .form-control:focus {
   border-color: #E5E592;
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
   background-color: #fff;
 }
 
-/* Labels */
 #contact-form .form-label {
   font-weight: 500;
   color: #444;
 }
 
-/* Buttons */
 #contact-form .btn-primary {
   padding: 12px;
   font-size: 1.05rem;
@@ -47,7 +44,6 @@
   transition: 0.3s ease;
 }
 
-/* Button hover */
 #contact-form .btn-primary:hover {
   background-color: #2796D1;
   box-shadow: 0 6px 15px rgba(13, 110, 253, 0.3);
@@ -55,26 +51,4 @@
 
 #contact-form:hover {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-}
-.map-responsive {
-  position: relative;
-  width: 100%;
-  padding-bottom: 50%; /* controls height */
-  height: 0;
-  overflow: hidden;
-}
-
-.map-responsive iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  border-radius: 15px;
-}
-.map-container {
-  height: 350px; 
-  overflow: hidden;
-  border-radius: 15px;
 }
