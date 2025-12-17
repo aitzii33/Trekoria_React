@@ -1,7 +1,7 @@
 import lupa from '../assets/img/lupa.png'
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
-import { Container } from 'reactstrap'
+
 
 
 function InitialPage()

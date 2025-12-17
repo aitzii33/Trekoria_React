@@ -1,7 +1,6 @@
 import logo from '../assets/img/logo.png'
 import "../assets/CSS/LogIn.css"
 import Header from '../Components/Header_Landing'
-import Footer from '../Components/Footer'
 import { useNavigate } from 'react-router-dom'
 import { ProveUserPassword  } from '../Funtions'
 
@@ -78,7 +77,6 @@ function Login()
                     </form>
                 </div>
             </div>
-            <Footer/>
         </>
     );
 }

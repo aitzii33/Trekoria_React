@@ -1,5 +1,3 @@
-
-import { useState } from 'react'
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import Landing from './Layout/LandingPage'
@@ -9,6 +7,7 @@ import Login from './Layout/LogIn'
 import ForgotPass from './Layout/Forgot_Pass'
 import Register from './Layout/Register'
 import AboutUs from './Components/AboutUs'
+import Profile from './Layout/MyProfile'
 
 
 function App()
@@ -23,6 +22,7 @@ function App()
         <Route path="/ForgotPass" element={<ForgotPass />} />
         <Route path="/Register" element={<Register />} />
         <Route path="/About" element={<AboutUs />} />
+        <Route path="/Profile" element={<Profile />} />
     </Routes>
     </>
  );
