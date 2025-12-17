@@ -16,6 +16,9 @@ body {
   width: 100%;
   z-index: 1000;
   background-color: rgb(255, 255, 255);
+   border-bottom: 1px solid #c9d9e2;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+ 
 }
 
 /* Logo */
@@ -98,19 +101,6 @@ body {
   background-color: #7bbcc0; 
 }
 
-
-/* we have to try and what we like more 
-.fade-in-element {
-  opacity: 0;
-  transition: opacity var(--fade-duration) ease-out;
-}*/
-/* Trigger with a class or JavaScript, updating the variable 
-.fade-in-element.fast {
-  --fade-duration: 0.5s;
-}*/
-
-/* we have to try and what we like more */
-
 .fade-in {
     animation: fadeIn 0.3s ease-in-out;
 }
@@ -120,3 +110,56 @@ body {
     to   { opacity: 1; transform: translateY(0); }
 }
 
+.nav-links {
+  display: flex;             /* make children in a row */
+  align-items: center;       /* vertically align image and links */
+  gap: 20px;                 /* optional: spacing between items */
+}
+
+.nav-ico {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease;
+}
+
+.nav-ico:hover {
+  transform: scale(1.2);     /* slightly enlarge on hover */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+  cursor: pointer;
+
+}
+
+.nav-link:hover {
+  color: #2796D1;
+  background: linear-gradient(90deg, rgba(39,150,209,0.10), rgba(39,150,209,0.02));
+  color: #155a78;
+  border-radius: 6px;
+  padding: 6px 10px;
+  box-shadow: 0 6px 12px rgba(39,150,209,0.08);
+  transform: translateY(-3px);
+  transition: color 0.25s ease, background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+/* Optional: sliding underline */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: #2796D1;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
