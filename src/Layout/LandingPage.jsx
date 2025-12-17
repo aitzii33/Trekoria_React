@@ -21,10 +21,11 @@ export default function Landing()
   const navigate = useNavigate();
   const { t } = useTranslation();
   
-const routeChange = () => 
-{
-  navigate('/Home');
-};
+  const routeChange = () => 
+  {
+    const path = '/Home';
+    navigate(path);
+  };
 
 
   return (
