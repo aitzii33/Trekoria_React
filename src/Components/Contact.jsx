@@ -29,21 +29,19 @@ function ContactUs()
 
     return(
         <>
-           
-
              <section className="py-5 about-gradient w-100">
                  <Header/>
                 <div className="container">
-                <div className="row justify-content-center">
-                    <div className="col-md-8">
-                    <div className="text-center text-white">
-                        <h1 className="display-5 fw-bold">Contact Us</h1>
-                        <p className="lead">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </p>
+                    <div className="row justify-content-center">
+                        <div className="col-md-8">
+                            <div className="text-center text-white">
+                                <h1 className="display-5 fw-bold">Contact Us</h1>
+                                <p className="lead">
+                                ...
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    </div>
-                </div>
                 </div>
             </section>
             
