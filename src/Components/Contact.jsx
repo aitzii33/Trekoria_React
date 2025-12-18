@@ -52,41 +52,42 @@ function ContactUs()
         <>
             <Header/>
             <section className="about-gradient py-5 w-100">
-                    <div className="container">
+                <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-md-8">
-                        <div className="text-center text-white">
-                            <h1 className="display-5 fw-bold">Contact Us</h1>
-                            <p className="lead">
-                            Get more closure to Trekoria, we are here to help you!
-                            </p>
-                        </div>
+                            <div className="text-center text-white">
+                                <h1 className="display-5 fw-bold">Contact Us</h1>
+                                <p className="lead">
+                                    Get more closure to Trekoria, we are here to help you!
+                                </p>
+                            </div>
                         </div>
                     </div>
                     </div>
                 </section>
             
-            <form id="contact-form" action="mail.php" method="POST" onSubmit={enviarEmail} className="p-4 border rounded shadow-sm bg-white"> 
-                <h2 className="text-center mb-4">Contact us</h2> 
- 
-                <div className="mb-3"> 
-                    <label className="form-label">Name</label> 
-                    <input type="text" id="name" name="name" className="form-control" required/> 
-                </div> 
- 
-                <div className="mb-3"> 
-                    <label className="form-label">Email address</label> 
-                    <input type="text" id="email" name="email" className="form-control" onBlur={(e) => validateEmail(e.target.value)} required/> 
-                </div> 
- 
-                <div className="mb-3"> 
-                    <label className="form-label">Message</label> 
-                    <textarea className="form-control" type="text" id="message" name="message" rows="4" onBlur={(e) => validateMessage(e.target.value)} required ></textarea>
-                </div> 
- 
-                <button id="submit-form" type="submit" className="btn btn-primary w-100"> Send </button> 
-                {status && <p>{status}</p>} 
-            </form> 
+            <form id="contact-form" action="mail.php" method="POST" onSubmit={enviarEmail} className="p-4 border rounded shadow-sm bg-white">
+                <h2 className="text-center mb-4">Contact us</h2>
+
+                <div className="mb-3">
+                    <label className="form-label">Name</label>
+                    <input type="text" id="name" name="name" className="form-control" required/>
+                </div>
+
+                <div className="mb-3">
+                    <label className="form-label">Email address</label>
+                    <input type="text" id="email" name="email" className="form-control" onBlur={(e) => validateEmail(e.target.value)} required/>
+                </div>
+
+                <div className="mb-3">
+                    <label className="form-label">Message</label>
+                    <textarea className="form-control" type="text" id="message" name="message" rows="4" onBlur={(e) => validateMessage(e.target.value)} required></textarea>
+                </div>
+
+                <button id="submit-form" type="submit" className="btn btn-primary w-100"> Send </button>
+                {status && <p>{status}</p>}
+            </form>
+            <Footer/>
         </>
     );
 }
