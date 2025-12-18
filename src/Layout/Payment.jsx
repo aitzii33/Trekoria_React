@@ -196,16 +196,16 @@ function RegisterPage()
                         <div class="form-step" id="step2">
                             <h2 class="h5 fw-bold mb-4">Payment Details</h2>
                             <div class="mb-3">
-                                <label for="cardNumber" class="form-label">Card Number</label>
+                                <label for="cardNumber" class="form-label">Card number</label>
                                 <input type="text" class="form-control" id="cardNumber" name="cardNumber" placeholder="xxxx xxxx xxxx xxxx"/>
                             </div>
                             <div class="mb-3">
-                                <label for="cardName" class="form-label">Name on Card</label>
+                                <label for="cardName" class="form-label">Card name</label>
                                 <input type="text" class="form-control" id="cardName" name="cardName"/>
                             </div>
                             <div class="row g-3">
                                 <div class="col-6">
-                                    <label for="expiry" class="form-label">Expiry Date</label>
+                                    <label for="expiry" class="form-label">Expiry date</label>
                                     <input type="text" class="form-control" id="expiry" name="expiry" placeholder="MM/YY"/>
                                 </div>
                                 <div class="col-6">
@@ -220,7 +220,7 @@ function RegisterPage()
                         </div>
                     #endregion
 
-                    #region
+                    #region Review part
                         <div class="summary-panel d-none d-lg-block">
                             <h5 class="fw-bold mb-4">Order Summary</h5>
                             <div id="summary-content">
@@ -234,7 +234,7 @@ function RegisterPage()
                                 </div>
                                 <div class="summary-total d-flex justify-content-between">
                                     <span>Total</span>
-                                    <span>$125.00</span>
+                                    <span></span> 
                                 </div>
                             </div>
                         </div>
