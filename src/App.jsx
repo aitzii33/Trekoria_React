@@ -8,6 +8,7 @@ import ForgotPass from './Layout/Forgot_Pass'
 import Register from './Layout/Register'
 import AboutUs from './Components/AboutUs'
 import Profile from './Layout/MyProfile'
+import Activities from './Layout/Activities'
 
 
 function App()
@@ -23,6 +24,7 @@ function App()
         <Route path="/Register" element={<Register />} />
         <Route path="/About" element={<AboutUs />} />
         <Route path="/Profile" element={<Profile />} />
+        <Route path="/Activities" element={<Activities/>} />
     </Routes>
     </>
  );

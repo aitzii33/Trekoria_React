@@ -1,28 +1,24 @@
-import React, { useState } from "react";
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
-import {
-  Carousel,
-  Form,
-  Button,
-  InputGroup,
-  Card,
-  Row,
-  Col,
-} from "react-bootstrap";
+import React, { useState } from "react"
+import Header from "../Components/Header"
+import Footer from "../Components/Footer"
+import {  Carousel,  Form,  Button,  InputGroup,  Card,  Row,  Col,} from "react-bootstrap"
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useNavigate } from 'react-router-dom'
+
 
 // Images
-import LandingImg1 from "../assets/img/LandingImg1.png";
-import LandingImg2 from "../assets/img/LandingImg2.jpg";
-import LandingImg3 from "../assets/img/LandingImg3.jpg";
-import lupa from "../assets/img/lupa.png";
-import Baloon from "../assets/img/Baloon.jpg";
-import TokyoImg from "../assets/img/Tokyo.webp";
-import Baloon2 from "../assets/img/Baloon2.webp";
+import LandingImg1 from "../assets/img/LandingImg1.png"
+import LandingImg2 from "../assets/img/LandingImg2.jpg"
+import LandingImg3 from "../assets/img/LandingImg3.jpg"
+import lupa from "../assets/img/lupa.png"
+import Baloon from "../assets/img/Baloon.jpg"
+import TokyoImg from "../assets/img/Tokyo.webp"
+import Baloon2 from "../assets/img/Baloon2.webp"
 
-import "../assets/CSS/Home.css";
+import "../assets/CSS/Home.css"
 
 function InitialPage() {
+  const navigate = useNavigate();
   const [showContinents, setShowContinents] = useState(false);
   const [hoveredContinent, setHoveredContinent] = useState(null);
   const [hoveredCountry, setHoveredCountry] = useState(null);
@@ -100,6 +96,12 @@ function InitialPage() {
     const query = e.target.search.value;
     console.log("Search:", query);
     // redirect to search results page if needed
+    navigate('/Activities');
+  };
+
+  const NavegateActivity = () => 
+  {
+      navigate('/Activities');
   };
 
   return (
@@ -141,7 +143,7 @@ function InitialPage() {
           <Row className="g-3">
             {popularCities.map((city, idx) => (
               <Col key={idx} md={3} sm={6}>
-                <Card className="city-card text-white">
+                <Card className="city-card text-white" onClick={NavegateActivity}>
                   <Card.Img src={city.img} alt={city.name} />
                   <Card.ImgOverlay className="d-flex align-items-end p-2">
                     <Card.Title>{city.name}</Card.Title>
