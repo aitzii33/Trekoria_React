@@ -11,6 +11,8 @@ import Button from '../Components/Button'
 import { useNavigate } from "react-router-dom"
 import Header from '../Components/Header_Landing'
 import { useTranslation } from "react-i18next";
+import '../assets/i18n/i18n';
+
 
 
 
@@ -94,6 +96,7 @@ export default function Landing()
           </div>
         </div>
       </section>
+      
     </>
   );
 }
