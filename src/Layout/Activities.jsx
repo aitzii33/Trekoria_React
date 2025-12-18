@@ -43,7 +43,7 @@ function Activities()
 
                             <Form onSubmit={handleSubmit} className="date-form">
                                 <DatePicker selected={selectedDate} onChange={(date) => setSelectedDate(date)} dateFormat="dd-MM-yyyy" placeholderText="Selecciona una fecha" className="form-control mb-3" />
-                                <Button type="submit" color="success" className="w-100">
+                                <Button type="submit" color="success" style={{ width: "50%", alignSelf: "flex-start", color: 'black' }} >
                                     Search activities
                                 </Button>
                             </Form>
@@ -53,7 +53,7 @@ function Activities()
             </Row>
 
 
-            <Row className="justify-content-center">
+            <Row className="justify-content-center" style={{ marginBottom: '30px'  }}>
                 <Col md={10} className="activity-box card activity-card">
                     <Row>
                         <Col md={4} className="activity-image">
@@ -66,7 +66,7 @@ function Activities()
 
                             <div className="activity-actions mt-auto">
                                 <span className="price">{activity.price}</span>
-                                <Button color="secondary">DETAILS</Button>
+                                <Button color="black">DETAILS</Button>
                             </div>
                         </Col>
                     </Row>

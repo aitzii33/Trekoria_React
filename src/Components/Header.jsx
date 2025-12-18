@@ -1,5 +1,6 @@
 
 import logo from '../assets/logo.svg'
+import lupa from '../assets/img/lupa.png'
 import userImg from '../assets/img/DefaultUserImage.png'
 import home from '../assets/img/home.png'
 import '../assets/CSS/Header.css'
@@ -10,6 +11,7 @@ import LanguageSelector from '../Components/LanguageSelector';
 
 function Head({ isLoggedIn, currentLanguage, setLanguage}) 
 {
+    //#region navigation part
     const navigate = useNavigate();
     const [showDropdown, setShowDropdown] = useState(false);
 
@@ -53,6 +55,7 @@ function Head({ isLoggedIn, currentLanguage, setLanguage})
     {
         navigate('/');
     }
+    //#endregion
 
 
 
@@ -65,6 +68,13 @@ function Head({ isLoggedIn, currentLanguage, setLanguage})
                 </div>
 
                 {/* Spacer */}
+                <div className="header-spacer"></div>
+
+                <div className="search-input">
+                    <input type='text' placeholder='Where do you like to go?' id='id_place' style={{ width:'350px'}} />
+                    <img src={lupa} alt="search" style={{ height:'60px', width: '60px' }}/>
+                </div>
+
                 <div className="header-spacer"></div>
 
                 <div className="nav-links">

@@ -32,7 +32,7 @@
 
 
 .activity-actions {
-    margin-top: auto;             
+    margin-top: auto;            
     display: flex;
     justify-content: flex-end;       
     align-items: center;
@@ -95,4 +95,11 @@
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+.date-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
 }
