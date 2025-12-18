@@ -34,7 +34,6 @@ function InitialPage() {
     { name: "Tokyo", img: TokyoImg },
     { name: "New York", img: LandingImg3 },
     { name: "London", img: Baloon2 },
-    { name: "Sydney", img: lupa }, // optional demo image
   ];
 
   const worldData = [
