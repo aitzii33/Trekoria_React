@@ -4,6 +4,7 @@ import Header from '../Components/Header'
 import { Container } from 'reactstrap'
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import Footer from '../Components/Footer';
 
 function ContactUs()
 {
@@ -48,8 +49,23 @@ function ContactUs()
 
 
     return(
-        <Container>
+        <>
             <Header/>
+
+            <section className="about-gradient py-5 w-100">
+                    <div className="container">
+                    <div className="row justify-content-center">
+                        <div className="col-md-8">
+                        <div className="text-center text-white">
+                            <h1 className="display-5 fw-bold">Contact Us</h1>
+                            <p className="lead">
+                            Get more closure to Trekoria, we are here to help you!
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </section>
             
             <form id="contact-form" action="mail.php" method="POST" onSubmit={enviarEmail} className="p-4 border rounded shadow-sm bg-white">
                 <h2 className="text-center mb-4">Contact us</h2>
@@ -72,7 +88,8 @@ function ContactUs()
                 <button id="submit-form" type="submit" className="btn btn-primary w-100"> Send </button>
                 {status && <p>{status}</p>}
             </form>
-        </Container>
+            <Footer/>
+        </>
     );
 }
 

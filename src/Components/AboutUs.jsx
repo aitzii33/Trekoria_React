@@ -64,28 +64,28 @@ export default function AboutUs(){
         <div className="container">
           <div className="row">
 
-            <div className="col-md-3 col-sm-6 mb-4">
+            <div className="section-a col-md-3 col-sm-6 mb-4">
               <div className="stat-box">
                 <h2 className="strong">5+</h2>
                 <p>Years of Experience</p>
               </div>
             </div>
 
-            <div className="col-md-3 col-sm-6 mb-4">
+            <div className="section-a col-md-3 col-sm-6 mb-4">
               <div className="stat-box">
                 <h2 className="strong">10,000+</h2>
                 <p>Happy Customers</p>
               </div>
             </div>
 
-            <div className="col-md-3 col-sm-6 mb-4">
+            <div className="section-a col-md-3 col-sm-6 mb-4">
               <div className="stat-box">
                 <h2 className="strong">95%</h2>
                 <p>Trusted Providers</p>
               </div>
             </div>
 
-            <div className="col-md-3 col-sm-6 mb-4">
+            <div className="section-a col-md-3 col-sm-6 mb-4">
               <div className="stat-box">
                 <h2 className="strong">4.8/5</h2>
                 <p>Average Rating</p>
