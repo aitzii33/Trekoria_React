@@ -134,6 +134,26 @@ function ContactUs()
                 </div>
             </div>
 
+            {/* MAP SECTION */}
+            <section className="contact-map-section">
+            <div className="container text-center">
+                <h2 className="fw-bold">Find Us Here</h2>
+                <p className="mb-4 text-muted">
+                Visit us at our office in <strong>Zubiri – Manteo</strong>. We’re always happy to help you!
+                </p>
+
+                <div className="map-wrapper">
+                <iframe
+                    title="Zubiri Manteo Location"
+                    src="https://www.google.com/maps?q=Zubiri%20Manteo&output=embed"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+                </div>
+            </div>
+            </section>
+
+
             <Footer/>
         </>
     );
