@@ -8,7 +8,11 @@ import ForgotPass from './Layout/Forgot_Pass'
 import Register from './Layout/Register'
 import AboutUs from './Components/AboutUs'
 import Profile from './Layout/MyProfile'
+<<<<<<< HEAD
 import Activities from './Layout/Activities'
+=======
+import "./assets/i18n/i18n";
+>>>>>>> f45fc37 (updated)
 
 
 function App()

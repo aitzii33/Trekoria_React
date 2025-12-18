@@ -50,7 +50,9 @@ export default function Head()
             <img src={home} alt="Home" style={{ width: "20px", height: "20px" }} className="me-4 nav-ico" onClick={routeInitial}/>
             <a onClick={routeAboutUs} className="nav-link me-4">About Us</a>
             <a onClick={routeContact} className="nav-link me-4">Contact</a>
+  
         </div>
+      
         
       </header>
     

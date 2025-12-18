@@ -6,9 +6,9 @@ import '../assets/CSS/Header.css'
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import '../assets/CSS/Header.css';
+import LanguageSelector from '../Components/LanguageSelector';
 
-
-function Head({ isLoggedIn }) 
+function Head({ isLoggedIn, currentLanguage, setLanguage}) 
 {
     const navigate = useNavigate();
     const [showDropdown, setShowDropdown] = useState(false);
@@ -49,6 +49,10 @@ function Head({ isLoggedIn })
     {
         //Close the sesion
     };
+    const routeLanding =() =>
+    {
+        navigate('/');
+    }
 
 
 
@@ -57,7 +61,7 @@ function Head({ isLoggedIn })
             <header className="header">
                 {/* Logo */}
                 <div>
-                    <img src={logo} alt="Logo" className="header-logo me-2" onClick={routeInitial}/>
+                    <img src={logo} alt="Logo" className="header-logo me-2" onClick={routeLanding}/>
                 </div>
 
                 {/* Spacer */}
@@ -69,6 +73,10 @@ function Head({ isLoggedIn })
                     <a onClick={routeContact} className="nav-link me-4">Contact</a>
                 </div>
 
+                {/* Language Selector */}
+                <div className="me-4">
+                    <LanguageSelector currentLanguage={currentLanguage} setLanguage={setLanguage} />
+                </div>
                 {/* Access button */}
                 <div className="header-access">
                     <img src={userImg} alt="profile" onClick={AccessButton} style={{ width: "50px", height: "50px", borderRadius: "50%", objectFit: "cover" }}/>

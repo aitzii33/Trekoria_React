@@ -1,65 +1,41 @@
-<<<<<<< HEAD
-import React, { useState } from "react"
-import Header from "../Components/Header"
-import Footer from "../Components/Footer"
-import {  Carousel,  Form,  Button,  InputGroup,  Card,  Row,  Col,} from "react-bootstrap"
-import "bootstrap/dist/css/bootstrap.min.css";
-import { useNavigate } from 'react-router-dom'
-
-
-// Images
-import LandingImg1 from "../assets/img/LandingImg1.png"
-import LandingImg2 from "../assets/img/LandingImg2.jpg"
-import LandingImg3 from "../assets/img/LandingImg3.jpg"
-import lupa from "../assets/img/lupa.png"
-import Baloon from "../assets/img/Baloon.jpg"
-import TokyoImg from "../assets/img/Tokyo.webp"
-import Baloon2 from "../assets/img/Baloon2.webp"
-
-import "../assets/CSS/Home.css"
-
-function InitialPage() {
-  const navigate = useNavigate();
-  const [showContinents, setShowContinents] = useState(false);
-  const [hoveredContinent, setHoveredContinent] = useState(null);
-  const [hoveredCountry, setHoveredCountry] = useState(null);
-=======
 import React, { useState } from "react";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import { Carousel, Form, Button, InputGroup, Card, Row, Col } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../assets/CSS/Home.css";
+
+// Images
 import LandingImg1 from "../assets/img/LandingImg1.png";
 import LandingImg2 from "../assets/img/LandingImg2.jpg";
 import LandingImg3 from "../assets/img/LandingImg3.jpg";
 import lupa from "../assets/img/lupa.png";
-
 import Baloon from "../assets/img/Baloon.jpg";
 import TokyoImg from "../assets/img/Tokyo.webp";
-import Landing3 from "../assets/img/LandingImg3.jpg";
 import Baloon2 from "../assets/img/Baloon2.webp";
 
-
-
-import "../assets/CSS/Home.css";
-
+// Data
 import countriesData from "../assets/DATA/contries.json";
 import countryToContinent from "../assets/DATA/Continent.json";
->>>>>>> fc50ec7ffc9a91e7ed74feafa5480e9a866fcf61
 
 // Popular cities with images
 const popularCities = [
   { name: "Paris", img: Baloon },
   { name: "Tokyo", img: TokyoImg },
-  { name: "New York", img: Landing3 },
+  { name: "New York", img: LandingImg3 },
   { name: "London", img: Baloon2 },
 ];
 
-
 function InitialPage() {
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const [showContinents, setShowContinents] = useState(false);
   const [hoveredContinent, setHoveredContinent] = useState(null);
   const [hoveredCountry, setHoveredCountry] = useState(null);
-  const [showContinents, setShowContinents] = useState(false);
 
   const images = [LandingImg1, LandingImg2, LandingImg3];
 
@@ -78,16 +54,7 @@ function InitialPage() {
     e.preventDefault();
     const query = e.target.search.value;
     console.log("Search:", query);
-<<<<<<< HEAD
-    // redirect to search results page if needed
-    navigate('/Activities');
-  };
-
-  const NavegateActivity = () => 
-  {
-      navigate('/Activities');
-=======
->>>>>>> fc50ec7ffc9a91e7ed74feafa5480e9a866fcf61
+    navigate('/Activities'); // Example navigation
   };
 
   return (
@@ -95,53 +62,42 @@ function InitialPage() {
       <Header />
 
       {/* Hero Section */}
-<div className="hero-container position-relative">
-  {/* Carousel */}
-  <Carousel fade interval={3000} controls={false} indicators={false}>
-    {images.map((img, idx) => (
-      <Carousel.Item key={idx}>
-        <img className="d-block w-100 hero-image" src={img} alt="Hero" />
-      </Carousel.Item>
-    ))}
-  </Carousel>
+      <div className="hero-container position-relative">
+        <Carousel fade interval={3000} controls={false} indicators={false}>
+          {images.map((img, idx) => (
+            <Carousel.Item key={idx}>
+              <img className="d-block w-100 hero-image" src={img} alt={t("Hero")} />
+            </Carousel.Item>
+          ))}
+        </Carousel>
 
-  {/* Search overlay: MUST BE OUTSIDE Carousel */}
-  <div className="search-overlay">
-    <h1 className="hero-heading">Find Your Perfect Place</h1>
-    <p className="hero-subtitle">Search from thousands of options</p>
-    <Form onSubmit={handleSearch}>
-      <InputGroup>
-        <InputGroup.Text>
-          <img src={lupa} alt="search" style={{ width: "20px" }} />
-        </InputGroup.Text>
-        <Form.Control type="text" name="search" placeholder="Search..." />
-        <Button variant="primary" type="submit">
-          Search
-        </Button>
-      </InputGroup>
-    </Form>
-  </div>
-</div>
-
-
+        {/* Search overlay */}
+        <div className="search-overlay">
+          <h1 className="hero-heading">{t("Find Your Perfect Place")}</h1>
+          <p className="hero-subtitle">{t("Search from thousands of options")}</p>
+          <Form onSubmit={handleSearch}>
+            <InputGroup>
+              <InputGroup.Text>
+                <img src={lupa} alt={t("search")} style={{ width: "20px" }} />
+              </InputGroup.Text>
+              <Form.Control type="text" name="search" placeholder={t("Search...")} />
+              <Button variant="primary" type="submit">{t("Search")}</Button>
+            </InputGroup>
+          </Form>
+        </div>
+      </div>
 
       {/* Popular Cities */}
       <section className="popular-cities pt-5 pb-5">
         <div className="container">
-          <h2 className="mb-4">Popular Cities</h2>
+          <h2 className="mb-4">{t("Popular Cities")}</h2>
           <Row className="g-3">
             {popularCities.map((city, idx) => (
               <Col key={idx} md={3} sm={6}>
-<<<<<<< HEAD
-                <Card className="city-card text-white" onClick={NavegateActivity}>
-                  <Card.Img src={city.img} alt={city.name} />
-=======
                 <Card className="city-card text-white text-center">
-                 <Card.Img src={city.img} alt={city.name} className="city-img" />
-
->>>>>>> fc50ec7ffc9a91e7ed74feafa5480e9a866fcf61
+                  <Card.Img src={city.img} alt={t(city.name)} className="city-img" />
                   <Card.ImgOverlay className="d-flex align-items-end p-2">
-                    <Card.Title>{city.name}</Card.Title>
+                    <Card.Title>{t(city.name)}</Card.Title>
                   </Card.ImgOverlay>
                 </Card>
               </Col>
@@ -152,7 +108,7 @@ function InitialPage() {
               variant="primary"
               onClick={() => setShowContinents(!showContinents)}
             >
-              See More
+              {t("See More")}
             </Button>
           </div>
         </div>
@@ -162,7 +118,7 @@ function InitialPage() {
       {showContinents && (
         <section className="continents-section py-5">
           <div className="container">
-            <h2 className="mb-4">Explore Countries & Cities</h2>
+            <h2 className="mb-4">{t("Explore Countries & Cities")}</h2>
             <div className="d-flex flex-wrap">
               {/* Continents */}
               <div className="me-4 continent-list" style={{ minWidth: "150px" }}>
@@ -177,7 +133,7 @@ function InitialPage() {
                     onMouseLeave={() => setHoveredContinent(null)}
                     style={{ cursor: "pointer" }}
                   >
-                    {cont}
+                    {t(cont)}
                   </div>
                 ))}
               </div>
@@ -193,17 +149,17 @@ function InitialPage() {
                       onMouseLeave={() => setHoveredCountry(null)}
                       style={{ cursor: "pointer" }}
                     >
-                      {country.name}
+                      {t(country.name)}
                       {hoveredCountry === country && (
                         <div className="cities mt-2">
-                          <h5>Cities in {country.name}:</h5>
+                          <h5>{t("Cities in")} {t(country.name)}:</h5>
                           <div className="d-flex flex-wrap">
                             {country.cities.map((city, ci) => (
                               <div
                                 key={ci}
                                 className="city-card p-2 m-1 rounded bg-light text-dark shadow-sm"
                               >
-                                {city}
+                                {t(city)}
                               </div>
                             ))}
                           </div>
