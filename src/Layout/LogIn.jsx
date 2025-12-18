@@ -76,8 +76,9 @@ function Login()
                 </div>
             </div>
             <Footer />
+            </Container>
         </>
-        </Container>
+        
     );
 }
 
