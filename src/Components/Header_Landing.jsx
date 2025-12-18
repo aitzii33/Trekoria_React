@@ -13,7 +13,7 @@ export default function Head()
   
   const routeInitial = () => 
   {
-    const path = '/Initial_Page';
+    const path = 'Home';
     navigate(path);
   };
 

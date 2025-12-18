@@ -1,0 +1,185 @@
+/* Enhanced right panel visuals and controls */
+.right-panel {
+    position: relative;
+    background: linear-gradient(135deg, #2796D1 0%, #033B63 100%);
+    color: #fff;
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 48px 36px;
+    gap: 22px;
+    transition: background .3s ease, transform .18s ease;
+    overflow: hidden;
+}
+
+/* soft layered highlights */
+.right-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(400px 200px at 10% 10%, rgba(255,255,255,0.06), transparent 8%),
+        radial-gradient(350px 180px at 90% 85%, rgba(0,0,0,0.06), transparent 10%);
+    mix-blend-mode: overlay;
+    opacity: 0.95;
+}
+
+/* decorative angled shape */
+.right-panel::after {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 140%;
+    right: -20%;
+    top: -30%;
+    transform: rotate(-18deg);
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0));
+    filter: blur(18px);
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+/* Welcome block */
+.welcome-section {
+    flex: none;
+    margin-bottom: 24px;
+    z-index: 1; /* sit above decorative shapes */
+}
+
+.welcome-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.2px;
+}
+
+.welcome-text {
+    font-size: 15px;
+    color: rgba(255,255,255,0.95);
+    margin: 0;
+    max-width: 420px;
+    line-height: 1.45;
+}
+
+/* CTAs */
+.cta-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+    align-items: center;
+    z-index: 1;
+}
+
+.cta-btn {
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.14);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform .14s ease, background .14s ease, box-shadow .14s ease;
+    white-space: nowrap;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    background: rgba(255,255,255,0.16);
+    box-shadow: 0 10px 30px rgba(3,59,99,0.22);
+}
+
+/* Login card inside right panel (glass effect) */
+.login-section {
+    flex: none;
+    z-index: 1;
+    margin-top: 6px;
+}
+
+.login-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+    border: 1px solid rgba(255,255,255,0.07);
+    padding: 16px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 6px 24px rgba(3,59,99,0.15);
+}
+
+/* Inputs & controls */
+.login-card input,
+.login-card select,
+.login-card textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: rgba(255,255,255,0.03);
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 10px;
+    outline: none;
+    transition: border-color .12s ease, box-shadow .12s ease;
+}
+
+.login-card input::placeholder,
+.login-card textarea::placeholder {
+    color: rgba(255,255,255,0.66);
+}
+
+.login-card input:focus,
+.login-card select:focus,
+.login-card textarea:focus {
+    border-color: rgba(255,255,255,0.28);
+    box-shadow: 0 8px 22px rgba(3,59,99,0.18);
+}
+
+/* Primary action inside login card */
+.login-card .primary {
+    display: inline-block;
+    background: #fff;
+    color: #033B63;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.login-card .primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 26px rgba(3,59,99,0.14);
+}
+
+/* Small utility row (links, social) */
+.login-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 8px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.9);
+}
+
+.login-row a {
+    color: rgba(255,255,255,0.95);
+    text-decoration: underline;
+}
+
+/* Responsive: tighten spacing and full-width forms on small screens */
+@media (max-width: 992px) {
+    .right-panel {
+        padding: 30px 20px;
+        align-items: center;
+        text-align: center;
+    }
+    .welcome-title { font-size: 22px; }
+    .welcome-text { max-width: 100%; margin: 0 auto; }
+    .cta-row { justify-content: center; flex-wrap: wrap; }
+    .login-card { margin: 0 auto; width: 100%; max-width: 520px; }
+    .login-row { justify-content: center; }
+    .right-panel::after { display: none; } /* simplify shapes on small devices */
+}

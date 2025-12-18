@@ -2,6 +2,8 @@ import logo from '../assets/img/logo.png'
 import "../assets/CSS/LogIn.css"
 import { useNavigate } from 'react-router-dom'
 import { ProveUserPassword  } from '../Funtions'
+import Header from '../Components/Header.jsx'
+import Footer from '../Components/Footer.jsx'
 import { Container } from 'reactstrap'
 
 function Login() 
@@ -39,6 +41,8 @@ function Login()
 
 
     return(
+        <>
+            <Header />
         <Container>
             <div className="container py-5 h-100 d-flex justify-content-center align-items-center" onSubmit={Verify}>
                 <div className="card rounded-3 text-black col-xl-10 col-lg-6 p-md-5 mx-md-4">
@@ -71,7 +75,10 @@ function Login()
                     </form>
                 </div>
             </div>
-        </Container>
+            <Footer />
+            </Container>
+        </>
+        
     );
 }
 

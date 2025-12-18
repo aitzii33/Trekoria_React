@@ -1,0 +1,113 @@
+.hero-container {
+  position: relative;
+  height: 50vh; /* adjust as needed */
+  margin-bottom: 0;
+}
+
+.hero-image {
+  height: 50vh;
+  object-fit: cover;
+}
+
+.search-overlay {
+  position: absolute;
+  top: 35%; /* move search bar + heading higher */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  z-index: 10;
+}
+
+.hero-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.search-overlay .form-control,
+.search-overlay .btn {
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+}
+
+.city-card {
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.city-card:hover {
+  transform: scale(1.05);
+}
+
+.city-card img {
+  height: 200px;
+  object-fit: cover;
+}
+/* Continents Section */
+.continent-item:hover {
+  background-color: #0d6efd;
+  color: white;
+  transition: 0.3s;
+}
+
+.country-item:hover {
+  background-color: #198754;
+  transition: 0.3s;
+}
+
+.cities ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+/* Other existing styles remain */
+/* Continent */
+.continent-item:hover {
+  background-color: #0d6efd;
+  color: #fff;
+  transition: 0.3s;
+}
+
+/* Country */
+.country-item:hover {
+  background-color: #198754;
+  transition: 0.3s;
+}
+
+/* Cities */
+.city-card {
+  transition: transform 0.2s;
+  cursor: default;
+}
+.city-card:hover {
+  transform: scale(1.05);
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+/* Panels */
+.country-city-panel {
+  flex: 1;
+  margin-left: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .d-flex {
+    flex-direction: column;
+  }
+  .continent-list {
+    margin-bottom: 20px;
+  }
+}
