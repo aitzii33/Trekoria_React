@@ -8,45 +8,65 @@ import Footer from '../Components/Footer';
 
 function ContactUs()
 {
-    const validateMessage = (e) => 
-    {
-        e.preventDefault();
+// validate email value (called from onBlur or submit)
+const validateEmail = (value) => {
+    if (!value) return false;
+    const dataEmail = ProveEmail(value);
 
-        const email = document.getElementById('email').value;
-        const dataEmail = ProveEmail(email);
-        
-        if(dataEmail === false)
-        {
-            alert("The email have to have a @ and .");
-        }
-    };
-
-
-    const validateEmail = (e) =>
-    {
-        e.preventDefault();
-
-        const message = document.getElementById('message').value;
-        const dataMessage = ProveMessage(message);
-
-        if(dataMessage === false)
-        {
-            alert("The message have to be between 20 and 120");
-        }
+    if (dataEmail === false) {
+        alert("The email must contain '@' and '.'");
+        return false;
     }
 
+    return true;
+};
 
-    const [status, setStatus] = useState('');
+// validate message value (called from onBlur or submit)
+const validateMessage = (value) => {
+    if (!value) return false;
+    const dataMessage = ProveMessage(value);
 
-    const enviarEmail = (e) => 
-    {
-        e.preventDefault();
-        emailjs.sendForm('SERVICE_ID', 'TEMPLATE_ID', e.target, 'PUBLIC_KEY').then(() => setStatus('Enviado!'), () => setStatus('Error'));
-        //'SERVICE_ID': Dashboard → Email Services → column Service ID 
-        //'TEMPLATE_ID': Dashboard → Email Templates → column Template ID 
-        //'PUBLIC_KEY': Dashboard → Account → API Keys → Public Key
-    };
+    if (dataMessage === false) {
+        alert("The message must be between 20 and 120 characters");
+        return false;
+    }
 
+    return true;
+};
+
+const [status, setStatus] = useState('');
+
+const enviarEmail = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const emailValue = form.email.value;
+    const messageValue = form.message.value;
+
+    const emailValid = validateEmail(emailValue);
+    const messageValid = validateMessage(messageValue);
+
+    if (!emailValid || !messageValid) {
+        setStatus('Error');
+        return; // Stop sending if validation fails
+    }
+
+    emailjs.sendForm(
+        'SERVICE_ID',
+        'TEMPLATE_ID',
+        form,
+        'PUBLIC_KEY'
+    ).then(
+        () => {
+            setStatus('Enviado!');
+            alert('Message sent!'); // Show alert when everything is correct
+        },
+        () => {
+            setStatus('Error');
+            alert('Error sending message!');
+        }
+    );
+};
 
     return(
         <>
