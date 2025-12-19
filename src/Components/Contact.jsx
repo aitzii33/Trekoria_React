@@ -42,15 +42,19 @@ const enviarEmail = (e) => {
     const form = e.target;
     const emailValue = form.email.value;
     const messageValue = form.message.value;
+    const nameValue = form.name.value;
 
+    // Run validations
     const emailValid = validateEmail(emailValue);
     const messageValid = validateMessage(messageValue);
+    const nameValid = nameValue.trim() !== '';
 
-    if (!emailValid || !messageValid) {
+    if (!emailValid || !messageValid || !nameValid) {
         setStatus('Error');
-        return; // Stop sending if validation fails
+        return;
     }
 
+    // Only send if all validations passed
     emailjs.sendForm(
         'SERVICE_ID',
         'TEMPLATE_ID',
@@ -59,7 +63,7 @@ const enviarEmail = (e) => {
     ).then(
         () => {
             setStatus('Enviado!');
-            alert('Message sent!'); // Show alert when everything is correct
+            alert('Message sent!'); // Only shown if everything validated
         },
         () => {
             setStatus('Error');
@@ -67,6 +71,7 @@ const enviarEmail = (e) => {
         }
     );
 };
+
 
     return(
         <>
