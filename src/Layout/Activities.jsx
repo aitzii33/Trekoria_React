@@ -9,10 +9,17 @@ import Header from "../Components/Header"
 import Footer from "../Components/Footer"
 import BoatImg from "../assets/img/Boat.avif"
 import Donostia from "../assets/img/Donostia1.jpeg"
+import { useNavigate } from "react-router-dom"
 
 function Activities() 
 {
     const [selectedDate, setSelectedDate] = useState(null);
+    const navigate = useNavigate();
+
+    const routeActivityClick = () => 
+    {
+        navigate('/ActivityClick');
+    };
 
     const handleSubmit = (e) => 
     {
@@ -61,12 +68,12 @@ function Activities()
                         </Col>
 
                         <Col md={8} className="activity-info d-flex flex-column">
-                            <h4>{activity.name}</h4>
+                            <h2>{activity.name}</h2>
                             <p className="description">{activity.description}</p>
 
                             <div className="activity-actions mt-auto">
                                 <span className="price">{activity.price}</span>
-                                <Button color="black">DETAILS</Button>
+                                <Button color="black" onClick={routeActivityClick}>DETAILS</Button>
                             </div>
                         </Col>
                     </Row>

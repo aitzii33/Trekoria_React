@@ -9,7 +9,8 @@ import ForgotPass from './Layout/Forgot_Pass'
 import Register from './Layout/Register'
 import AboutUs from './Components/AboutUs'
 import Profile from './Layout/MyProfile'
-import Activities from './Layout/Activities'   // keep this if you need it
+import Activities from './Layout/Activities'  
+import ActivityClick from './Layout/ActivitiesInfo'
 import "./assets/i18n/i18n";                   // keep this to initialize i18n
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <Route path="/About" element={<AboutUs />} />
       <Route path="/Profile" element={<Profile />} />
       <Route path="/Activities" element={<Activities />} />
+      <Route path="/ActivityClick" element={<ActivityClick/>} />
     </Routes>
   );
 }

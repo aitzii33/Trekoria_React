@@ -1,7 +1,6 @@
 import '../assets/CSS/Contact.css'
 import { ProveEmail,  ProveMessage  } from '../Funtions'
 import Header from '../Components/Header'
-import { Container } from 'reactstrap'
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Footer from '../Components/Footer';
