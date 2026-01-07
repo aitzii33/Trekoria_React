@@ -1,3 +1,79 @@
+
+
+#container{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+body {
+  color: #000;
+  overflow-x: hidden;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+.form-outline input {
+  padding: 10px 20px;
+  border: 1px solid lightgrey !important;
+  border-radius: 6px !important;
+  background-color: #fff !important;
+  color: #2c3e50;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.form-outline input:focus {
+  box-shadow: none !important;
+  border-color: #2796D1 !important;
+  outline: none;
+}
+
+::placeholder {
+  color: #bdbdbd;
+}
+
+.text-muted:hover {
+  text-decoration: underline;
+}
+
+.card {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+.right-panel{
+    background: linear-gradient(135deg, #2796D1 0%, #2773a8 100%);
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 :root{
     --panel-bg-start: #2796D1;
     --panel-bg-end: #033B63;
@@ -16,12 +92,12 @@
     --max-form-width: 26rem;
 }
 
-/* Box sizing base (safe to include for component files) */
+
 *,
 *::before,
 *::after { box-sizing: border-box; }
 
-/* Professional right panel */
+
 .right-panel {
     position: relative;
     display: flex;
@@ -34,11 +110,11 @@
     background: linear-gradient(135deg, var(--panel-bg-start) 0%, var(--panel-bg-end) 100%);
     transition: background var(--transition-medium) ease, transform var(--transition-fast) ease;
     overflow: hidden;
-    isolation: isolate; /* prevent mix-blend interactions outside */
+    isolation: isolate;
     min-height: 320px;
 }
 
-/* Soft layered highlights */
+
 .right-panel::before {
     content: "";
     position: absolute;
@@ -51,7 +127,7 @@
     opacity: 0.95;
 }
 
-/* Decorative angled sheen */
+
 .right-panel::after {
     content: "";
     position: absolute;
@@ -66,7 +142,7 @@
     opacity: 0.75;
 }
 
-/* Welcome block */
+
 .welcome-section {
     z-index: 1;
     margin-bottom: 1.5rem;
@@ -89,7 +165,7 @@
     line-height: 1.5;
 }
 
-/* CTA row */
+
 .cta-row {
     display: flex;
     gap: 0.75rem;
@@ -125,7 +201,7 @@
     box-shadow: 0 0 0 4px rgba(255,255,255,0.06), 0 10px 24px var(--accent-shadow);
 }
 
-/* Login card (glass) */
+
 .login-section { z-index: 1; margin-top: 0.375rem; }
 
 .login-card{
@@ -138,7 +214,7 @@
     box-shadow: 0 8px 28px var(--accent-shadow);
 }
 
-/* Inputs and controls */
+
 .login-card input,
 .login-card select,
 .login-card textarea {
@@ -154,7 +230,7 @@
     transition: border-color var(--transition-fast) ease, box-shadow var(--transition-fast) ease;
 }
 
-/* placeholder and focus */
+
 .login-card input::placeholder,
 .login-card textarea::placeholder { color: var(--muted-white-2); }
 
@@ -165,7 +241,7 @@
     box-shadow: 0 8px 22px rgba(3,59,99,0.16);
 }
 
-/* Primary action inside login card */
+
 .login-card .primary {
     display: inline-block;
     background: #fff;
@@ -190,7 +266,7 @@
     box-shadow: 0 0 0 4px rgba(3,59,99,0.08), 0 10px 26px rgba(3,59,99,0.12);
 }
 
-/* Utility row */
+
 .login-row {
     display: flex;
     gap: 0.625rem;
@@ -206,7 +282,7 @@
     text-decoration: underline;
 }
 
-/* Accessibility helper */
+
 .visually-hidden {
     position: absolute !important;
     height: 1px; width: 1px;
@@ -216,7 +292,7 @@
     border: 0; padding: 0; margin: -1px;
 }
 
-/* Responsive: tighten spacing and center on smaller screens */
+
 @media (max-width: 992px) {
     .right-panel {
         padding: 1.75rem 1.25rem;
@@ -232,8 +308,11 @@
     .right-panel::after { display: none; }
 }
 
-/* Respect reduced motion preference */
+
 @media (prefers-reduced-motion: reduce) {
     .cta-btn, .login-card .primary, .right-panel { transition: none !important; }
     .cta-btn:hover, .login-card .primary:hover { transform: none !important; box-shadow: none !important; }
 }
+
+
+*/

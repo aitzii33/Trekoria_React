@@ -5,6 +5,7 @@ import { ProveUserPassword  } from '../Funtions'
 import Header from '../Components/Header.jsx'
 import Footer from '../Components/Footer.jsx'
 import { Container } from 'reactstrap'
+import Button from '../Components/Button.jsx';
 
 function Login() 
 {
@@ -62,7 +63,7 @@ function Login()
                         </div>
 
                         <div className="text-center pt-1 mb-5 pb-1">
-                            <button className="btn btn-primary btn-block fa-lg mb-3" type="submit"> Log in </button>
+                            <Button text="Log in" type="submit" />
                             <br></br>
                             <br></br>
                             <a className="text-muted" onClick={NavegateForgot}> Forgot password/user? </a>
@@ -70,7 +71,7 @@ function Login()
 
                         <div className="d-flex align-items-center justify-content-center pb-4">
                             <p className="mb-0 me-2">Don't have an account?</p>
-                            <a className="btn btn-outline-danger" onClick={NavegateRegister}> Register </a>
+                            <Button text="Register" onClick={NavegateRegister} />
                         </div>
                     </form>
                 </div>

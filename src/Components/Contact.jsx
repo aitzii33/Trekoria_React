@@ -1,57 +1,80 @@
 import '../assets/CSS/Contact.css'
 import { ProveEmail,  ProveMessage  } from '../Funtions'
 import Header from '../Components/Header'
-import { Container } from 'reactstrap'
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Footer from '../Components/Footer';
 
 function ContactUs()
 {
-    const validateMessage = (e) => 
-    {
-        e.preventDefault();
+// validate email value (called from onBlur or submit)
+const validateEmail = (value) => {
+    if (!value) return false;
+    const dataEmail = ProveEmail(value);
 
-        const email = document.getElementById('email').value;
-        const dataEmail = ProveEmail(email);
-        
-        if(dataEmail === false)
-        {
-            alert("The email have to have a @ and .");
-        }
-    };
-
-
-    const validateEmail = (e) =>
-    {
-        e.preventDefault();
-
-        const message = document.getElementById('message').value;
-        const dataMessage = ProveMessage(message);
-
-        if(dataMessage === false)
-        {
-            alert("The message have to be between 20 and 120");
-        }
+    if (dataEmail === false) {
+        alert("The email must contain '@' and '.'");
+        return false;
     }
 
+    return true;
+};
 
-    const [status, setStatus] = useState('');
+// validate message value (called from onBlur or submit)
+const validateMessage = (value) => {
+    if (!value) return false;
+    const dataMessage = ProveMessage(value);
 
-    const enviarEmail = (e) => 
-    {
-        e.preventDefault();
-        emailjs.sendForm('SERVICE_ID', 'TEMPLATE_ID', e.target, 'PUBLIC_KEY').then(() => setStatus('Enviado!'), () => setStatus('Error'));
-        //'SERVICE_ID': Dashboard → Email Services → column Service ID 
-        //'TEMPLATE_ID': Dashboard → Email Templates → column Template ID 
-        //'PUBLIC_KEY': Dashboard → Account → API Keys → Public Key
-    };
+    if (dataMessage === false) {
+        alert("The message must be between 20 and 120 characters");
+        return false;
+    }
+
+    return true;
+};
+
+const [status, setStatus] = useState('');
+
+const enviarEmail = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const emailValue = form.email.value;
+    const messageValue = form.message.value;
+    const nameValue = form.name.value;
+
+    // Run validations
+    const emailValid = validateEmail(emailValue);
+    const messageValid = validateMessage(messageValue);
+    const nameValid = nameValue.trim() !== '';
+
+    if (!emailValid || !messageValid || !nameValid) {
+        setStatus('Error');
+        return;
+    }
+
+    // Only send if all validations passed
+    emailjs.sendForm(
+        'SERVICE_ID',
+        'TEMPLATE_ID',
+        form,
+        'PUBLIC_KEY'
+    ).then(
+        () => {
+            setStatus('Enviado!');
+            alert('Message sent!'); // Only shown if everything validated
+        },
+        () => {
+            setStatus('Error');
+            alert('Error sending message!');
+        }
+    );
+};
 
 
     return(
         <>
             <Header/>
-
             <section className="about-gradient py-5 w-100">
                 <div className="container">
                     <div className="row justify-content-center">
@@ -64,96 +87,30 @@ function ContactUs()
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <div className="container my-5">
-                <div className="row gx-4 gy-4">
-                    {/* Left: form */}
-                    <div className="col-md-7">
-                        <form id="contact-form" action="mail.php" method="POST" onSubmit={enviarEmail} className="p-4 border rounded shadow-sm bg-white">
-                            <h2 className="text-center mb-4">Contact us</h2>
-
-                            <div className="mb-3">
-                                <label className="form-label">Name</label>
-                                <input type="text" id="name" name="name" className="form-control" required/>
-                            </div>
-
-                            <div className="mb-3">
-                                <label className="form-label">Email address</label>
-                                <input type="text" id="email" name="email" className="form-control" onBlur={(e) => validateEmail(e.target.value)} required/>
-                            </div>
-
-                            <div className="mb-3">
-                                <label className="form-label">Message</label>
-                                <textarea className="form-control" type="text" id="message" name="message" rows="4" onBlur={(e) => validateMessage(e.target.value)} required></textarea>
-                            </div>
-
-                            <button id="submit-form" type="submit" className="btn btn-primary w-100"> Send </button>
-                            {status && <p className="mt-3">{status}</p>}
-                        </form>
                     </div>
+                </section>
+            
+            <form id="contact-form" action="mail.php" method="POST" onSubmit={enviarEmail} className="p-4 border rounded shadow-sm bg-white">
+                <h2 className="text-center mb-4">Contact us</h2>
 
-                    {/* Right: three cards with contact info */}
-                    
-                    <div className="col-md-5">
-                        
-                        <br />
-                        <br />
-                        <br />
-                
-                        <div className="d-flex flex-column">
-                            <div className="card mb-3 shadow-sm">
-                                <div className="card-body">
-                                    <h5 className="card-title">Address</h5>
-                                    <p className="card-text mb-0">
-                                        <a className="text-black">Donostia, calle urbieta 20010, SP</a>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="card mb-3 shadow-sm">
-                                <div className="card-body">
-                                    <h5 className="card-title">Email</h5>
-                                    <p className="card-text mb-0">
-                                        <a href="mailto:infoTrekoria@gmail.com" className="text-black">infoTrekoria@gmail.com</a>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="card mb-3 shadow-sm">
-                                <div className="card-body">
-                                    <h5 className="card-title">Phone</h5>
-                                    <p className="card-text mb-0">
-                                        <a href="tel:+34200749518" className="text-black">+34 200 74 95 18</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div className="mb-3">
+                    <label className="form-label">Name</label>
+                    <input type="text" id="name" name="name" className="form-control" required/>
                 </div>
-            </div>
 
-            {/* MAP SECTION */}
-            <section className="contact-map-section">
-            <div className="container text-center">
-                <h2 className="fw-bold">Find Us Here</h2>
-                <p className="mb-4 text-muted">
-                Visit us at our office in <strong>Zubiri – Manteo</strong>. We’re always happy to help you!
-                </p>
-
-                <div className="map-wrapper">
-                <iframe
-                    title="Zubiri Manteo Location"
-                    src="https://www.google.com/maps?q=Zubiri%20Manteo&output=embed"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
+                <div className="mb-3">
+                    <label className="form-label">Email address</label>
+                    <input type="text" id="email" name="email" className="form-control" onBlur={(e) => validateEmail(e.target.value)} required/>
                 </div>
-            </div>
-            </section>
 
+                <div className="mb-3">
+                    <label className="form-label">Message</label>
+                    <textarea className="form-control" type="text" id="message" name="message" rows="4" onBlur={(e) => validateMessage(e.target.value)} required></textarea>
+                </div>
 
+                <button id="submit-form" type="submit" className="btn btn-primary w-100"> Send </button>
+                {status && <p>{status}</p>}
+            </form>
             <Footer/>
         </>
     );
