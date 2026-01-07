@@ -40,7 +40,10 @@ body {
 .card {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
-
+.right-panel{
+    background: linear-gradient(135deg, #2796D1 0%, #2773a8 100%);
+    color: white;
+}
 
 
 

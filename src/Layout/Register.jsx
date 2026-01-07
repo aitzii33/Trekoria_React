@@ -5,6 +5,7 @@ import Footer from '../Components/Footer.jsx'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import '../assets/CSS/Register.css'
+import Button from '../Components/Button.jsx';
 
 function RegisterPage() {
   const navigate = useNavigate();
@@ -49,13 +50,13 @@ function RegisterPage() {
       <Header />
       <div className="container py-5 d-flex justify-content-center align-items-center">
         <div className="card register-card shadow d-flex flex-row col-xl-8 col-lg-10 col-md-11 p-0 overflow-hidden">
-          <div className="col-lg-6 left-panel p-4 d-flex flex-column justify-content-start align-items-center bg-light">
+          <div className="col-lg-6 left-panel p-4 d-flex flex-column justify-content-start align-items-center">
 
             <div className="logo mb-2">
               <img src={logo} alt="logo" className="logo-img" />
             </div>
 
-            <h1 className="fw-bold mb-3 text-center">Welcome to Tripify 🌍</h1>
+            <h1 className="fw-bold mb-3 text-center">Welcome to Trekoria</h1>
             <p className="text-muted mb-3 text-center">
               Explore unforgettable trips, activities, and experiences worldwide.
             </p>
@@ -81,9 +82,11 @@ function RegisterPage() {
               </div> 
               <div className="form-outline mb-3"> 
                 <input type="password" id="password2" className="form-control" placeholder="Repeat your password" onChange={e => setPassword2(e.target.value)} required/> 
+                
               </div> 
 
-              <button className="btn btn-primary w-100 mb-3" type="submit"> Register </button> 
+              <Button text="Register" type="submit" className="w-100 mb-3" />
+  
               <small className="text-muted d-block text-center">
                 By registering, you agree to our Terms & Privacy Policy.
               </small>
@@ -93,9 +96,7 @@ function RegisterPage() {
           <div className="col-lg-6 right-panel d-flex flex-column justify-content-center align-items-center text-center p-4 bg-primary text-white">
             <h2 className="mb-3">Already have an account?</h2>
             <p className="mb-4"> Click below to login and start your adventure! </p>
-            <button className="btn btn-outline-light px-4 py-2" onClick={() => navigate('/LogIn')} >
-              Login
-            </button>
+            <Button text="Login" onClick={() => navigate('/LogIn')} className="btn btn-outline-light bg-black" />
           </div>
         </div>
       </div>
