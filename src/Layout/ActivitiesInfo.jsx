@@ -7,36 +7,26 @@ import "react-datepicker/dist/react-datepicker.css"
 import "../assets/CSS/DatePicker.css"
 import BoatImg from "../assets/img/Boat.avif"
 
-
-
 function ActivitiesInfo()
 {
     const [selectedDate, setSelectedDate] = useState(null);
-
-    const [Activity] = useState({
-        image: BoatImg,
-        name: "Kayak in the river",
-        description: "Activity giuded for all the ages and levels",
-        price: "25€",
-    });
-
 
     return(
         <Container fluid className="px-1 px-sm-5 mx-auto mt-4">
             <Header/>
                 <Row>
-                    <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
+                    <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel" style={{ width: "580px", height: "200px"}}>
                         <div className="carousel-inner">
                             <div className="carousel-item active">
-                                <img src={Activity.image} className="d-block w-100" alt="activity image"/>
+                                <img src={BoatImg} className="d-block w-100" alt="activity image"/>
                             </div>
 
                             <div className="carousel-item">
-                                <img src={Activity.image} className="d-block w-100" alt="activity image"/>
+                                <img src={BoatImg} className="d-block w-100" alt="activity image"/>
                             </div>
                             
                             <div className="carousel-item">
-                                <img src={Activity.image} className="d-block w-100" alt="activity image"/>
+                                <img src={BoatImg} className="d-block w-100" alt="activity image"/>
                             </div>
                         </div>
 
@@ -54,11 +44,11 @@ function ActivitiesInfo()
 
                 <Row>
                     <Col md={8} className="activity-info d-flex flex-column">
-                        <h2>{activity.name}</h2>
-                        <p className="description">{activity.description}</p>
+                        <h2>{"Kayak in the river"}</h2>
+                        <p className="description">{"Activity giuded for all the ages and levels"}</p>
 
                         <div className="activity-actions mt-auto">
-                            <span className="price">{activity.price}</span>
+                            <span className="price">{"25€"}</span>
                         </div>
                     </Col>
 

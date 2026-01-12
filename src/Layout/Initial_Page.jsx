@@ -3,7 +3,7 @@ import Footer from "../Components/Footer";
 import { Carousel, Form, Button, InputGroup, Card, Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-
+import { useState } from "react"
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../assets/CSS/Home.css";
 
@@ -31,7 +31,7 @@ function InitialPage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
-  const [showContinents, setShowContinents] = useState(false);
+  const [showContinents, setShowContinents] = useState(null);
   const [hoveredContinent, setHoveredContinent] = useState(null);
   const [hoveredCountry, setHoveredCountry] = useState(null);
 
