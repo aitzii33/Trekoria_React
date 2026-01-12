@@ -1,12 +1,11 @@
 
 import logo from '../assets/logo.svg'
-import lupa from '../assets/img/lupa.png'
+import { Form, Button, InputGroup } from "react-bootstrap";
 import userImg from '../assets/img/DefaultUserImage.png'
 import home from '../assets/img/home.png'
 import '../assets/CSS/Header.css'
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
 import { useState } from "react"
-import '../assets/CSS/Header.css';
 import LanguageSelector from '../Components/LanguageSelector';
 
 function Head({ isLoggedIn, currentLanguage, setLanguage}) 
@@ -14,6 +13,10 @@ function Head({ isLoggedIn, currentLanguage, setLanguage})
     //#region navigation part
     const navigate = useNavigate();
     const [showDropdown, setShowDropdown] = useState(false);
+
+    const location = useLocation(); 
+    const currentPath = location.pathname;
+    const showSearchInput = currentPath === '/Activities' || currentPath === '/ActivityClick';
 
     const AccessButton = () => 
     {
@@ -70,10 +73,16 @@ function Head({ isLoggedIn, currentLanguage, setLanguage})
                 {/* Spacer */}
                 <div className="header-spacer"></div>
 
-                <div className="search-input">
-                    <input type='text' placeholder='Where do you like to go?' id='id_place' style={{ width:'350px'}} />
-                    <img src={lupa} alt="search" style={{ height:'60px', width: '60px' }}/>
-                </div>
+                {showSearchInput && (
+                    <div className="search-input">
+                        <Form onSubmit={routeLanding}>
+                            <InputGroup>
+                                <Form.Control type="text" name="search" placeholder={("Where fo you like to go?")} style={{ width: "580px"}}/>
+                                <Button variant="primary" type="submit">{("Search")}</Button>
+                            </InputGroup>
+                        </Form>
+                    </div>
+                )}
 
                 <div className="header-spacer"></div>
 

@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import { Carousel, Form, Button, InputGroup, Card, Row, Col } from "react-bootstrap";
@@ -12,7 +11,6 @@ import "../assets/CSS/Home.css";
 import LandingImg1 from "../assets/img/LandingImg1.png";
 import LandingImg2 from "../assets/img/LandingImg2.jpg";
 import LandingImg3 from "../assets/img/LandingImg3.jpg";
-import lupa from "../assets/img/lupa.png";
 import Baloon from "../assets/img/Baloon.jpg";
 import TokyoImg from "../assets/img/Tokyo.webp";
 import Baloon2 from "../assets/img/Baloon2.webp";
@@ -77,9 +75,6 @@ function InitialPage() {
           <p className="hero-subtitle">{t("Search from thousands of options")}</p>
           <Form onSubmit={handleSearch}>
             <InputGroup>
-              <InputGroup.Text>
-                <img src={lupa} alt={t("search")} style={{ width: "20px" }} />
-              </InputGroup.Text>
               <Form.Control type="text" name="search" placeholder={t("Search...")} />
               <Button variant="primary" type="submit">{t("Search")}</Button>
             </InputGroup>
