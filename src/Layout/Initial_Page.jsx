@@ -55,6 +55,47 @@ function InitialPage() {
     navigate('/Activities'); // Example navigation
   };
 
+  const [selectedContinent, setSelectedContinent] = useState(null);
+  const [selectedCountry, setSelectedCountry] = useState(null);
+
+  const toggleContinents = () => {
+    const newShow = !showContinents;
+    setShowContinents(newShow);
+    if (!newShow) {
+      // clear selections when closing the panel
+      setSelectedContinent(null);
+      setSelectedCountry(null);
+      setHoveredContinent(null);
+      setHoveredCountry(null);
+    }
+  };
+
+  const activeContinent = hoveredContinent || selectedContinent;
+
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Build filtered suggestions (countries + their cities) only when user types something
+  const suggestions = (() => {
+    const q = searchQuery.trim().toLowerCase();
+    if (!q) return [];
+    const setS = new Set();
+    Object.keys(countriesData).forEach((country) => {
+      if (country.toLowerCase().includes(q)) setS.add(country);
+      countriesData[country].forEach((city) => {
+        if (city.toLowerCase().includes(q)) setS.add(city);
+      });
+    });
+    return Array.from(setS);
+  })();
+
+  // Use this submit so we prefer the controlled state but still work if needed
+  const submitSearch = (e) => {
+    e.preventDefault();
+    const query = searchQuery.trim() || (e.target.search && e.target.search.value) || "";
+    console.log("Search:", query);
+    navigate(`/Activities?search=${encodeURIComponent(query)}`);
+  };
+
   return (
     <>
       <Header />
@@ -73,11 +114,18 @@ function InitialPage() {
         <div className="search-overlay">
           <h1 className="hero-heading">{t("Find Your Perfect Place")}</h1>
           <p className="hero-subtitle">{t("Search from thousands of options")}</p>
-          <Form onSubmit={handleSearch}>
+          <Form onSubmit={submitSearch}>
             <InputGroup>
               <Form.Control type="text" name="search" placeholder={t("Search...")} />
               <Button variant="primary" type="submit">{t("Search")}</Button>
             </InputGroup>
+
+            {/* Render datalist only when there's some input */}
+            <datalist id="search-suggestions">
+              {suggestions.map((s) => (
+                <option key={s} value={s} />
+              ))}
+            </datalist>
           </Form>
         </div>
       </div>
@@ -89,20 +137,16 @@ function InitialPage() {
           <Row className="g-3">
             {popularCities.map((city, idx) => (
               <Col key={idx} md={3} sm={6}>
-                <Card className="city-card text-white text-center">
+                <Card className="city-card text-black text-center">
                   <Card.Img src={city.img} alt={t(city.name)} className="city-img" />
-                  <Card.ImgOverlay className="d-flex align-items-end p-2">
-                    <Card.Title>{t(city.name)}</Card.Title>
-                  </Card.ImgOverlay>
+                  <Card.ImgOverlay className="d-flex align-items-end p-2"></Card.ImgOverlay>
+                  <Card.Title>{t(city.name)}</Card.Title>
                 </Card>
               </Col>
             ))}
           </Row>
           <div className="text-center mt-3">
-            <Button
-              variant="primary"
-              onClick={() => setShowContinents(!showContinents)}
-            >
+            <Button variant="primary" onClick={toggleContinents}>
               {t("See More")}
             </Button>
           </div>
@@ -117,51 +161,69 @@ function InitialPage() {
             <div className="d-flex flex-wrap">
               {/* Continents */}
               <div className="me-4 continent-list" style={{ minWidth: "150px" }}>
-                {Object.keys(continents).map((cont, idx) => (
-                  <div
-                    key={idx}
-                    className="continent-item p-2 mb-2 rounded bg-light text-center"
-                    onMouseEnter={() => {
-                      setHoveredContinent(continents[cont]);
-                      setHoveredCountry(null);
-                    }}
-                    onMouseLeave={() => setHoveredContinent(null)}
-                    style={{ cursor: "pointer" }}
-                  >
-                    {t(cont)}
-                  </div>
-                ))}
+                {Object.keys(continents).map((cont, idx) => {
+                  const contObj = continents[cont];
+                  const isSelected = selectedContinent === contObj;
+                  return (
+                    <div
+                      key={idx}
+                      className={`continent-item p-2 mb-2 rounded text-center ${
+                        isSelected ? "bg-primary text-white" : "bg-light"
+                      }`}
+                      onMouseEnter={() => setHoveredContinent(contObj)}
+                      onMouseLeave={() => {
+                        if (!isSelected) setHoveredContinent(null);
+                      }}
+                      onClick={() => {
+                        setSelectedContinent(isSelected ? null : contObj);
+                        setSelectedCountry(null);
+                      }}
+                      style={{ cursor: "pointer" }}
+                    >
+                      {t(cont)}
+                    </div>
+                  );
+                })}
               </div>
 
               {/* Countries & Cities */}
               <div className="flex-grow-1 country-city-panel">
-                {hoveredContinent &&
-                  hoveredContinent.map((country, idx) => (
-                    <div
-                      key={idx}
-                      className="country-item p-2 m-1 rounded bg-secondary text-white"
-                      onMouseEnter={() => setHoveredCountry(country)}
-                      onMouseLeave={() => setHoveredCountry(null)}
-                      style={{ cursor: "pointer" }}
-                    >
-                      {t(country.name)}
-                      {hoveredCountry === country && (
-                        <div className="cities mt-2">
-                          <h5>{t("Cities in")} {t(country.name)}:</h5>
-                          <div className="d-flex flex-wrap">
-                            {country.cities.map((city, ci) => (
-                              <div
-                                key={ci}
-                                className="city-card p-2 m-1 rounded bg-light text-dark shadow-sm"
-                              >
-                                {t(city)}
-                              </div>
-                            ))}
+                {activeContinent &&
+                  activeContinent.map((country, idx) => {
+                    const isCountrySelected = selectedCountry === country;
+                    return (
+                      <div
+                        key={idx}
+                        className={`country-item p-2 m-1 rounded ${
+                          isCountrySelected ? "bg-dark text-white" : "bg-secondary text-white"
+                        }`}
+                        onMouseEnter={() => setHoveredCountry(country)}
+                        onMouseLeave={() => {
+                          if (!isCountrySelected) setHoveredCountry(null);
+                        }}
+                        onClick={() => {
+                          setSelectedCountry(isCountrySelected ? null : country);
+                        }}
+                        style={{ cursor: "pointer" }}
+                      >
+                        {t(country.name)}
+                        {(hoveredCountry === country || isCountrySelected) && (
+                          <div className="cities mt-2">
+                            <h5>
+                              {t("Cities in")} {t(country.name)}:
+                            </h5>
+                            <div className="d-flex flex-wrap">
+                              {country.cities.map((city, ci) => (
+                                <div key={ci} className="city-card p-2 m-1 rounded bg-light text-dark shadow-sm">
+                                  {t(city)}
+                                </div>
+                              ))}
+                            </div>
                           </div>
-                        </div>
-                      )}
-                    </div>
-                  ))}
+                        )}
+                      </div>
+                    );
+                  })}
               </div>
             </div>
           </div>

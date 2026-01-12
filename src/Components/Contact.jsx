@@ -5,8 +5,11 @@ import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Footer from '../Components/Footer';
 
+
+
 function ContactUs()
 {
+   
 // validate email value (called from onBlur or submit)
 const validateEmail = (value) => {
     if (!value) return false;
@@ -32,6 +35,7 @@ const validateMessage = (value) => {
 
     return true;
 };
+
 
 const [status, setStatus] = useState('');
 
@@ -100,8 +104,9 @@ const enviarEmail = (e) => {
 
                 <div className="mb-3">
                     <label className="form-label">Email address</label>
-                    <input type="text" id="email" name="email" className="form-control" onBlur={(e) => validateEmail(e.target.value)} required/>
+                    <input className="form-control" type="email" id="email" name="email" onBlur={(e) => validateEmail(e.target.value)} required/>
                 </div>
+                
 
                 <div className="mb-3">
                     <label className="form-label">Message</label>

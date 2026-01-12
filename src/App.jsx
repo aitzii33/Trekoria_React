@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 
 import Landing from './Layout/LandingPage'
 import Initial from './Layout/Initial_Page'
-import ContactUs from './Components/Contact'
+import ContactUs from './Components/Contact2'
 import Login from './Layout/LogIn'
 import ForgotPass from './Layout/Forgot_Pass'
 import Register from './Layout/Register'
@@ -11,6 +11,7 @@ import AboutUs from './Components/AboutUs'
 import Profile from './Layout/MyProfile'
 import Activities from './Layout/Activities'  
 import ActivityClick from './Layout/ActivitiesInfo'
+
 import "./assets/i18n/i18n";                   // keep this to initialize i18n
 
 function App() {

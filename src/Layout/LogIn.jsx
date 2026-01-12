@@ -1,85 +1,105 @@
-import logo from '../assets/img/logo.png'
-import "../assets/CSS/LogIn.css"
-import { useNavigate } from 'react-router-dom'
-import { ProveUserPassword  } from '../Funtions'
-import Header from '../Components/Header.jsx'
-import Footer from '../Components/Footer.jsx'
-import { Container } from 'reactstrap'
+import logo from '../assets/img/logo.png';
+import "../assets/CSS/LogIn.css";
+import { useNavigate } from 'react-router-dom';
+import { ProveUserPassword } from '../Funtions';
+import Header from '../Components/Header.jsx';
+import Footer from '../Components/Footer.jsx';
+import { Container } from 'reactstrap';
+import Button from '../Components/Button.jsx';
+import { useForm } from 'react-hook-form';
 
-function Login() 
-{
-    const navigate = useNavigate();
-  
-    const NavegateForgot = () => 
-    {
-        navigate('/ForgotPass');
-    };
+function Login() {
+  const navigate = useNavigate();
 
-    const NavegateRegister = () => 
-    {
-        navigate('/Register');
-    };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm();
 
-    const Verify = (e) => 
-    {
-        e.preventDefault();
+  const onSubmit = (data) => {
+    // data = { username, password }
+    const { username, password } = data;
 
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
+    const valid = ProveUserPassword(password, username);
 
-        const data = ProveUserPassword(password, username);
+    if (!valid) {
+      // Show inline error
+      alert('The username or password is incorrect');
+      return;
+    }
 
-        if(data === false)
-        {
-            alert('The user name or the password is incorrect');
-        }
-        else 
-        {
-            navigate('/Home');
-        }
-    };
+    // Navigate to home on success
+    navigate('/Home');
+  };
 
+  const navigateForgot = () => navigate('/ForgotPass');
+  const navigateRegister = () => navigate('/Register');
 
-    return(
-        <>
-            <Header />
-        <Container>
-            <div className="container py-5 h-100 d-flex justify-content-center align-items-center" onSubmit={Verify}>
-                <div className="card rounded-3 text-black col-xl-10 col-lg-6 p-md-5 mx-md-4">
-                    <div className="text-center">
-                        <img src={logo} alt="logo" style={{ width: "185px" }}/>
-                        </div>
-
-                        <form onSubmit={Verify} > 
-                        <div className="form-outline mb-4">
-                            <input type="email" className="form-control" id="username" placeholder="Introduce your username"/>
-                            <label className="form-label" id="username"></label>
-                        </div>
-
-                        <div className="form-outline mb-4">
-                            <input type="password" className="form-control" id="password" placeholder="Introduce your password"/>
-                            <label className="form-label" id="password"></label>
-                        </div>
-
-                        <div className="text-center pt-1 mb-5 pb-1">
-                            <button className="btn btn-primary btn-block fa-lg mb-3" type="submit"> Log in </button>
-                            <br></br>
-                            <br></br>
-                            <a className="text-muted" onClick={NavegateForgot}> Forgot password/user? </a>
-                        </div>
-
-                        <div className="d-flex align-items-center justify-content-center pb-4">
-                            <p className="mb-0 me-2">Don't have an account?</p>
-                            <a className="btn btn-outline-danger" onClick={NavegateRegister}> Register </a>
-                        </div>
-                    </form>
-                </div>
+  return (
+    <>
+      <Header />
+      <Container>
+        <div className="container py-5 h-100 d-flex justify-content-center align-items-center">
+          <div className="card rounded-3 text-black col-xl-10 col-lg-6 p-md-5 mx-md-4">
+            <div className="text-center">
+              <img src={logo} alt="logo" style={{ width: "185px" }} />
             </div>
-            <Footer />
-            </Container>
-        </>
-        
-    );
+
+            <form onSubmit={handleSubmit(onSubmit)}>
+              {/* Username */}
+              <div className="form-outline mb-4">
+                <label htmlFor="username" className="form-label">Username</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="username"
+                  placeholder="Introduce your username"
+                  {...register('username', { required: 'Username is required' })}
+                />
+                {errors.username && (
+                  <span className="text-danger">{errors.username.message}</span>
+                )}
+              </div>
+
+              {/* Password */}
+              <div className="form-outline mb-4">
+                <label htmlFor="password" className="form-label">Password</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  id="password"
+                  placeholder="Introduce your password"
+                  {...register('password', { required: 'Password is required' })}
+                />
+                {errors.password && (
+                  <span className="text-danger">{errors.password.message}</span>
+                )}
+              </div>
+
+              <div className="text-center pt-1 mb-5 pb-1">
+                <Button text="Log in" type="submit" />
+                <br /><br />
+                <a
+                  className="text-muted"
+                  onClick={navigateForgot}
+                  style={{ cursor: 'pointer' }}
+                >
+                  Forgot password/user?
+                </a>
+              </div>
+
+              <div className="d-flex align-items-center justify-content-center pb-4">
+                <p className="mb-0 me-2">Don't have an account?</p>
+                <Button text="Register" onClick={navigateRegister} />
+              </div>
+            </form>
+          </div>
+        </div>
+      </Container>
+      <Footer />
+    </>
+  );
 }
 
 export default Login;
