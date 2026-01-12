@@ -24,5 +24,9 @@
   "Russia": ["Moscow","Saint Petersburg","Novosibirsk","Yekaterinburg","Kazan"],
   "South Africa": ["Johannesburg","Cape Town","Durban","Pretoria","Port Elizabeth"],
   "United Kingdom": ["London","Manchester","Birmingham","Glasgow","Liverpool"],
-  "United States": ["New York","Los Angeles","Chicago","Houston","Phoenix"]
+  "United States": ["New York","Los Angeles","Chicago","Houston","Phoenix"],
+  "Spain": ["Madrid","Barcelona","Valencia","Seville","Zaragoza", "Malaga", "Murcia", "Palma", "Las Palmas", "Bilbao", "Alicante", "Cordoba", "Valladolid", "Vigo", "Gijon", "Hospitalet de Llobregat", "A Coruña", "Granada", "Elche", "Oviedo", "Badalona", "Cartagena", "Terrassa", "Jerez de la Frontera", "Sabadell", "Santa Cruz de Tenerife", "Móstoles", "Alcalá de Henares", "Pamplona", "Fuenlabrada", "Almería", "Leganés", "San Sebastián", "Getafe", "Burgos", "Santander", "Castellón de la Plana", "Albacete", "Logroño", "Badajoz", "Huelva", "Salamanca", "Lleida", "Tarragona", "Marbella", "Dos Hermanas", "Mataró", "Santa Coloma de Gramenet", "Jaén", "Ourense", "Lugo", "San Cristóbal de La Laguna", "Girona", "Benidorm", "Algeciras", "Talavera de la Reina", "Ceuta", "Melilla"],
+  "Pakistan": ["Karachi","Lahore","Islamabad","Rawalpindi","Faisalabad"],
+  "Turkey": ["Istanbul","Ankara","Izmir","Bursa","Antalya"],
+  "Poland": ["Warsaw","Krakow","Lodz","Wroclaw","Poznan"]
 }
