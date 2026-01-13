@@ -22,11 +22,9 @@ export default function AboutUs(){
           </div>
         </section>
 
-
         <div className="aboutus-secktion paddingTB60">
           <div className="container">
             <div className="row align-items-center">
-              
               <div className="col-md-6">
                 <br />
                 <br />
@@ -53,15 +51,13 @@ export default function AboutUs(){
             </div>
           </div>
         </div>
+
         <br />
         <br />
 
-
-
-      <div className="stats-section paddingTB60 text-center">
+        <div className="stats-section paddingTB60 text-center">
           <div className="container">
             <div className="row">
-
               <div className="section-a col-md-3 col-sm-6 mb-4">
                 <div className="stat-box">
                   <h2 className="strong">5+</h2>
@@ -89,13 +85,12 @@ export default function AboutUs(){
                   <p>Average Rating</p>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
-        <br />
-        <br />
 
+        <br />
+        <br />
 
         <div className="container team-sektion paddingTB60" >
           <div className="row">
