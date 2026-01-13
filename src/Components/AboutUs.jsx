@@ -1,4 +1,4 @@
-import Header from './Header_Landing';
+import Header from './Header';
 import '../assets/CSS/About.css';
 export default function AboutUs(){
     return(
@@ -24,8 +24,72 @@ export default function AboutUs(){
       </section>
 
 
+      <div className="aboutus-secktion paddingTB60">
+        <div className="container">
+          <div className="row align-items-center">
+            
+            <div className="col-md-6">
+              <br />
+              <br />
+              <h2 className="strong mb-3">Discover. Book. Experience.</h2>
+              <p className="lead mb-4">
+                Your gateway to unforgettable activities, wherever you are.
+              </p>
+              <p>
+                We bring together exciting experiences from destinations around the world, making it easy to explore, compare, and book activities that match your interests.
+              </p>
+            </div>
+
+            <div className="col-md-6">
+              <p className="mb-3">
+                <br />
+                <br />
+                <br />
+                From adventure and culture to leisure and entertainment, our platform connects you with trusted local providers offering high-quality experiences.
+              </p>
+              <p>
+                With secure payments, transparent pricing, and reliable support, we take care of the details—so you can focus on enjoying every moment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
 
 
+
+     <div className="stats-section paddingTB60 text-center">
+        <div className="container">
+          <div className="row">
+
+            <div className="section-a col-md-3 col-sm-6 mb-4">
+              <div className="stat-box">
+                <h2 className="strong">5+</h2>
+                <p>Years of Experience</p>
+              </div>
+            </div>
+
+            <div className="section-a col-md-3 col-sm-6 mb-4">
+              <div className="stat-box">
+                <h2 className="strong">10,000+</h2>
+                <p>Happy Customers</p>
+              </div>
+            </div>
+
+            <div className="section-a col-md-3 col-sm-6 mb-4">
+              <div className="stat-box">
+                <h2 className="strong">95%</h2>
+                <p>Trusted Providers</p>
+              </div>
+            </div>
+
+            <div className="section-a col-md-3 col-sm-6 mb-4">
+              <div className="stat-box">
+                <h2 className="strong">4.8/5</h2>
+                <p>Average Rating</p>
+              </div>
+            </div>
 
       <div class="aboutus-secktion paddingTB60">
           <div class="container">

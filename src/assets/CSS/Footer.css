@@ -3,10 +3,10 @@ footer {
   color: black !important;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  padding: 0.5em 0;   /* small padding top & bottom */
-  margin-top: 0;       /* ensure no extra margin above */
-  margin-bottom: 0;    /* no extra margin below */
+  padding: 0.5em 0;
+  margin-top: 0;
   text-align: center;
+
 }
 
 .icono {
@@ -17,8 +17,6 @@ footer {
   margin-right: 8px; 
 }
 
-
-/* Titles in uppercase, bold, and with a bottom margin */
 .text-uppercase {
   text-transform: uppercase;
 }
@@ -31,7 +29,6 @@ footer {
   margin-bottom: 1.5rem;
 }
 
-/* General margins for columns */
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -46,7 +43,6 @@ footer {
   margin-bottom: 3rem;
 }
 
-/* For blank links */
 a.text-black {
   color: black !important;
   text-decoration: none;
@@ -56,7 +52,6 @@ a.text-black:hover {
   text-decoration: underline;
 }
 
-/* Social buttons */
 .btn-floating {
   border-radius: 50%;
   padding: 0.5rem 0.6rem;
@@ -75,7 +70,6 @@ a.text-black:hover {
   text-decoration: none;
 }
 
-/* Tools for centered or aligned text */
 .text-center {
   text-align: center;
 }
@@ -84,7 +78,6 @@ a.text-black:hover {
   text-align: left;
 }
 
-/* For containers and rows */
 .container {
   max-width: 1140px;
   margin-left: auto;
@@ -157,14 +150,12 @@ a.text-black:hover {
   max-width: 16.666667%;
 }
 
-/* Responsive: Hide the hr on md+ screens */
 @media (min-width: 768px) {
   .d-md-none {
     display: none !important;
   }
 }
 
-/* horizontal lines */
 hr {
   border: 0;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -178,14 +169,12 @@ hr {
   margin-bottom: 1rem;
 }
 
-/* Font Awesome Margin icons */
 .fas,
 .fab {
   margin-right: 0.5rem;
   color: black !important;
 }
 
-/* Right-aligned text for the social section */
 .text-md-end {
   text-align: right;
 }
@@ -198,7 +187,6 @@ hr {
   margin-left: 0 !important;
 }
 
-/* Paddings */
 .p-3 {
   padding: 1rem !important;
 }

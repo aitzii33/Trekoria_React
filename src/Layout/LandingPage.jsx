@@ -10,17 +10,20 @@ import '../assets/CSS/InitialPage.css'
 import Button from '../Components/Button'
 import { useNavigate } from "react-router-dom"
 import Header from '../Components/Header_Landing'
+import { useTranslation } from "react-i18next";
+import '../assets/i18n/i18n';
+
 
 
 
 export default function Landing() 
 {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   
   const routeChange = () => 
   {
-    const path = '/Home';
-    navigate(path);
+    navigate('/Home');
   };
 
 
@@ -93,6 +96,7 @@ export default function Landing()
           </div>
         </div>
       </section>
+      
     </>
   );
 }

@@ -13,15 +13,19 @@ export function ProveEmail(email)
     }
 }
 
+export function samePass(pass1, pass2)
+{
+    if(pass1.localcompare(pass2) != 0)
+    {
+        return false;
+    }
+}
+
 
 //The message have to be between 20 and 120 characters
 export function ProveMessage(message)
 {
-    if(message.length >= 20 && message.length <= 120)
-    {
-        return true;
-    }
-    else 
+    if(message.length < 20 || message.length > 120)
     {
         return false;
     }
@@ -31,7 +35,7 @@ export function ProveMessage(message)
 //Check user name and password
 export function ProveUserPassword(password, username)
 {
-    //se necesitan los datos de la base de datos para verificar
+    //The database data is needed for verification
     if(!password && !username)
     {
         return false;
@@ -40,9 +44,11 @@ export function ProveUserPassword(password, username)
 
 export function IfExistEmail(email)
 {
-    //Mira si el email si esta en la base de datos
-    if(!email.includes('@') && !email.includes('.'))
+    const data = ProveEmail(email);
+
+    //Check if the email is in the database
+    if(data == true)
     {
-        return false;
+        //
     }
 }

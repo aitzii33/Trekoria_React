@@ -1,16 +1,22 @@
 
 import logo from '../assets/logo.svg'
+import { Form, Button, InputGroup } from "react-bootstrap";
 import userImg from '../assets/img/DefaultUserImage.png'
 import home from '../assets/img/home.png'
 import '../assets/CSS/Header.css'
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
 import { useState } from "react"
+import LanguageSelector from '../Components/LanguageSelector';
 
-
-function Head({ isLoggedIn }) 
+function Head({ isLoggedIn, currentLanguage, setLanguage}) 
 {
+    //#region navigation part
     const navigate = useNavigate();
     const [showDropdown, setShowDropdown] = useState(false);
+
+    const location = useLocation(); 
+    const currentPath = location.pathname;
+    const showSearchInput = currentPath === '/Activities' || currentPath === '/ActivityClick';
 
     const AccessButton = () => 
     {
@@ -26,32 +32,33 @@ function Head({ isLoggedIn })
 
     const routeInitial = () => 
     {
-        const path = '/Home';
-        navigate(path);
+        navigate('/Home');
     };
 
     const routeAboutUs = () =>
     {
-        const path = '/About';
-        navigate(path);
+        navigate('/About');
     }
 
     const routeContact = () => 
     {
-        const path = '/ContactUs';
-        navigate(path);
+        navigate('/ContactUs');
     };
 
     const routeProfile = () => 
     {
-        const path = '/Profile';
-        navigate(path);
+        navigate('/Profile');
     };
 
     const routeLogOut = () => 
     {
         //Close the sesion
     };
+    const routeLanding =() =>
+    {
+        navigate('/');
+    }
+    //#endregion
 
 
 
@@ -60,18 +67,35 @@ function Head({ isLoggedIn })
             <header className="header">
                 {/* Logo */}
                 <div>
-                    <img src={logo} alt="Logo" className="header-logo" onClick={routeInitial}/>
+                    <img src={logo} alt="Logo" className="header-logo me-2" onClick={routeLanding}/>
                 </div>
 
                 {/* Spacer */}
                 <div className="header-spacer"></div>
 
-                <div>
-                    <img src={home} alt="Home" style={{ width: "20px", height: "20px" }} className="me-4" onClick={routeInitial}/>
-                    <a onClick={routeAboutUs} className="me-4" style={{ color: 'black' }}>About Us</a>
-                    <a onClick={routeContact} className="me-4" style={{ color: 'black' }}>Contact</a>
+                {showSearchInput && (
+                    <div className="search-input">
+                        <Form onSubmit={routeLanding}>
+                            <InputGroup>
+                                <Form.Control type="text" name="search" placeholder={("Where fo you like to go?")} style={{ width: "580px"}}/>
+                                <Button variant="primary" type="submit">{("Search")}</Button>
+                            </InputGroup>
+                        </Form>
+                    </div>
+                )}
+
+                <div className="header-spacer"></div>
+
+                <div className="nav-links">
+                    <img src={home} alt="Home" style={{ width: "20px", height: "20px" }} className="me-4 nav-ico" onClick={routeInitial}/>
+                    <a onClick={routeAboutUs} className="nav-link me-4">About Us</a>
+                    <a onClick={routeContact} className="nav-link me-4">Contact</a>
                 </div>
 
+                {/* Language Selector */}
+                <div className="me-4">
+                    <LanguageSelector currentLanguage={currentLanguage} setLanguage={setLanguage} />
+                </div>
                 {/* Access button */}
                 <div className="header-access">
                     <img src={userImg} alt="profile" onClick={AccessButton} style={{ width: "50px", height: "50px", borderRadius: "50%", objectFit: "cover" }}/>
