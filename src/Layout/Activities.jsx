@@ -37,10 +37,11 @@ function Activities()
     return (
         <Container >
             <Header />
+
             <Row className="justify-content-center align-items-center hero-row">
                 <Col md={10}>
                     <Row className="hero-box">
-                        <Col md={7} className="hero-image p-0">
+                        <Col md={7} className="hero-image">
                             <img src={Donostia} alt="city" />
                         </Col>
 
