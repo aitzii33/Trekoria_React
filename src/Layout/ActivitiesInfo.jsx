@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "reactstrap"
+import { Row, Col } from "reactstrap"
 import { useState } from "react"
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
@@ -11,6 +11,8 @@ import Header from '../Components/Header'
 import Footer from '../Components/Footer'
 
 import BoatImg from "../assets/img/Boat.avif"
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../assets/CSS/Activity_details.css";
 
 
 
@@ -27,11 +29,15 @@ function ActivitiesInfo()
 
 
     return(
-        <Container fluid className="px-1 px-sm-5 mx-auto mt-4">
+        <>
             <Header/>
                 <Row>
+<<<<<<< HEAD
                     <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
                     <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
+=======
+                    <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel" >
+>>>>>>> 057fefd (modify css of the activity details)
                         <div className="carousel-inner">
                             <div className="carousel-item active">
                                 <img src={Activity.image} className="d-block w-100" alt="activity image"/>
@@ -58,6 +64,7 @@ function ActivitiesInfo()
                     </div>
                 </Row>
 
+<<<<<<< HEAD
                 <Row>
                     <Col md={8} className="activity-info d-flex flex-column">
                         <h2>{activity.name}</h2>
@@ -69,32 +76,68 @@ function ActivitiesInfo()
                     </Col>
 
                     <Col>
+=======
+                <Row className="justify-content-center mt-4">
+                    <Col md={8} className="activity-info">
+                        <h2>Kayak in the river</h2>
+                        <p className="description">Activity giuded for all the ages and levels</p>
+
+                        <div className="activity-form">
+>>>>>>> 057fefd (modify css of the activity details)
                         <div className="col-auto">
-                            <DatePicker selected={selectedDate} onChange={(date) => setSelectedDate(date)} dateFormat="dd-MM-yyyy" highlightDates={[new Date()]} placeholderText="Selecciona una fecha" className="form-control" name="date" />
+                            <DatePicker selected={selectedDate} onChange={(date) => setSelectedDate(date)}
+                            dateFormat="dd-MM-yyyy"
+                            highlightDates={[new Date()]}
+                            placeholderText="Selecciona una fecha"
+                            className="form-control"
+                            name="date"
+                            />
                         </div>
 
-                        <div className="col-auto dropdown">           
-                            <button type="button" className="btn dropdown-toggle" data-bs-toggle="dropdown"> HOURS </button>
+                        <div className="col-auto dropdown">
+                            <button
+                            type="button"
+                            className="btn dropdown-toggle"
+                            data-bs-toggle="dropdown"
+                            >
+                            HOURS
+                            </button>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="#">Link 1</a></li>
-                                <li><a className="dropdown-item" href="#">Link 2</a></li>
-                                <li><a className="dropdown-item" href="#">Link 3</a></li>
+                            <li><a className="dropdown-item" href="#">Link 1</a></li>
+                            <li><a className="dropdown-item" href="#">Link 2</a></li>
+                            <li><a className="dropdown-item" href="#">Link 3</a></li>
                             </ul>
                         </div>
 
-                        <div className="col-auto dropdown">           
-                            <button type="button" className="btn dropdown-toggle" data-bs-toggle="dropdown"> People </button>
+                        <div className="col-auto dropdown">
+                            <button
+                            type="button"
+                            className="btn dropdown-toggle"
+                            data-bs-toggle="dropdown"
+                            >
+                            People
+                            </button>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="#">Link 1</a></li>
-                                <li><a className="dropdown-item" href="#">Link 2</a></li>
-                                <li><a className="dropdown-item" href="#">Link 3</a></li>
+                            <li><a className="dropdown-item" href="#">Link 1</a></li>
+                            <li><a className="dropdown-item" href="#">Link 2</a></li>
+                            <li><a className="dropdown-item" href="#">Link 3</a></li>
                             </ul>
+                        </div>
+                        </div>
+
+                        <div className="activity-actions">
+                        <span className="price">25€</span>
+                        <button className="btn-reserve">Reserve</button>
                         </div>
                     </Col>
                 </Row>
             <Footer/>
+<<<<<<< HEAD
         </Container>
         </Container>
+=======
+        </>
+>>>>>>> 057fefd (modify css of the activity details)
     );
 }
 

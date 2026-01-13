@@ -32,7 +32,6 @@ function InitialPage() {
   const navigate = useNavigate();
 
   const [showContinents, setShowContinents] = useState(false);
-  const [showContinents, setShowContinents] = useState(false);
   const [hoveredContinent, setHoveredContinent] = useState(null);
   const [hoveredCountry, setHoveredCountry] = useState(null);
 
