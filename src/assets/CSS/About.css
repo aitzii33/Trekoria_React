@@ -1,6 +1,4 @@
-body{
-  background-color: white;
-}.about-gradient {
+.about-gradient {
   background: linear-gradient(
     to bottom, /* top → bottom */
     #FFFFFF,   /* White at the top */
