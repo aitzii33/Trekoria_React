@@ -178,6 +178,10 @@ function RegisterPage()
                                     <input type="text" className="form-control" id="fullName" name="fullName"/>
                                 </div>
                                 <div className="mb-3">
+                                    <label htmlFor="dni" className="form-label">DNI</label>
+                                    <input type="text" className="form-control" id="dni" name="dni"/>
+                                </div>
+                                <div className="mb-3">
                                     <label htmlFor="address" className="form-label">Address</label>
                                     <input type="text" className="form-control" id="address" name="address"/>
                                 </div>
