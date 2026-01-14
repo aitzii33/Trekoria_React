@@ -113,7 +113,9 @@ export default function AboutUs() {
             <div className="col-md-4 team-box text-center mb-4">
               <div className="team-img thumbnail mb-3">
                 <img
+                  src={team1}
                   alt="Umama Shahzadi"
+                  loading="lazy"
                   style={{
                     width: '150px',
                     height: '150px',
@@ -147,7 +149,9 @@ export default function AboutUs() {
             <div className="col-md-4 team-box text-center mb-4">
               <div className="team-img thumbnail mb-3">
                 <img
+                  src={team2}
                   alt="Aitziber Gonzalez"
+                  loading="lazy"
                   style={{
                     width: '150px',
                     height: '150px',
@@ -176,10 +180,8 @@ export default function AboutUs() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-      {/* Long Text / Story Section */}
+            </div>
+            </div>
       <section className="long-text-section py-5">
         <div className="container">
           <div className="row justify-content-center">
