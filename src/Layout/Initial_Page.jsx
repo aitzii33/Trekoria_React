@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import { Carousel, Form, Button, InputGroup, Card, Row, Col } from "react-bootstrap";
