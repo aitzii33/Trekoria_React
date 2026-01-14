@@ -1,5 +1,5 @@
 import logo from '../assets/img/logo.png';
-import { IfExistEmail, ProveUserName, samePass } from '../Funtions';
+import { IfExistEmail, ProveUserName, samePass } from '../Funtions.jsx';
 import Header from '../Components/Header.jsx';
 import Footer from '../Components/Footer.jsx';
 import { useNavigate } from 'react-router-dom';
@@ -61,31 +61,19 @@ function RegisterPage() {
             <form onSubmit={handleSubmit(onSubmit)} className="w-100">
               {/* Name */}
               <div className="form-outline mb-2">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Introduce your name"
-                  {...register('name', { required: 'Name is required' })}
-                />
+                <input type="text" className="form-control" placeholder="Introduce your name" {...register('name', { required: 'Name is required' })}/>
                 {errors.name && <span className="text-danger">{errors.name.message}</span>}
               </div>
 
               {/* Surname */}
               <div className="form-outline mb-2">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Introduce your surname"
-                  {...register('surname', { required: 'Surname is required' })}
-                />
+                <input type="text" className="form-control" placeholder="Introduce your surname" {...register('surname', { required: 'Surname is required' })} />
                 {errors.surname && <span className="text-danger">{errors.surname.message}</span>}
               </div>
 
               {/* Birthday */}
               <div className="form-outline mb-2">
-                <input
-                  type="date"
-                  className="form-control"
+                <input type="date" className="form-control"
                   {...register('birthday', {
                     required: 'Birthday is required',
                     validate: (value) => {
@@ -115,29 +103,13 @@ function RegisterPage() {
 
               {/* Email */}
               <div className="form-outline mb-2">
-                <input
-                  type="email"
-                  className="form-control"
-                  placeholder="Introduce your email"
-                  {...register('email', {
-                    required: 'Email is required',
-                    pattern: {
-                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                      message: 'Invalid email format'
-                    }
-                  })}
-                />
+                <input type="email" className="form-control" placeholder="Introduce your email"/>
                 {errors.email && <span className="text-danger">{errors.email.message}</span>}
               </div>
 
               {/* Username */}
               <div className="form-outline mb-2">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Introduce your username"
-                  {...register('username', { required: 'Username is required' })}
-                />
+                <input type="text" className="form-control" placeholder="Introduce your username" {...register('username', { required: 'Username is required' })}/>
                 {errors.username && <span className="text-danger">{errors.username.message}</span>}
               </div>
 
