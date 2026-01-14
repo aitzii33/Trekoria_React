@@ -13,7 +13,7 @@ import Activities from './Layout/Activities'
 import ActivityClick from './Layout/ActivitiesInfo'
 import Cart from './Layout/Cart'
 import Payment from './Layout/Payment'
-import AdminPortal from './Layout/ADMIN/AdminPortal'
+import AdminPortal from './Layout/Admin/AdminPortal'
 
 import "./assets/i18n/i18n";                   // keep this to initialize i18n
 
