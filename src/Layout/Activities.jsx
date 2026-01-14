@@ -63,11 +63,11 @@ function Activities()
             <Row className="justify-content-center" style={{ marginBottom: '30px'  }}>
                 <Col md={10} className="activity-box card activity-card">
                     <Row>
-                        <Col md={4} className="activity-image">
+                        <Col md={5} className="activity-image">
                             <img src={activity.image} alt="Boat activity" />
                         </Col>
 
-                        <Col md={8} className="activity-info d-flex flex-column">
+                        <Col md={7} className="activity-info d-flex flex-column">
                             <h2>{activity.name}</h2>
                             <p className="description">{activity.description}</p>
 

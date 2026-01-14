@@ -11,6 +11,8 @@ import AboutUs from './Components/AboutUs'
 import Profile from './Layout/MyProfile'
 import Activities from './Layout/Activities'  
 import ActivityClick from './Layout/ActivitiesInfo'
+import Cart from './Layout/Cart'
+import Payment from './Layout/Payment'
 
 import "./assets/i18n/i18n";                   // keep this to initialize i18n
 
@@ -27,6 +29,8 @@ function App() {
       <Route path="/Profile" element={<Profile />} />
       <Route path="/Activities" element={<Activities />} />
       <Route path="/ActivityClick" element={<ActivityClick/>} />
+      <Route path="/Cart" element={<Cart/>} />
+      <Route path="/Pay" element={<Payment/>} />
     </Routes>
   );
 }

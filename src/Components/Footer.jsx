@@ -63,29 +63,28 @@ function Footer()
                     </section>
 
                 <hr className="my-3" />
+                    <section className="p-3 pt-0">
+                        <div className="row d-flex align-items-center">
+                            <div className="col-md-7 col-lg-8 text-center text-md-start">
+                                <div className="p-3 text-black">
+                                    © 2020 Copyright:
+                                    <a className="text-black" href="https://Trekoria.com/" target="_blank" rel="noopener noreferrer">
+                                        Trekoria.com
+                                    </a>
+                                </div>
+                            </div>
 
-                <section className="p-3 pt-0">
-                    <div className="row d-flex align-items-center">
-                        <div className="col-md-7 col-lg-8 text-center text-md-start">
-                            <div className="p-3 text-black">
-                                © 2020 Copyright:
-                                <a className="text-black" href="https://Trekoria.com/" target="_blank" rel="noopener noreferrer">
-                                    Trekoria.com
-                                </a>
+                            <div className="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+                                <img className="img rounded-circle icono" src={img_insta} alt="instagram"/>
+                                <img className="img rounded-circle icono" src={img_tiktok} alt="tiktok"/>
+                                <img className="img rounded-circle icono" src={img_twitter} alt="twitter"/>
+                                <img className="img rounded-circle icono" src={img_youtube} alt="youtube"/>
                             </div>
                         </div>
-
-                        <div className="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
-                            <img className="img rounded-circle icono" src={img_insta} alt="instagram"/>
-                            <img className="img rounded-circle icono" src={img_tiktok} alt="tiktok"/>
-                            <img className="img rounded-circle icono" src={img_twitter} alt="twitter"/>
-                            <img className="img rounded-circle icono" src={img_youtube} alt="youtube"/>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </footer>
-    </>
+                    </section>
+                </div>
+            </footer>
+        </>
     );
 }
 export default Footer;
