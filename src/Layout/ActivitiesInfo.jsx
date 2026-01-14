@@ -6,10 +6,6 @@ import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 import "../assets/CSS/DatePicker.css"
 import "../assets/CSS/Activity_details.css"
-
-import Header from '../Components/Header'
-import Footer from '../Components/Footer'
-
 import BoatImg from "../assets/img/Boat.avif"
 
 
