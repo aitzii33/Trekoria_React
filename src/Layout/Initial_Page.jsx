@@ -114,31 +114,11 @@ function InitialPage() {
         <div className="search-overlay">
           <h1 className="hero-heading">{t("Find Your Perfect Place")}</h1>
           <p className="hero-subtitle">{t("Search from thousands of options")}</p>
-          <Form onSubmit={submitSearch}>
-          <InputGroup>
-            <InputGroup.Text>🔍</InputGroup.Text>
-
-            {/* Controlled input; suggestions appear only when user types */}
-            <Form.Control
-              type="text"
-              name="search"
-              placeholder={t("Search...")}
-              list="search-suggestions"
-              autoComplete="off"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-            <Button variant="primary" type="submit">
-              {t("Search")}
-            </Button>
-          </InputGroup>
-
-            {/* Render datalist only when there's some input */}
-            <datalist id="search-suggestions">
-              {suggestions.map((s) => (
-                <option key={s} value={s} />
-              ))}
-            </datalist>
+          <Form onSubmit={handleSearch}>
+            <InputGroup>
+              <Form.Control type="text" name="search" placeholder={t("Search...")} />
+              <Button variant="primary" type="submit">{t("Search")}</Button>
+            </InputGroup>
           </Form>
         </div>
       </div>
