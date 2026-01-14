@@ -1,7 +1,7 @@
 import logo from '../assets/img/logo.png';
 import "../assets/CSS/LogIn.css";
 import { useNavigate } from 'react-router-dom';
-import { ProveUserPassword } from '../Funtions';
+import { ProveUserPassword } from '../Funtions.jsx';
 import Header from '../Components/Header.jsx';
 import Footer from '../Components/Footer.jsx';
 import { Container } from 'reactstrap';
@@ -50,13 +50,7 @@ function Login() {
               {/* Username */}
               <div className="form-outline mb-4">
                 <label htmlFor="username" className="form-label">Username</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="username"
-                  placeholder="Introduce your username"
-                  {...register('username', { required: 'Username is required' })}
-                />
+                <input type="text" className="form-control" id="username" placeholder="Introduce your username" {...register('username', { required: 'Username is required' })}/>
                 {errors.username && (
                   <span className="text-danger">{errors.username.message}</span>
                 )}
@@ -65,13 +59,7 @@ function Login() {
               {/* Password */}
               <div className="form-outline mb-4">
                 <label htmlFor="password" className="form-label">Password</label>
-                <input
-                  type="password"
-                  className="form-control"
-                  id="password"
-                  placeholder="Introduce your password"
-                  {...register('password', { required: 'Password is required' })}
-                />
+                <input type="password" className="form-control" id="password" placeholder="Introduce your password" {...register('password', { required: 'Password is required' })} />
                 {errors.password && (
                   <span className="text-danger">{errors.password.message}</span>
                 )}
@@ -80,11 +68,7 @@ function Login() {
               <div className="text-center pt-1 mb-5 pb-1">
                 <Button text="Log in" type="submit" />
                 <br /><br />
-                <a
-                  className="text-muted"
-                  onClick={navigateForgot}
-                  style={{ cursor: 'pointer' }}
-                >
+                <a className="text-muted" onClick={navigateForgot} style={{ cursor: 'pointer' }}>
                   Forgot password/user?
                 </a>
               </div>
