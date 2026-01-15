@@ -2,7 +2,7 @@ import '../assets/CSS/Payment.css'
 import { useNavigate } from "react-router-dom"
 import { useEffect, useRef } from 'react'
 
-function RegisterPage() 
+function Order() 
 {
     const formRef = useRef(null);
     const navigate = useNavigate();
@@ -246,4 +246,4 @@ function RegisterPage()
     );
 }
 
-export default RegisterPage;
+export default Order;

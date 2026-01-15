@@ -43,7 +43,7 @@ function Footer()
 
                             <hr className="w-100 clearfix d-md-none" />
 
-                            <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                            <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
 
                                 <h6 className="text-uppercase text-black mb-4 font-weight-bold">Useful links</h6>
                                 <p><a className="text-black" onClick={routeAboutUs}>About us</a></p>
@@ -53,7 +53,7 @@ function Footer()
 
                             <hr className="w-100 clearfix d-md-none" />
 
-                            <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 ">
+                            <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                                 <h6 className="text-uppercase text-black mb-4 font-weight-bold">Contact</h6>
                                 <p><a className="text-black"> Donostia, calle urbieta 20010, SP</a></p>
                                 <p><a className="text-black"> infoTrekoria@gmail.com </a></p>

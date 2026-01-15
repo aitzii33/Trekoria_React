@@ -1,72 +1,135 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import '../assets/CSS/Profile.css'
+import Userimg from '../assets/img/Girl.avif'
 import Header from '../Components/Header.jsx'
 import Footer from '../Components/Footer.jsx'
-import '../assets/CSS/Profile.css'
-import React, { useState, useRef } from 'react'
 
+function Profile() {
+    const navigate = useNavigate();
 
-function Profile()
-{
-    const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
-    const fileInputRef = useRef(null);
+    const [userData, setUserData] = useState({ username: 'devUser', fullName: 'Shannon Doe', birthDate: '1998-05-12',
+        email: 'shannon@example.com', profilePic: Userimg });
 
-    const handleImageChange = (e) => 
+    const [isEditing, setIsEditing] = useState(false);
+    const [tempData, setTempData] = useState(userData);
+
+    const handleEditToggle = () => 
     {
-        const file = e.target.files[0];
-        if (file) 
+        setTempData(userData);
+        setIsEditing(!isEditing);
+    };
+
+    const handleChange = (e) => 
+    {
+        const { name, value, files } = e.target;
+        if (name === 'profilePic') 
         {
-            const reader = new FileReader();
-            reader.onloadend = () => 
+            const file = files[0];
+            if (file) 
             {
-                setPreview(reader.result);
-            };
-            reader.readAsDataURL(file);
+                const imageUrl = URL.createObjectURL(file);
+                setTempData({ ...tempData, profilePic: imageUrl });
+            }
+        } 
+        else 
+        {
+            setTempData({ ...tempData, [name]: value });
         }
     };
 
-    const handleChangeImage = () => 
+    const handleSave = (e) =>
     {
-        fileInputRef.current?.click();
+        e.preventDefault();
+        setUserData(tempData);
+        setIsEditing(false);
     };
 
-    return(
+    const handleCancel = () => 
+    {
+        setIsEditing(false);
+    };
+
+    return (
         <>
-            <Header />
-            <div class="profile-container">
-                <form id="checkout-form" ref={formRef}>
-                    <div class="profile-avatar-section">
-                        <div class="avatar-wrapper">
-                            <img src={preview} alt="IMG user" class="profile-avatar" />
-
-                            <button type="button" class="change-image-btn" onClick={handleChangeImage}>
-                                CHANGE IMAGE
-                            </button>
-
-                            <input ref={fileInputRef} type="file" class="file-input" accept="image/*" onChange={handleImageChange}/>
+            <Header/>
+            <div className="profile-container">
+                <div className="container">
+                    <div className={`card profile-card ${isEditing ? 'edit-mode' : ''}`}>
+                        <div className="profile-header text-center">
+                            <img src={isEditing ? tempData.profilePic : userData.profilePic} alt="Profile" className="profile-avatar mx-auto d-block"/>
+                            <p className="mb-0 mb-2 mt-3 text-center fw-bold">{isEditing ? tempData.username : userData.username}</p>
+                            <p className="mb-0 opacity-90">{isEditing ? tempData.email : userData.email}</p>
                         </div>
-                        <div class="avatar-label">user</div>
+
+                        <div className="card-body p-4">
+                            {!isEditing ? (
+                            <>
+                                <div className="text-center mb-4">
+                                    <div className="profile-info">
+                                        <strong>Complete name:</strong> {userData.fullName}
+                                    </div>
+
+                                    <div className="profile-info">
+                                        <strong>Birth date:</strong> {new Date(userData.birthDate).toLocaleDateString('es-ES')}
+                                    </div>
+                                </div>
+
+                                <div className="d-flex flex-column flex-sm-row gap-2 justify-content-center">
+                                    <button className="btn btn-edit" onClick={handleEditToggle}>
+                                        Edit profile
+                                    </button>
+
+                                    <button className="btn btn-outline-secondary" onClick={() => navigate('/home')}>
+                                        Return to home
+                                    </button>
+                                </div>
+                            </>
+                            ) : (
+                            <form onSubmit={handleSave}>
+                                <div className="mb-4">
+                                    <label className="form-label fw-bold">Profile image</label>
+                                    <input type="file" name="profilePic" className="form-control" accept="image/*" onChange={handleChange}/>
+                                </div>
+
+                                <div className="row g-3">
+                                    <div className="col-md-6">
+                                        <label className="form-label fw-bold">User name</label>
+                                        <input type="text" name="username" className="form-control" value={tempData.username} onChange={handleChange} required />
+                                    </div>
+                                    <div className="col-md-6">
+                                        <label className="form-label fw-bold">Email</label>
+                                        <input type="email" name="email" className="form-control" value={tempData.email} onChange={handleChange} required/>
+                                    </div>
+                                </div>
+
+                                <div className="row g-3 mt-3">
+                                    <div className="col-md-6">
+                                        <label className="form-label fw-bold">Complete name</label>
+                                        <input type="text" name="fullName" className="form-control" value={tempData.fullName} onChange={handleChange} required/>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <label className="form-label fw-bold">Birth date</label>
+                                        <input type="date" name="birthDate" className="form-control" value={tempData.birthDate} onChange={handleChange} required />
+                                    </div>
+                                </div>
+
+                                <div className="d-flex justify-content-between mt-4">
+                                    <button type="button" className="btn btn-cancel" onClick={handleCancel}>
+                                        Cancel
+                                    </button>
+
+                                    <button type="submit" className="btn btn-save">
+                                        Save changes
+                                    </button>
+                                </div>
+                            </form>
+                            )}
+                        </div>
                     </div>
-
-                    <div class="profile-form-section">
-                        <div class="form-group">
-                            <label class="form-label">User name</label>
-                            <input type="text" class="form-input" placeholder="..." value={username} onChange={(e) => setUsername(e.target.value)}/>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">email</label>
-                            <input type="email" class="form-input" placeholder="..." value={email} onChange={(e) => setEmail(e.target.value)}/>
-                        </div>
-                        
-                        <div class="form-group">
-                            <button class="change-password-btn">
-                                change password / email
-                            </button>
-                        </div>
-                    </div>
-                </form>
+                </div>
             </div>
-            <Footer />
+            <Footer/>
         </>
     );
 }
