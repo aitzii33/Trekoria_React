@@ -46,12 +46,12 @@ function Activities()
                         </Col>
 
                         <Col md={5} className="hero-search d-flex flex-column justify-content-center">
-                            <h2 className="mb-3">When you like to go?</h2>
+                            <h2 className="mb-3" style={{ color: '#5A4C29' }}>When you like to go?</h2>
 
                             <Form onSubmit={handleSubmit} className="date-form">
                                 <DatePicker selected={selectedDate} onChange={(date) => setSelectedDate(date)} dateFormat="dd-MM-yyyy" placeholderText="Selecciona una fecha" className="form-control mb-3" />
-                                <Button type="submit" color="success" style={{ width: "50%", alignSelf: "flex-start", color: 'black' }} >
-                                    Search activities
+                                <Button type="submit" color="success" style={{ height:'30%', width: "40%", color: 'black', textAlign: '' }} >
+                                    Search
                                 </Button>
                             </Form>
                         </Col>
