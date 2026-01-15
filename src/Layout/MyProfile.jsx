@@ -58,8 +58,8 @@ function Profile() {
                     <div className={`card profile-card ${isEditing ? 'edit-mode' : ''}`}>
                         <div className="profile-header text-center">
                             <img src={isEditing ? tempData.profilePic : userData.profilePic} alt="Profile" className="profile-avatar mx-auto d-block"/>
-                            <p className="mb-0 mb-2 mt-3 text-center fw-bold">{isEditing ? tempData.username : userData.username}</p>
-                            <p className="mb-0 opacity-90">{isEditing ? tempData.email : userData.email}</p>
+                            <p className="mb-0 mb-2 mt-3 text-center fw-bold" style={{ color: '#5A4C29' }}>{isEditing ? tempData.username : userData.username}</p>
+                            <p className="mb-0 mb-2 mt-3 text-center fw-bold" style={{ color: '#5A4C29' }}>{isEditing ? tempData.email : userData.email}</p>
                         </div>
 
                         <div className="card-body p-4">
