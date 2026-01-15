@@ -6,8 +6,9 @@ import { useNavigate } from 'react-router-dom';
 import '../assets/CSS/Register.css';
 import Button from '../Components/Button.jsx';
 import { useForm } from 'react-hook-form';
+import otherImage from '../assets/img/registerImg.webp';
 
-function RegisterPage() {
+export default function RegisterPage() {
   const navigate = useNavigate();
 
   const {
@@ -18,8 +19,6 @@ function RegisterPage() {
   } = useForm();
 
   const onSubmit = (data) => {
-    // Inline field validation handles email/username/password matching.
-    // All validations passed
     navigate('/LogIn');
   };
 
@@ -28,18 +27,9 @@ function RegisterPage() {
       <Header />
       <div className="container py-5 d-flex justify-content-center align-items-center">
         <div className="card register-card shadow d-flex flex-row col-xl-8 col-lg-10 col-md-11 p-0 overflow-hidden">
-          
-          {/* Left Panel */}
-          <div className="col-lg-6 left-panel p-4 d-flex flex-column justify-content-start align-items-center">
-            <div className="logo mb-2">
-              <img src={logo} alt="logo" className="logo-img" />
-            </div>
 
-            <h1 className="fw-bold mb-3 text-center">Welcome to Trekoria</h1>
-            <p className="text-muted mb-3 text-center">
-              Explore unforgettable trips, activities, and experiences worldwide.
-            </p>
-
+          {/* Left Panel: ONLY Form */}
+          <div className="col-lg-6 left-panel p-4 d-flex flex-column justify-content-center">
             <form onSubmit={handleSubmit(onSubmit)} className="w-100">
               {/* Name */}
               <div className="form-outline mb-2">
@@ -61,21 +51,12 @@ function RegisterPage() {
                     validate: (value) => {
                       const today = new Date();
                       const birthDate = new Date(value);
-
-                      if (birthDate > today) {
-                        return 'Birthday cannot be in the future';
-                      }
-
-                      // Calculate age
+                      if (birthDate > today) return 'Birthday cannot be in the future';
                       const ageDifMs = today - birthDate;
                       const ageDate = new Date(ageDifMs);
                       const age = Math.abs(ageDate.getUTCFullYear() - 1970);
-
-                      if (age < 18) {
-                        return 'You must be at least 18 years old';
-                      }
-
-                      return true; // Validation passed
+                      if (age < 18) return 'You must be at least 18 years old';
+                      return true;
                     }
                   })}
                 />
@@ -143,14 +124,60 @@ function RegisterPage() {
                 By registering, you agree to our Terms & Privacy Policy.
               </small>
             </form>
+            <br />
+            {/* Inline Login Text (same style as Register question) */}
+          <div className="d-flex align-items-center justify-content-center">
+            <p className="mb-0 me-2 small text-muted">Already have an account?</p>
+              <span
+              className="small"
+              style={{ 
+                cursor: 'pointer', 
+                textDecoration: 'underline', 
+                color: '#329ac6',  // Azure theme color
+                fontWeight: '500'  // optional, makes it look more professional
+              }}
+              onClick={() => navigate('/LogIn')}
+            >
+              Log in
+            </span>
+
+          </div>
           </div>
 
           {/* Right Panel */}
-          <div className="col-lg-6 right-panel d-flex flex-column justify-content-center align-items-center text-center p-4 bg-primary text-white">
-            <h2 className="mb-3">Already have an account?</h2>
-            <p className="mb-4">Click below to login and start your adventure!</p>
-            <Button text="Login" onClick={() => navigate('/LogIn')} className="btn btn-outline-light bg-black" />
+          <div className="col-lg-6 right-panel d-flex flex-column align-items-center justify-content-center p-5 bg-white text-center">
+
+            {/* Welcome Text */}
+            <h1 
+              className="fw-bold mb-3" 
+              style={{ color: '#329ac6', fontSize: '2.5rem', lineHeight: '1.2' }}
+            >
+              Welcome to Trekoria
+            </h1>
+            
+            <p 
+              className="mb-4 text-muted" 
+              style={{ fontSize: '1.1rem', maxWidth: '350px' }}
+            >
+              Plan your next adventure with us!
+            </p>
+
+            {/* Illustration / Theme Image */}
+            <div className="illustration" style={{ width: '100%', maxWidth: '400px' }}>
+              <img 
+                src={otherImage} 
+                alt="Welcome Illustration" 
+                className="img-fluid"
+                style={{ borderRadius: '12px', boxShadow: '0 8px 20px rgba(0,0,0,0.1)' }}
+              />
+            </div>
+
           </div>
+
+
+
+
+
 
         </div>
       </div>
@@ -158,5 +185,3 @@ function RegisterPage() {
     </>
   );
 }
-
-export default RegisterPage;
