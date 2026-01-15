@@ -1,5 +1,6 @@
 import React from "react";
 import "./../../assets/CSS/ActivitiesAdmin.css";
+import img_coming_soon from "./../../assets/img/Coming.png";
 
 export default function Activities() {
   const activities = [
@@ -10,16 +11,26 @@ export default function Activities() {
   ];
 
   return (
-    <div className="activities-view">
-      <h2>Recent Activities</h2>
-      <ul>
-        {activities.map((item) => (
-          <li key={item.id}>
-            <span className="activity-text">{item.activity}</span>
-            <span className="activity-date">{item.date}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <div className="activities-view">
+        <h2>Activities Dashboard</h2>
+      </div>
+
+      <div
+        className="activities-view1"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "80vh",
+        }}
+      >
+        <img
+          src={img_coming_soon}
+          alt="coming soon"
+          style={{ maxWidth: 900, width: "100%", height: "auto" }}
+        />
+      </div>
+    </>
   );
 }

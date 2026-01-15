@@ -1,5 +1,6 @@
 import React from "react";
 import "./../../assets/CSS/Bookings.css";
+import img_coming_soon from "./../../assets/img/Coming.png";
 
 export default function Bookings() {
   const bookings = [
@@ -9,28 +10,27 @@ export default function Bookings() {
   ];
 
   return (
+    <>
     <div className="bookings-view">
       <h2>Bookings</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Booking ID</th>
-            <th>Customer</th>
-            <th>Date</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {bookings.map((b) => (
-            <tr key={b.id}>
-              <td>{b.id}</td>
-              <td>{b.customer}</td>
-              <td>{b.date}</td>
-              <td>{b.status}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      
     </div>
+    <div
+            className="activities-view1"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "80vh",
+            }}
+          >
+            <img
+              src={img_coming_soon}
+              alt="coming soon"
+              style={{ maxWidth: 900, width: "100%", height: "auto" }}
+            />
+          </div>
+    </>
+    
   );
 }

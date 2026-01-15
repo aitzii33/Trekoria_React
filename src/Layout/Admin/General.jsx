@@ -1,5 +1,6 @@
 import React from "react";
 import "./../../assets/CSS/General.css";
+import img_coming_soon from "./../../assets/img/Coming.png";
 
 export default function GeneralDashboard() {
   const recentActivity = [
@@ -12,28 +13,21 @@ export default function GeneralDashboard() {
     <div className="dashboard">
       <h2>Welcome back, Admin!</h2>
 
-      <div className="dashboard-cards">
-        <div className="card">
-          <h3>Total Bookings</h3>
-          <p>120</p>
-        </div>
-        <div className="card">
-          <h3>Active Customers</h3>
-          <p>45</p>
-        </div>
-      </div>
-
-      <div className="recent-activity">
-        <h3>Recent Activity</h3>
-        <ul>
-          {recentActivity.map((item) => (
-            <li key={item.id}>
-              <span>{item.activity}</span>
-              <span className="activity-date">{item.date}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <div
+              className="activities-view1"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "80vh",
+              }}
+            >
+              <img
+                src={img_coming_soon}
+                alt="coming soon"
+                style={{ maxWidth: 900, width: "100%", height: "auto" }}
+              />
+            </div>
     </div>
   );
 }

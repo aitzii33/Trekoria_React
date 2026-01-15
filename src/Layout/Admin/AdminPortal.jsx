@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // <- import useNavigate
 import "./../../assets/CSS/AdminPortal.css";
 import adminAvatar from "./../../assets/img/admin-icon.jpg";
 import GeneralDashboard from "./General";
@@ -7,66 +8,72 @@ import Customers from "./Users";
 import Activities from "./Activities";
 import Analytics from "./Analytics";
 
-
-//Menu items for the admin portal
 const MENU = [
-    {key: "dashboard", label: "General"},
-    {key: "bookings", label: "Bookings"},
-    {key: "customers",label: "Customers"},
-    {key: "activities", label: "Activities"},
-    {key: "analytics", label: "Analytics"}, 
+    { key: "dashboard", label: "General" },
+    { key: "bookings", label: "Bookings" },
+    { key: "customers", label: "Customers" },
+    { key: "activities", label: "Activities" },
+    { key: "analytics", label: "Analytics" },
 ];
-
 
 export default function AdminPortal() {
     const [active, setActive] = useState("dashboard");
+    const navigate = useNavigate(); // <- initialize navigate
 
-    //Funtion to render the content based in the active menu item
     const renderContent = () => {
-        switch (active){
+        switch (active) {
             case "dashboard":
-                return <GeneralDashboard/>;
+                return <GeneralDashboard />;
             case "bookings":
-                return <Bookings/>;
+                return <Bookings />;
             case "customers":
-                return <Customers/>;
+                return <Customers />;
             case "activities":
-                return <Activities/>;
+                return <Activities />;
             case "analytics":
-                return <Analytics/>;
+                return <Analytics />;
             default:
-                return <GeneralDashboard/>;
-        }    }
-   
-    return(
+                return <GeneralDashboard />;
+        }
+    };
+
+    // Logout function
+    const handleLogout = () => {
+        const confirmLogout = window.confirm("Are you sure you want to logout?");
+        if (confirmLogout) {
+            // Optional: clear any auth tokens here
+            // localStorage.removeItem("token"); 
+            navigate("/"); // redirect to landing page
+        }
+    };
+
+    return (
         <div className="admin-portal">
             <aside className="sidebar">
                 <ul className="sidebar-menu">
                     {MENU.map((item) => (
-                    <li
-                        key={item.key}
-                        className={active === item.key ? "active" : ""}
-                        onClick={() => setActive(item.key)}
-                    >
-                        {item.label}
-                    </li>
+                        <li
+                            key={item.key}
+                            className={active === item.key ? "active" : ""}
+                            onClick={() => setActive(item.key)}
+                        >
+                            {item.label}
+                        </li>
                     ))}
                 </ul>
 
                 <div className="sidebar-footer">
                     <img src={adminAvatar} alt="Admin" className="profile-pic" />
                     <div className="admin-info">
-                    <span className="admin-name">Administrator</span>
-                    <button className="logout-btn" onClick={() => alert("Logging Out")}>
-                        Logout
-                    </button>
+                        <span className="admin-name">Administrator</span>
+                        <button className="logout-btn" onClick={handleLogout}>
+                            Logout
+                        </button>
                     </div>
                 </div>
-                </aside>
+            </aside>
 
-
-
-              <main className="content">{renderContent()}</main>
+            <main className="content">{renderContent()}</main>
         </div>
     );
 }

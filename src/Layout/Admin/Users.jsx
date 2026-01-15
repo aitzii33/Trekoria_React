@@ -1,5 +1,6 @@
 import React from "react";
 import "./../../assets/CSS/Customers.css";
+import img_coming_soon from "./../../assets/img/Coming.png";
 
 export default function Customers() {
   const customers = [
@@ -8,28 +9,26 @@ export default function Customers() {
   ];
 
   return (
+    <>
     <div className="customers-view">
       <h2>Customers</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Total Bookings</th>
-          </tr>
-        </thead>
-        <tbody>
-          {customers.map((c) => (
-            <tr key={c.id}>
-              <td>{c.name}</td>
-              <td>{c.email}</td>
-              <td>{c.phone}</td>
-              <td>{c.bookings}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    
     </div>
+    <div
+            className="activities-view1"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "80vh",
+            }}
+          >
+            <img
+              src={img_coming_soon}
+              alt="coming soon"
+              style={{ maxWidth: 900, width: "100%", height: "auto" }}
+            />
+          </div>
+          </>
   );
 }
