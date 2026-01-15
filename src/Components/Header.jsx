@@ -4,13 +4,18 @@ import lupa from '../assets/img/lupa.png'
 import userImg from '../assets/img/DefaultUserImage.png'
 import home from '../assets/img/home.png'
 import '../assets/CSS/Header.css'
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
 import { useState } from "react"
-import '../assets/CSS/Header.css';
-import LanguageSelector from '../Components/LanguageSelector';
+import '../assets/CSS/Header.css'
+import LanguageSelector from '../Components/LanguageSelector'
 
 function Head({ isLoggedIn, currentLanguage, setLanguage}) 
 {
+    const location = useLocation();
+
+    const paginasPermitidas = ['/Inital_Page', '/Activities', '/ActivitiesInfo'];
+    const mostrarBuscador = paginasPermitidas.includes(location.pathname);
+
     //#region navigation part
     const navigate = useNavigate();
     const [showDropdown, setShowDropdown] = useState(false);
@@ -70,11 +75,12 @@ function Head({ isLoggedIn, currentLanguage, setLanguage})
                 {/* Spacer */}
                 <div className="header-spacer"></div>
 
-                <div className="search-input">
-                    <input type='text' placeholder='Where do you like to go?' id='id_place' style={{ width:'350px'}} />
-                    <img src={lupa} alt="search" style={{ height:'60px', width: '60px' }}/>
-                </div>
-
+                {mostrarBuscador &&
+                    <div className="search-input">
+                        <input type='text' placeholder='Where do you like to go?' id='id_place' style={{ width:'350px'}}/>
+                        <img src={lupa} alt="search" style={{ height:'60px', width: '60px' }}/>
+                    </div>
+                }
                 <div className="header-spacer"></div>
 
                 <div className="nav-links">

@@ -117,9 +117,6 @@ function InitialPage() {
           <p className="hero-subtitle">{t("Search from thousands of options")}</p>
           <Form onSubmit={submitSearch}>
             <InputGroup>
-              <InputGroup.Text>
-                <img src={lupa} alt={t("search")} style={{ width: "20px" }} />
-              </InputGroup.Text>
 
               {/* Controlled input; suggestions appear only when user types */}
               <Form.Control
