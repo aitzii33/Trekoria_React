@@ -23,7 +23,8 @@ export default function Landing()
   
   const routeChange = () => 
   {
-    navigate('/Home');
+    const path = '/Home';
+    navigate(path);
   };
 
 

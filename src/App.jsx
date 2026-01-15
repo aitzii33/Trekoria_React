@@ -4,15 +4,16 @@ import { Routes, Route } from 'react-router-dom'
 import Landing from './Layout/LandingPage'
 import Initial from './Layout/Initial_Page'
 import ContactUs from './Components/Contact2'
-import Login from './Layout/LogIn'
+import Login from './Layout/Login'
 import ForgotPass from './Layout/Forgot_Pass'
-import Register from './Layout/Register'
+import Register from './Layout/Registe'
 import AboutUs from './Components/AboutUs'
 import Profile from './Layout/MyProfile'
 import Activities from './Layout/Activities'  
 import ActivityClick from './Layout/ActivitiesInfo'
 import Cart from './Layout/Cart'
 import Payment from './Layout/Payment'
+import AdminPortal from './Layout/Admin/AdminPortal'
 
 import "./assets/i18n/i18n";                   // keep this to initialize i18n
 
@@ -31,6 +32,7 @@ function App() {
       <Route path="/ActivityClick" element={<ActivityClick/>} />
       <Route path="/Cart" element={<Cart/>} />
       <Route path="/Pay" element={<Payment/>} />
+      <Route path="/AdminPortal" element={<AdminPortal />} />
     </Routes>
   );
 }

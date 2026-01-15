@@ -18,25 +18,7 @@ function RegisterPage() {
   } = useForm();
 
   const onSubmit = (data) => {
-    const { email, username, password, password2 } = data;
-    // Check if email already exists
-    if (IfExistEmail(email)) {
-      alert('The email is already registered');
-      return;
-    }
-
-    // Check if username already exists
-    if (ProveUserName(username)) {
-      alert('The username is already taken');
-      return;
-    }
-
-    // Check if passwords match
-    if (!samePass(password, password2)) {
-      alert('Passwords do not match');
-      return;
-    }   
-
+    // Inline field validation handles email/username/password matching.
     // All validations passed
     navigate('/LogIn');
   };
@@ -100,16 +82,29 @@ function RegisterPage() {
                 {errors.birthday && <span className="text-danger">{errors.birthday.message}</span>}
               </div>
 
-
               {/* Email */}
               <div className="form-outline mb-2">
-                <input type="email" className="form-control" placeholder="Introduce your email"/>
+                <input
+                  type="email"
+                  className="form-control"
+                  placeholder="Introduce your email"
+                  {...register('email', {
+                    required: 'Email is required',
+                    pattern: { value: /^\S+@\S+\.\S+$/, message: 'Invalid email address' },
+                    validate: (value) => !IfExistEmail(value) || 'The email is already registered'
+                  })}
+                />
                 {errors.email && <span className="text-danger">{errors.email.message}</span>}
               </div>
 
               {/* Username */}
               <div className="form-outline mb-2">
-                <input type="text" className="form-control" placeholder="Introduce your username" {...register('username', { required: 'Username is required' })}/>
+                <input type="text" className="form-control" placeholder="Introduce your username"
+                  {...register('username', {
+                    required: 'Username is required',
+                    validate: (value) => !ProveUserName(value) || 'The username is already taken'
+                  })}
+                />
                 {errors.username && <span className="text-danger">{errors.username.message}</span>}
               </div>
 

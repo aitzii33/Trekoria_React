@@ -1,0 +1,105 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.admin-portal {
+    display: flex;
+    height: 100vh;
+  
+
+}
+.sidebar {
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between;
+  width: 210px;
+  background-color: #2796D1;
+  color: #ecf0f1;
+  padding: 20px;
+  height: 100vh; 
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+
+.sidebar-menu li {
+  padding: 12px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  transition: background 0.2s;
+    background-color: transparent;
+  color: #ecf0f1;
+  font-size: 17px;
+}
+
+
+.sidebar-menu li:hover {
+  background-color: #b1b187;
+}
+
+.sidebar-menu li.active {
+  background-color: #a7a761;
+  font-weight: bold;
+}
+
+
+.content {
+    flex: 1;
+    padding: 40px;
+}
+/* Sidebar footer */
+.sidebar-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+     margin-top: 530px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Profile picture styling */
+.profile-pic {
+    width: 70px;    
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #1abc9c;
+}
+
+
+.admin-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Admin name styling */
+.admin-name {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: #ecf0f1;
+}
+
+/* Logout button styling */
+.logout-btn {
+    padding: 4px 8px;
+    font-size: 12px;
+    color: #ecf0f1;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
+}

@@ -2,7 +2,7 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import { Carousel, Form, Button, InputGroup, Card, Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import { useNavigate, } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../assets/CSS/Home.css";
@@ -115,7 +115,7 @@ function InitialPage() {
         <div className="search-overlay">
           <h1 className="hero-heading">{t("Find Your Perfect Place")}</h1>
           <p className="hero-subtitle">{t("Search from thousands of options")}</p>
-          <Form onSubmit={submitSearch}>
+          <Form onSubmit={handleSearch}>
             <InputGroup>
 
               {/* Controlled input; suggestions appear only when user types */}
@@ -132,13 +132,6 @@ function InitialPage() {
                 {t("Search")}
               </Button>
             </InputGroup>
-
-            {/* Render datalist only when there's some input */}
-            <datalist id="search-suggestions">
-              {suggestions.map((s) => (
-                <option key={s} value={s} />
-              ))}
-            </datalist>
           </Form>
         </div>
       </div>
