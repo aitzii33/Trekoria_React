@@ -61,7 +61,7 @@
 
 .progress-indicator {
     height: 100%;
-    background-color: #D1DCEC;
+    background-color: #055ee2;
     border-radius: 9999px;
     transition: width 0.5s ease-in-out;
     position: relative;
@@ -101,17 +101,17 @@
 
 .step-item.active .step-number {
     background-color: #D1DCEC;
-    color: white;
+    color: #5A4C29;
     box-shadow: 0 0 0 4px rgba(93, 93, 255, 0.2);
 }
 
 .step-item.completed .step-number {
     background-color: #D1DCEC;
-    color: white;
+    color: #5A4C29;
 }
 
 .step-item.active .step-title, .step-item.completed .step-title {
-    color: #D1DCEC;
+    color: #5A4C29;
 }
 
 .form-step {
@@ -162,6 +162,7 @@
 .btn-success {
     background-color: #D1DCEC;
     border-color: #D1DCEC;
+    color: #000000;
     border-radius: 9999px;
     padding: 0.75rem 2rem;
     font-weight: 600;
