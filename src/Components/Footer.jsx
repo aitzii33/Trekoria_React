@@ -23,11 +23,16 @@ function Footer()
         const path = '/About';
         navigate(path);
     }
-    const routeLanding = () => 
+    const routeAdmin = () => 
     {
-        const path = '/InitialPage';
+        const path = '/AdminPortal';
         navigate(path);
     };
+    const routeProfile = () => 
+    {
+        const path = '/Profile';
+        navigate(path);
+    }
 
 
     return (
@@ -39,6 +44,8 @@ function Footer()
                             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                                 <h6 className="text-uppercase text-black mb-4 font-weight-bold">Products</h6>
                                 <p><a className="text-black" href="#!">Activities</a></p>
+                                <p><a className="text-black" onClick={routeAdmin}>AdminDashboard</a></p>
+                                <p><a className="text-black" onClick={routeProfile}>User Profile</a></p>
                             </div>
 
                             <hr className="w-100 clearfix d-md-none" />
