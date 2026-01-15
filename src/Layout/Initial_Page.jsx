@@ -11,7 +11,6 @@ import "../assets/CSS/Home.css";
 import LandingImg1 from "../assets/img/LandingImg1.png";
 import LandingImg2 from "../assets/img/LandingImg2.jpg";
 import LandingImg3 from "../assets/img/LandingImg3.jpg";
-import lupa from "../assets/img/lupa.png";
 import Baloon from "../assets/img/Baloon.jpg";
 import TokyoImg from "../assets/img/Tokyo.webp";
 import Baloon2 from "../assets/img/Baloon2.webp";
